@@ -24,6 +24,19 @@ texture = ExtResource( 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
 shape = SubResource( 2 )
 
+[node name="floor2" type="StaticBody2D" parent="."]
+position = Vector2( 1116, 331 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="floor2"]
+scale = Vector2( 1.2, 0.0609013 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor2"]
+shape = SubResource( 2 )
+
 [node name="Steve" parent="." instance=ExtResource( 2 )]
 position = Vector2( 486, 136 )
 scale = Vector2( 0.4, 0.4 )
