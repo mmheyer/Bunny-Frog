@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sprite placeholder.png-8f03441995b6da1a8da072ac3d28f612.stex"
+path="res://.import/Safeimagekit-1.png-23641071fabb1c742d01f7775265be47.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite placeholder.png"
-dest_files=[ "res://.import/sprite placeholder.png-8f03441995b6da1a8da072ac3d28f612.stex" ]
+source_file="res://ASSETS/Safeimagekit-1.png"
+dest_files=[ "res://.import/Safeimagekit-1.png-23641071fabb1c742d01f7775265be47.stex" ]
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=1
+flags/repeat=0
 flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
