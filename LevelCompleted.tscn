@@ -24,15 +24,16 @@ margin_bottom = 600.0
 color = Color( 0, 0.952941, 1, 1 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 287.0
-margin_top = 138.0
-margin_right = 738.0
-margin_bottom = 297.0
+margin_left = 131.0
+margin_top = 119.0
+margin_right = 913.0
+margin_bottom = 278.0
 input_pass_on_modal_close_click = false
 custom_colors/font_color = Color( 1, 0.796078, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0.952941, 1, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "YOU WIN!"
+text = "level completed!"
+align = 1
 
 [node name="MainMenuButton" type="Button" parent="."]
 margin_left = 352.0
