@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
 var velocity = Vector2(0,0)
-const SPEED = 200
-const JUMPFORCE = -1100
+const SPEED = 250
+const JUMPFORCE = -1000
 const GRAVITY = 38
 
 func _physics_process(delta):
@@ -27,3 +27,7 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
 	velocity.x = lerp(velocity.x,0,0.4)
+
+func die ():
+	$Sprite.play("die")
+	get_tree().change_scene("res://MainGame.tscn")
