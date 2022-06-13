@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 var velocity = Vector2(0,0)
+var coins = 0
 const SPEED = 250
 const JUMPFORCE = -1000
 const GRAVITY = 38
@@ -31,3 +32,6 @@ func _physics_process(delta):
 func die ():
 	$Sprite.play("die")
 	get_tree().change_scene("res://MainGame.tscn")
+
+func add_coin():
+		coins = coins + 1
