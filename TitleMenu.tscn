@@ -1,7 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://ASSETS/fonts/KiriFont.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://ASSETS/HUD & fonts/fonts/upheavtt.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://PlayButton.gd" type="Script" id=2]
+[ext_resource path="res://ASSETS/enemy temp.png" type="Texture" id=3]
+[ext_resource path="res://ASSETS/forestbackground1.png" type="Texture" id=4]
+[ext_resource path="res://coin.tscn" type="PackedScene" id=5]
+[ext_resource path="res://ASSETS/player/bunnyfrog+walk3.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 70
@@ -16,30 +20,43 @@ font_data = ExtResource( 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 1024.0
-margin_bottom = 600.0
-color = Color( 0.113725, 0.0588235, 0.521569, 1 )
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 249.0
-margin_top = 62.0
-margin_right = 782.0
-margin_bottom = 145.0
+margin_left = 281.0
+margin_top = 129.0
+margin_right = 814.0
+margin_bottom = 212.0
 custom_fonts/font = SubResource( 1 )
-text = "[Game Title]"
+text = "Easter Frog"
 
 [node name="PlayButton" type="Button" parent="."]
-margin_left = 303.0
+margin_left = 276.0
 margin_top = 213.0
-margin_right = 739.0
+margin_right = 712.0
 margin_bottom = 337.0
-custom_colors/font_color = Color( 0, 1, 0.25098, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 0, 0.72549, 1 )
 custom_colors/font_color_pressed = Color( 1, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "CLICK TO BEGIN!"
 flat = true
 script = ExtResource( 2 )
+
+[node name="EnemyTemp" type="Sprite" parent="."]
+position = Vector2( 896, 365 )
+scale = Vector2( 0.707031, 0.707031 )
+texture = ExtResource( 3 )
+
+[node name="coin" parent="." instance=ExtResource( 5 )]
+position = Vector2( 162, 378 )
+scale = Vector2( 2, 2 )
+
+[node name="Bunnyfrog+walk3" type="Sprite" parent="."]
+position = Vector2( 539, 78 )
+texture = ExtResource( 6 )
 
 [connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_PlayButton_pressed"]
