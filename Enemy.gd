@@ -33,5 +33,6 @@ func move_to (current, to, step):
 
 
 func _on_Area2D_body_entered(body):
+	speed = 0
 	if body.name == "bunnyfrog":
 		body.die()

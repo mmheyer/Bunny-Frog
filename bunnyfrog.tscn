@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://player_spriteframes.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://bunnyfrog.gd" type="Script" id=2]
@@ -7,20 +7,21 @@
 radius = 33.0977
 height = 48.0557
 
+[sub_resource type="GDScript" id=2]
+
 [node name="Steve" type="KinematicBody2D"]
 position = Vector2( 523, 284 )
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="."]
-position = Vector2( 43, 49 )
-frames = ExtResource( 1 )
-animation = "die"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 46, 73 )
 rotation = 1.55247
 scale = Vector2( 1.01128, 1.01546 )
 shape = SubResource( 1 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 43.0001, 49 )
+frames = ExtResource( 1 )
+animation = "die"
+frame = 1
+script = SubResource( 2 )
