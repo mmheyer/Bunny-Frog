@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Transition.gd" type="Script" id=1]
 [ext_resource path="res://ASSETS/transition/transition3.png" type="Texture" id=2]
@@ -11,18 +11,25 @@
 [ext_resource path="res://ASSETS/transition/transition6.png" type="Texture" id=9]
 [ext_resource path="res://ASSETS/transition/transition7.png" type="Texture" id=10]
 [ext_resource path="res://ASSETS/transparent.png" type="Texture" id=11]
+[ext_resource path="res://ASSETS/transition/transition15.png" type="Texture" id=12]
+[ext_resource path="res://ASSETS/transition/transition9.png" type="Texture" id=13]
+[ext_resource path="res://ASSETS/transition/transition14.png" type="Texture" id=14]
+[ext_resource path="res://ASSETS/transition/transition13.png" type="Texture" id=15]
+[ext_resource path="res://ASSETS/transition/transition10.png" type="Texture" id=16]
+[ext_resource path="res://ASSETS/transition/transition11.png" type="Texture" id=17]
+[ext_resource path="res://ASSETS/transition/transition12.png" type="Texture" id=18]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 7 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 5 ), ExtResource( 11 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 13 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 15 ), ExtResource( 14 ), ExtResource( 12 ), ExtResource( 11 ) ],
 "loop": false,
 "name": "fade2",
-"speed": 12.0
+"speed": 17.0
 }, {
-"frames": [ ExtResource( 11 ), ExtResource( 4 ), ExtResource( 8 ), ExtResource( 2 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 11 ), ExtResource( 4 ), ExtResource( 8 ), ExtResource( 2 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 5 ) ],
 "loop": false,
 "name": "fade1",
-"speed": 10.0
+"speed": 17.0
 } ]
 
 [node name="CanvasLayer" type="CanvasLayer"]
