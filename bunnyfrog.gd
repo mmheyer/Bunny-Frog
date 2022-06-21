@@ -45,6 +45,7 @@ func die():
 	Transition.fade_to(get_tree().get_current_scene().get_name())
 	yield(get_node("/root/Transition/AnimatedSprite"), "animation_finished")
 	get_tree().reload_current_scene()
+	Transition.fade_from(get_tree().get_current_scene().get_name())
 
 func add_coin():
 		coins = coins + 1

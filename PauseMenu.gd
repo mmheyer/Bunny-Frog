@@ -10,16 +10,14 @@ func set_is_paused(value):
 	is_paused = value
 	get_tree().paused = is_paused
 	visible = is_paused
-	
-
 
 func _on_ResumeButton_pressed():
 	self.is_paused = false
 
 func _on_RestartButton_pressed():
 	self.is_paused = false
-	get_tree().change_scene("res://MainGame.tscn")
+	Transition.fade("res://MainGame.tscn")
 
 func _on_QuitButton_pressed():
 	self.is_paused = false
-	get_tree().change_scene("res://TitleMenu.tscn")
+	Transition.fade("res://TitleMenu.tscn")

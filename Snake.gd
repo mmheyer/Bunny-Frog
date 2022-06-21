@@ -13,7 +13,6 @@ func _process(_delta):
 		collision1.disabled = false
 		collision2.disabled = true
 
-
 func _on_Area2D_body_entered(body):
 	if body.name == "bunnyfrog":
 		body.die()
