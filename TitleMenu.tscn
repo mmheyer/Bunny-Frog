@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://ASSETS/HUD & fonts/fonts/upheavtt.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://PlayButton.gd" type="Script" id=2]
 [ext_resource path="res://ASSETS/background/title screen background.png" type="Texture" id=3]
 [ext_resource path="res://ASSETS/UI/play button.png" type="Texture" id=4]
+[ext_resource path="res://ASSETS/UI/gear icon.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 70
@@ -43,9 +44,9 @@ align = 1
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 425.0
-margin_top = 283.0
+margin_top = 299.0
 margin_right = -329.0
-margin_bottom = -73.0
+margin_bottom = -57.0
 rect_scale = Vector2( 0.5, 0.5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 0, 0.72549, 1 )
@@ -58,5 +59,15 @@ script = ExtResource( 2 )
 [node name="Polygon2D" type="Polygon2D" parent="PlayButton"]
 color = Color( 0, 0, 0, 1 )
 texture = SubResource( 3 )
+
+[node name="SettingsButton" type="MenuButton" parent="."]
+anchor_right = 0.545
+margin_left = 805.0
+margin_top = 460.0
+margin_right = 567.92
+margin_bottom = 655.0
+icon = ExtResource( 6 )
+expand_icon = true
+items = [ "Music", null, 1, true, false, 0, 0, null, "", false ]
 
 [connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_PlayButton_pressed"]

@@ -1,51 +1,41 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://ASSETS/HUD & fonts/fonts/Sniglet-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://ASSETS/HUD & fonts/fonts/KiriFont.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://ASSETS/UI/lock icon.png" type="Texture" id=2]
+[ext_resource path="res://LevelBox.gd" type="Script" id=3]
 
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.219608, 0.439216, 0.14902, 1 )
-
-[sub_resource type="DynamicFont" id=2]
-size = 40
+[sub_resource type="DynamicFont" id=1]
+size = 100
 outline_size = 5
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
-[sub_resource type="Theme" id=3]
-
-[node name="LevelBox" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -138.0
-margin_top = 3.0
-margin_right = -138.0
-margin_bottom = 3.0
-
-[node name="LevelBox" type="PanelContainer" parent="."]
+[node name="PanelContainer" type="PanelContainer"]
 margin_right = 14.0
-margin_bottom = 28.0
+margin_bottom = 14.0
 rect_min_size = Vector2( 110, 110 )
-custom_styles/panel = SubResource( 1 )
+script = ExtResource( 3 )
 
-[node name="Label" type="Label" parent="LevelBox"]
-margin_top = 29.0
-margin_right = 110.0
-margin_bottom = 80.0
-custom_fonts/font = SubResource( 2 )
+[node name="Label" type="Label" parent="."]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 103.0
+margin_bottom = 108.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
 text = "1"
 align = 1
-valign = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="LevelBox"]
-margin_right = 110.0
-margin_bottom = 110.0
-custom_constants/margin_right = 0
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 103.0
+margin_bottom = 108.0
 
-[node name="TextureRect" type="TextureRect" parent="LevelBox/MarginContainer"]
-margin_right = 110.0
-margin_bottom = 110.0
-rect_min_size = Vector2( 110, 110 )
-theme = SubResource( 3 )
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+margin_right = 96.0
+margin_bottom = 101.0
 texture = ExtResource( 2 )
 expand = true
