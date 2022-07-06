@@ -2,7 +2,7 @@
 
 [ext_resource path="res://ASSETS/HUD & fonts/fonts/upheavtt.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://PlayButton.gd" type="Script" id=2]
-[ext_resource path="res://ASSETS/background/title screen background.png" type="Texture" id=3]
+[ext_resource path="res://ASSETS/background/title screen.v2.png" type="Texture" id=3]
 [ext_resource path="res://ASSETS/UI/play button.png" type="Texture" id=4]
 [ext_resource path="res://ASSETS/UI/gear icon.png" type="Texture" id=6]
 

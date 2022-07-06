@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/title screen background.png-2f4ef5a79bb50d68f7ed184c6a937e34.stex"
+path="res://.import/water middle 1.png-73981f654e3fd9af87369300e83eb0b6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/background/title screen background.png"
-dest_files=[ "res://.import/title screen background.png-2f4ef5a79bb50d68f7ed184c6a937e34.stex" ]
+source_file="res://ASSETS/water/water middle 1.png"
+dest_files=[ "res://.import/water middle 1.png-73981f654e3fd9af87369300e83eb0b6.stex" ]
 
 [params]
 

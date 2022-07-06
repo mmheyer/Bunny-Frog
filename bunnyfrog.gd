@@ -2,9 +2,9 @@ extends KinematicBody2D
 
 var velocity = Vector2(0,0)
 var coins = 0
-var speed = 250
-var jumpforce = -1000
-var gravity = 38
+var speed = 160
+var jumpforce = -700
+var gravity = 35
 var dying = false
 var offsets = Vector2(100,100)
 
@@ -34,6 +34,11 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
 	velocity.x = lerp(velocity.x,0,0.4)
+	
+	var collision = move_and_collide(velocity * delta)
+	if collision:
+		if collision.collider.name == "Water":
+			die()
 	
 func die():
 	dying = true
