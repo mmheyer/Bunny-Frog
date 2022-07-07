@@ -36,7 +36,7 @@ func _physics_process(delta):
 	velocity.x = lerp(velocity.x,0,0.4)
 	
 	var collision = move_and_collide(velocity * delta)
-	if collision:
+	if not is_on_floor() and collision:
 		if collision.collider.name == "Water":
 			die()
 	

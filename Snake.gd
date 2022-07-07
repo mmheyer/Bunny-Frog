@@ -6,7 +6,7 @@ func _process(_delta):
 	$Snake.play("default")
 	var collision1 := get_node(str("Coll0")) as CollisionPolygon2D
 	var collision2 := get_node(str("Coll1")) as CollisionPolygon2D
-	if sprite.frame == 9 || sprite.frame == 10 || sprite.frame == 11:
+	if sprite.frame == 9 || sprite.frame == 10 || sprite.frame == 11 || sprite.frame == 12:
 		collision1.disabled = true
 		collision2.disabled = false
 	else:
