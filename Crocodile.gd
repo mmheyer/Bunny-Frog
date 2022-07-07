@@ -11,6 +11,10 @@ func _process(_delta):
 	var collision5 := get_node(str("Coll5")) as CollisionPolygon2D
 	if sprite.frame == 0:
 		collision5.disabled = true
+		collision1.disabled = true
+		collision2.disabled = true
+		collision3.disabled = true
+		collision4.disabled = true
 		collision0.disabled = false
 	elif sprite.frame == 1:
 		collision0.disabled = true
