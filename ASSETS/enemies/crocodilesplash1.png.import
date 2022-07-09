@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/crocodile6.png-78fb5c0f111ae63983d5cf03a4214cb2.stex"
+path="res://.import/crocodilesplash1.png-88cb494dde8882e7a1dccfc3506408ec.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/enemies/crocodile6.png"
-dest_files=[ "res://.import/crocodile6.png-78fb5c0f111ae63983d5cf03a4214cb2.stex" ]
+source_file="res://ASSETS/enemies/crocodilesplash1.png"
+dest_files=[ "res://.import/crocodilesplash1.png-88cb494dde8882e7a1dccfc3506408ec.stex" ]
 
 [params]
 

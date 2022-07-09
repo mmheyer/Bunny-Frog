@@ -22,6 +22,17 @@
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 511.5, 26 )
 
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0, 0, 0, 0.352941 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="DynamicFont" id=13]
+size = 40
+font_data = ExtResource( 12 )
+
 [sub_resource type="ConvexPolygonShape2D" id=16]
 points = PoolVector2Array( 4, 0, 4, 0, 96, 0, 96, 48, 4, 48, 4, 24, 0, 20, 0, 8 )
 
@@ -188,17 +199,6 @@ points = PoolVector2Array( 112, 72, 0, 72, 0, 0, 112, 0 )
 } ]
 2/z_index = 0
 
-[sub_resource type="StyleBoxFlat" id=11]
-bg_color = Color( 0, 0, 0, 0.352941 )
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="DynamicFont" id=13]
-size = 40
-font_data = ExtResource( 12 )
-
 [node name="Level1" type="Node2D"]
 script = ExtResource( 9 )
 __meta__ = {
@@ -247,20 +247,6 @@ texture = ExtResource( 3 )
 position = Vector2( 6999, 8 )
 scale = Vector2( 40, 1 )
 shape = SubResource( 2 )
-
-[node name="Blocks" type="TileMap" parent="."]
-tile_set = SubResource( 5 )
-cell_size = Vector2( 96, 48 )
-cell_quadrant_size = 10
-cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
-format = 1
-tile_data = PoolIntArray( 65535, 4, 0, 131071, 4, 0, 196607, 4, 0, 262143, 4, 0, 327679, 4, 0, 262155, 3, 0, 262156, 4, 0, 262157, 4, 0, 262158, 4, 0, 262159, 4, 0, 262160, 5, 0, 393215, 4, 0, 458751, 4, 0, 524287, 4, 0, 589823, 4, 0, 524294, 3, 0, 524295, 4, 0, 524296, 4, 0, 524297, 4, 0, 524298, 5, 0, 655359, 4, 0, 720895, 4, 0, 786431, 4, 0, 851967, 4, 0 )
-
-[node name="Water" type="TileMap" parent="."]
-tile_set = SubResource( 20 )
-cell_size = Vector2( 16, 16 )
-format = 1
-tile_data = PoolIntArray( 2162770, 0, 0, 2162778, 1, 0, 2162786, 2, 0, 2162815, 0, 0, 2162823, 1, 0, 2162831, 2, 0 )
 
 [node name="Enemy" parent="." instance=ExtResource( 10 )]
 position = Vector2( 605, 350 )
@@ -313,7 +299,22 @@ position = Vector2( 1307, 151 )
 scale = Vector2( 2.5, 2.5 )
 
 [node name="Crocodile" parent="Enemies" instance=ExtResource( 18 )]
-position = Vector2( 1373, 496 )
+position = Vector2( 1460, 495 )
+scale = Vector2( 1.2, 1.2 )
+
+[node name="Blocks" type="TileMap" parent="."]
+tile_set = SubResource( 5 )
+cell_size = Vector2( 96, 48 )
+cell_quadrant_size = 10
+cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
+format = 1
+tile_data = PoolIntArray( 65535, 4, 0, 131071, 4, 0, 196607, 4, 0, 262143, 4, 0, 327679, 4, 0, 262155, 3, 0, 262156, 4, 0, 262157, 4, 0, 262158, 4, 0, 262159, 4, 0, 262160, 5, 0, 393215, 4, 0, 458751, 4, 0, 524287, 4, 0, 589823, 4, 0, 524294, 3, 0, 524295, 4, 0, 524296, 4, 0, 524297, 4, 0, 524298, 5, 0, 655359, 4, 0, 720895, 4, 0, 786431, 4, 0, 851967, 4, 0 )
+
+[node name="Water" type="TileMap" parent="."]
+tile_set = SubResource( 20 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 2162770, 0, 0, 2162778, 1, 0, 2162786, 2, 0, 2162815, 0, 0, 2162823, 1, 0, 2162831, 2, 0 )
 
 [connection signal="coin_collected" from="Coins/Coin" to="HUD" method="_on_coin_collected"]
 [connection signal="coin_collected" from="Coins/Coin2" to="HUD" method="_on_coin_collected"]
