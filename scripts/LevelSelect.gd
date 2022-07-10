@@ -22,6 +22,6 @@ func generate_buttons(name : int):
 	
 func column_size():
 	if total_levels % 2 == 0:
-		grid.colums = total_levels / 2
+		grid.columns - total_levels/2
 	else:
-		grid.columns = total_levels / 2 + 1
+		grid.columns = total_levels/2 + 1

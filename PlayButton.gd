@@ -1,4 +1,4 @@
 extends Button
 
 func _on_PlayButton_pressed():
-	Transition.fade("res://MainGame.tscn")
+	Transition.fade("res://scenes/levels/LevelSelect.tscn")

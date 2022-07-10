@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/flag pole.png-1183b5054bf9bd90f132ed093639e213.stex"
+path="res://.import/sparks (2).png-38175ad1263559d069829b46f04d47e1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/flag pole.png"
-dest_files=[ "res://.import/flag pole.png-1183b5054bf9bd90f132ed093639e213.stex" ]
+source_file="res://ASSETS/flag pole/sparks (2).png"
+dest_files=[ "res://.import/sparks (2).png-38175ad1263559d069829b46f04d47e1.stex" ]
 
 [params]
 
