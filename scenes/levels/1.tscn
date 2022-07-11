@@ -1,9 +1,9 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://bunnyfrog.tscn" type="PackedScene" id=1]
 [ext_resource path="res://GUI.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ASSETS/white.png" type="Texture" id=3]
-[ext_resource path="res://ASSETS/background/forestbackground1.png" type="Texture" id=4]
+[ext_resource path="res://ASSETS/background/backgroundfull.png" type="Texture" id=4]
 [ext_resource path="res://ASSETS/blocks/block 2.png" type="Texture" id=5]
 [ext_resource path="res://ASSETS/blocks/block 3.png" type="Texture" id=6]
 [ext_resource path="res://ASSETS/blocks/block 1.png" type="Texture" id=7]
@@ -22,6 +22,9 @@
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 511.5, 26 )
+
+[sub_resource type="RectangleShape2D" id=26]
+extents = Vector2( 43, 678 )
 
 [sub_resource type="StyleBoxFlat" id=11]
 bg_color = Color( 0, 0, 0, 0.352941 )
@@ -207,30 +210,32 @@ __meta__ = {
 }
 
 [node name="bunnyfrog" parent="." instance=ExtResource( 1 )]
-position = Vector2( 100, 497 )
+position = Vector2( 400, 294 )
 scale = Vector2( 0.6, 0.6 )
 
 [node name="Camera2D" type="Camera2D" parent="bunnyfrog"]
-position = Vector2( -810, -226.667 )
-scale = Vector2( 1.66667, 1.66667 )
-anchor_mode = 0
+position = Vector2( 190, 110 )
 current = true
-process_mode = 0
-limit_left = 15
-limit_top = 1
-limit_bottom = -1
+limit_left = 0
+limit_top = -600
+limit_bottom = 593
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+drag_margin_left = 0.1
+drag_margin_top = 0.5
+drag_margin_bottom = 0.5
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
-[node name="Forestbackground1" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+[node name="Forest 2" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 light_mask = 7
-position = Vector2( 6088, 300 )
-scale = Vector2( 0.991346, 1.02479 )
+position = Vector2( 6088, 10 )
+scale = Vector2( 0.991, 1.026 )
 texture = ExtResource( 4 )
 region_enabled = true
-region_rect = Rect2( 0, -10, 12288, 600 )
+region_rect = Rect2( 0, 0, 12288, 1200 )
 
 [node name="Floor" type="StaticBody2D" parent="."]
 visible = false
@@ -249,8 +254,24 @@ position = Vector2( 6999, 8 )
 scale = Vector2( 40, 1 )
 shape = SubResource( 2 )
 
+[node name="Left wall" type="StaticBody2D" parent="."]
+visible = false
+position = Vector2( -5043, -78 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Left wall"]
+position = Vector2( 5000, 8 )
+scale = Vector2( 0.19, 5 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left wall"]
+position = Vector2( 5000, 8 )
+shape = SubResource( 26 )
+
 [node name="Enemy" parent="." instance=ExtResource( 10 )]
-position = Vector2( 605, 350 )
+position = Vector2( 921, 512 )
 scale = Vector2( 1.2, 1.2 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
@@ -300,7 +321,7 @@ position = Vector2( 1307, 151 )
 scale = Vector2( 2.5, 2.5 )
 
 [node name="Crocodile" parent="Enemies" instance=ExtResource( 18 )]
-position = Vector2( 1460, 495 )
+position = Vector2( 1451, 481 )
 scale = Vector2( 1.2, 1.2 )
 
 [node name="Blocks" type="TileMap" parent="."]
@@ -309,16 +330,17 @@ cell_size = Vector2( 96, 48 )
 cell_quadrant_size = 10
 cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
 format = 1
-tile_data = PoolIntArray( 65535, 4, 0, 131071, 4, 0, 196607, 4, 0, 262143, 4, 0, 327679, 4, 0, 262155, 3, 0, 262156, 4, 0, 262157, 4, 0, 262158, 4, 0, 262159, 4, 0, 262160, 5, 0, 393215, 4, 0, 458751, 4, 0, 524287, 4, 0, 589823, 4, 0, 524294, 3, 0, 524295, 4, 0, 524296, 4, 0, 524297, 4, 0, 524298, 5, 0, 655359, 4, 0, 720895, 4, 0, 786431, 4, 0, 851967, 4, 0 )
+tile_data = PoolIntArray( -720873, 4, 0, -720872, 4, 0, -524267, 4, 0, -524266, 4, 0, -262125, 4, 0, -262124, 4, 0, 17, 4, 0, 18, 4, 0, 262156, 4, 0, 262157, 4, 0, 262158, 4, 0, 262159, 4, 0, 262160, 5, 0, 524297, 4, 0, 524298, 4, 0, 524299, 4, 0 )
 
 [node name="Water" type="TileMap" parent="."]
 tile_set = SubResource( 20 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 2162770, 0, 0, 2162778, 1, 0, 2162786, 2, 0, 2162815, 0, 0, 2162823, 1, 0, 2162831, 2, 0 )
+tile_data = PoolIntArray( 2097234, 0, 0, 2097242, 1, 0, 2097250, 2, 0, 2162815, 0, 0, 2162823, 1, 0, 2162831, 2, 0 )
 
 [node name="flag_pole" parent="." instance=ExtResource( 19 )]
-position = Vector2( 385, 497 )
+visible = false
+position = Vector2( 385, 494 )
 
 [connection signal="coin_collected" from="Coins/Coin" to="HUD" method="_on_coin_collected"]
 [connection signal="coin_collected" from="Coins/Coin2" to="HUD" method="_on_coin_collected"]

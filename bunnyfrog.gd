@@ -4,7 +4,7 @@ var velocity = Vector2(0,0)
 var coins = 0
 var speed = 160
 var jumpforce = -700
-var gravity = 35
+var gravity = 30
 var dying = false
 var offsets = Vector2(100,100)
 
