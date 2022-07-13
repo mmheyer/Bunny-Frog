@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://bunnyfrog.tscn" type="PackedScene" id=1]
 [ext_resource path="res://GUI.tscn" type="PackedScene" id=2]
@@ -9,7 +9,7 @@
 [ext_resource path="res://ASSETS/blocks/block 1.png" type="Texture" id=7]
 [ext_resource path="res://Snake.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scripts/levels/MainGame.gd" type="Script" id=9]
-[ext_resource path="res://Enemy.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Spider.tscn" type="PackedScene" id=10]
 [ext_resource path="res://coin.tscn" type="PackedScene" id=11]
 [ext_resource path="res://ASSETS/HUD & fonts/fonts/upheavtt.ttf" type="DynamicFontData" id=12]
 [ext_resource path="res://ASSETS/HUD & fonts/HUD/coin_gold.png" type="Texture" id=13]
@@ -19,6 +19,7 @@
 [ext_resource path="res://ASSETS/water/water_anim_right.tres" type="Texture" id=17]
 [ext_resource path="res://Crocodile.tscn" type="PackedScene" id=18]
 [ext_resource path="res://scenes/flag_pole.tscn" type="PackedScene" id=19]
+[ext_resource path="res://ASSETS/blocks/spikes.png" type="Texture" id=20]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 511.5, 26 )
@@ -203,6 +204,32 @@ points = PoolVector2Array( 112, 72, 0, 72, 0, 0, 112, 0 )
 } ]
 2/z_index = 0
 
+[sub_resource type="ConvexPolygonShape2D" id=27]
+points = PoolVector2Array( 155, 49, 2.26196, 49, 0, 0, 153.77, 0 )
+
+[sub_resource type="TileSet" id=28]
+0/name = "spikes.png 0"
+0/texture = ExtResource( 20 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 1, 0, 155, 49 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 27 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 27 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
 [node name="Level1" type="Node2D"]
 script = ExtResource( 9 )
 __meta__ = {
@@ -221,9 +248,11 @@ limit_top = -600
 limit_bottom = 593
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
+smoothing_enabled = true
+smoothing_speed = 10.0
 drag_margin_left = 0.1
-drag_margin_top = 0.5
-drag_margin_bottom = 0.5
+drag_margin_top = 0.46
+drag_margin_bottom = 0.42
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -269,10 +298,6 @@ texture = ExtResource( 3 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Left wall"]
 position = Vector2( 5000, 8 )
 shape = SubResource( 26 )
-
-[node name="Enemy" parent="." instance=ExtResource( 10 )]
-position = Vector2( 921, 512 )
-scale = Vector2( 1.2, 1.2 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
 script = ExtResource( 14 )
@@ -324,19 +349,31 @@ scale = Vector2( 2.5, 2.5 )
 position = Vector2( 1451, 481 )
 scale = Vector2( 1.2, 1.2 )
 
+[node name="Spider" parent="Enemies" instance=ExtResource( 10 )]
+position = Vector2( 914, 350 )
+speed = 150
+moveDist = 200
+
 [node name="Blocks" type="TileMap" parent="."]
 tile_set = SubResource( 5 )
 cell_size = Vector2( 96, 48 )
 cell_quadrant_size = 10
 cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
 format = 1
-tile_data = PoolIntArray( -720873, 4, 0, -720872, 4, 0, -524267, 4, 0, -524266, 4, 0, -262125, 4, 0, -262124, 4, 0, 17, 4, 0, 18, 4, 0, 262156, 4, 0, 262157, 4, 0, 262158, 4, 0, 262159, 4, 0, 262160, 5, 0, 524297, 4, 0, 524298, 4, 0, 524299, 4, 0 )
+tile_data = PoolIntArray( 262156, 4, 0, 262157, 4, 0, 262158, 4, 0, 262159, 4, 0, 262160, 5, 0, 524297, 4, 0, 524298, 4, 0, 524299, 4, 0 )
 
 [node name="Water" type="TileMap" parent="."]
 tile_set = SubResource( 20 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 2097234, 0, 0, 2097242, 1, 0, 2097250, 2, 0, 2162815, 0, 0, 2162823, 1, 0, 2162831, 2, 0 )
+tile_data = PoolIntArray( 2097234, 0, 0, 2097242, 1, 0, 2097250, 2, 0 )
+
+[node name="Spikes" type="TileMap" parent="."]
+scale = Vector2( 0.8, 0.8 )
+tile_set = SubResource( 28 )
+cell_size = Vector2( 8, 8 )
+format = 1
+tile_data = PoolIntArray( 5505411, 0, 0, 5505430, 0, 0, 5505449, 0, 0 )
 
 [node name="flag_pole" parent="." instance=ExtResource( 19 )]
 visible = false

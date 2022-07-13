@@ -38,7 +38,7 @@ script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 517, 298.25 )
-scale = Vector2( 4.95192, 5.10684 )
+scale = Vector2( 5, 5.2 )
 frames = SubResource( 1 )
 animation = "fade1"
 
