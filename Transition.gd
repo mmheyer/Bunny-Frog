@@ -1,9 +1,9 @@
 extends CanvasLayer
 
-func fade_to(scn_path):
+func fade_to(_scn_path):
 	get_node("AnimatedSprite").play("fade1")
 
-func fade_from(scn_path):
+func fade_from(_scn_path):
 	get_node("AnimatedSprite").play("fade2")
 	
 func fade(scn):
