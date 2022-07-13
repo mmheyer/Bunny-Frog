@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://bunnyfrog.tscn" type="PackedScene" id=1]
 [ext_resource path="res://GUI.tscn" type="PackedScene" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://Crocodile.tscn" type="PackedScene" id=18]
 [ext_resource path="res://scenes/flag_pole.tscn" type="PackedScene" id=19]
 [ext_resource path="res://ASSETS/blocks/spikes.png" type="Texture" id=20]
+[ext_resource path="res://Spring.tscn" type="PackedScene" id=21]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 511.5, 26 )
@@ -329,30 +330,43 @@ text = "##"
 [node name="Coins" type="Node2D" parent="."]
 
 [node name="Coin" parent="Coins" instance=ExtResource( 11 )]
-position = Vector2( 969, 349 )
+position = Vector2( 3551, 537 )
 
 [node name="Coin2" parent="Coins" instance=ExtResource( 11 )]
-position = Vector2( 1381, 146 )
+position = Vector2( 1297, 247 )
 
 [node name="Coin3" parent="Coins" instance=ExtResource( 11 )]
-position = Vector2( 1693, 470 )
+position = Vector2( 1250, 349 )
+
+[node name="Coin4" parent="Coins" instance=ExtResource( 11 )]
+position = Vector2( 1386, 185 )
+
+[node name="Coin5" parent="Coins" instance=ExtResource( 11 )]
+position = Vector2( 1466, 251 )
+
+[node name="Coin6" parent="Coins" instance=ExtResource( 11 )]
+position = Vector2( 1506, 349 )
+
+[node name="Coin7" parent="Coins" instance=ExtResource( 11 )]
+position = Vector2( 2125, 532 )
+
+[node name="Coin8" parent="Coins" instance=ExtResource( 11 )]
+position = Vector2( 2527, 534 )
 
 [node name="GUI" parent="." instance=ExtResource( 2 )]
 
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Snake" parent="Enemies" instance=ExtResource( 8 )]
-position = Vector2( 1307, 151 )
+position = Vector2( 1397, 341 )
 scale = Vector2( 2.5, 2.5 )
 
 [node name="Crocodile" parent="Enemies" instance=ExtResource( 18 )]
-position = Vector2( 1451, 481 )
-scale = Vector2( 1.2, 1.2 )
+position = Vector2( 3147, 498 )
 
 [node name="Spider" parent="Enemies" instance=ExtResource( 10 )]
-position = Vector2( 914, 350 )
+position = Vector2( 2259, 530 )
 speed = 150
-moveDist = 200
 
 [node name="Blocks" type="TileMap" parent="."]
 tile_set = SubResource( 5 )
@@ -360,20 +374,24 @@ cell_size = Vector2( 96, 48 )
 cell_quadrant_size = 10
 cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
 format = 1
-tile_data = PoolIntArray( 262156, 4, 0, 262157, 4, 0, 262158, 4, 0, 262159, 4, 0, 262160, 5, 0, 524297, 4, 0, 524298, 4, 0, 524299, 4, 0 )
+tile_data = PoolIntArray( 524299, 3, 0, 524300, 4, 0, 524301, 4, 0, 524302, 4, 0, 524303, 4, 0, 524304, 5, 0, 524321, 3, 0, 524322, 4, 0, 524323, 4, 0, 524324, 4, 0, 524325, 5, 0 )
 
 [node name="Water" type="TileMap" parent="."]
+scale = Vector2( 0.8, 0.8 )
 tile_set = SubResource( 20 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 2097234, 0, 0, 2097242, 1, 0, 2097250, 2, 0 )
+tile_data = PoolIntArray( 2687216, 0, 0, 2687224, 1, 0, 2687232, 1, 0, 2687240, 2, 0 )
 
 [node name="Spikes" type="TileMap" parent="."]
 scale = Vector2( 0.8, 0.8 )
 tile_set = SubResource( 28 )
 cell_size = Vector2( 8, 8 )
 format = 1
-tile_data = PoolIntArray( 5505411, 0, 0, 5505430, 0, 0, 5505449, 0, 0 )
+tile_data = PoolIntArray( 5505188, 0, 0, 5505207, 0, 0, 5505226, 0, 0, 5505245, 0, 0, 5505264, 0, 0 )
+
+[node name="Spring" parent="." instance=ExtResource( 21 )]
+position = Vector2( 813, 540 )
 
 [node name="flag_pole" parent="." instance=ExtResource( 19 )]
 visible = false
@@ -382,3 +400,8 @@ position = Vector2( 385, 494 )
 [connection signal="coin_collected" from="Coins/Coin" to="HUD" method="_on_coin_collected"]
 [connection signal="coin_collected" from="Coins/Coin2" to="HUD" method="_on_coin_collected"]
 [connection signal="coin_collected" from="Coins/Coin3" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/Coin4" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/Coin5" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/Coin6" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/Coin7" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/Coin8" to="HUD" method="_on_coin_collected"]
