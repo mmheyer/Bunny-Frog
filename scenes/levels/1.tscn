@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://bunnyfrog.tscn" type="PackedScene" id=1]
 [ext_resource path="res://GUI.tscn" type="PackedScene" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://flag_pole.tscn" type="PackedScene" id=19]
 [ext_resource path="res://ASSETS/blocks/spikes.png" type="Texture" id=20]
 [ext_resource path="res://Spring.tscn" type="PackedScene" id=21]
+[ext_resource path="res://ASSETS/flag pole/FlagPolev2.tscn" type="PackedScene" id=22]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 511.5, 26 )
@@ -456,6 +457,9 @@ position = Vector2( 6108, -11 )
 
 [node name="Flagpole" parent="." instance=ExtResource( 19 )]
 position = Vector2( 8072, 506 )
+
+[node name="FlagPolev2" parent="." instance=ExtResource( 22 )]
+position = Vector2( 836, 412 )
 
 [connection signal="coin_collected" from="Coins/Coin" to="HUD" method="_on_coin_collected"]
 [connection signal="coin_collected" from="Coins/Coin2" to="HUD" method="_on_coin_collected"]
