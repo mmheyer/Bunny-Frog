@@ -3,8 +3,8 @@ extends KinematicBody2D
 var velocity = Vector2(0,0)
 var coins = 0
 var speed = 160
-var jumpforce = -600
-var gravity = 23
+var jumpforce = -450
+var gravity = 18
 var dying = false
 var offsets = Vector2(100,100)
 
