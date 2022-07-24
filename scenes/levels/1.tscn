@@ -423,7 +423,7 @@ position = Vector2( 2259, 530 )
 speed = 150
 
 [node name="Spider2" parent="Enemies" instance=ExtResource( 10 )]
-position = Vector2( 4936, 212 )
+position = Vector2( 4935, 218 )
 speed = 150
 moveDist = 300
 
@@ -459,7 +459,7 @@ position = Vector2( 6108, -11 )
 position = Vector2( 8072, 506 )
 
 [node name="FlagPolev2" parent="." instance=ExtResource( 22 )]
-position = Vector2( 836, 412 )
+position = Vector2( 8010, 414 )
 
 [connection signal="coin_collected" from="Coins/Coin" to="HUD" method="_on_coin_collected"]
 [connection signal="coin_collected" from="Coins/Coin2" to="HUD" method="_on_coin_collected"]
