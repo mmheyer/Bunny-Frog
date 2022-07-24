@@ -1,6 +1,5 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://ASSETS/spider1.png" type="Texture" id=1]
 [ext_resource path="res://Spider.gd" type="Script" id=2]
 [ext_resource path="res://ASSETS/enemies/spider 3.png" type="Texture" id=3]
 [ext_resource path="res://ASSETS/enemies/spider 1.png" type="Texture" id=4]
@@ -9,6 +8,10 @@
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 28.0
 height = 52.0
+
+[sub_resource type="StreamTexture" id=3]
+flags = 4
+load_path = "res://.import/spider1.png-27af55734aa7a8bbb99f4889cc91f399.stex"
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -35,7 +38,7 @@ shape = SubResource( 1 )
 visible = false
 position = Vector2( 7, 25 )
 scale = Vector2( 1.54766, 1.54766 )
-texture = ExtResource( 1 )
+texture = SubResource( 3 )
 
 [node name="Spider" type="AnimatedSprite" parent="."]
 position = Vector2( 17, -42 )
