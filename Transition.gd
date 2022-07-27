@@ -11,3 +11,9 @@ func fade(scn):
 	yield(get_node("AnimatedSprite"), "animation_finished")
 	get_tree().change_scene(scn)
 	fade_from(get_tree().get_current_scene().get_name())
+
+func fade2():
+	fade_to(get_tree().get_current_scene().get_name())
+	yield(get_node("AnimatedSprite"), "animation_finished")
+	get_tree().reload_current_scene()
+	fade_from(get_tree().get_current_scene().get_name())

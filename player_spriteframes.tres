@@ -1,39 +1,44 @@
-[gd_resource type="SpriteFrames" load_steps=5 format=2]
+[gd_resource type="SpriteFrames" load_steps=10 format=2]
 
-[ext_resource path="res://ASSETS/player/bunnyfrog+walk1.png" type="Texture" id=1]
-[ext_resource path="res://ASSETS/player/bunnyfrog+walk2.png" type="Texture" id=2]
-[ext_resource path="res://ASSETS/player/bunnyfrog+walk3.png" type="Texture" id=3]
+[ext_resource path="res://ASSETS/player/frog idle.png" type="Texture" id=1]
+[ext_resource path="res://ASSETS/player/frog walk3.png" type="Texture" id=2]
+[ext_resource path="res://ASSETS/player/frog walk2.png" type="Texture" id=3]
 [ext_resource path="res://ASSETS/transparent.png" type="Texture" id=4]
+[ext_resource path="res://ASSETS/player/frogjump1.png" type="Texture" id=5]
+[ext_resource path="res://ASSETS/player/frogjump4.png" type="Texture" id=6]
+[ext_resource path="res://ASSETS/player/frog walk1.png" type="Texture" id=7]
+[ext_resource path="res://ASSETS/player/frogjump2.png" type="Texture" id=8]
+[ext_resource path="res://ASSETS/player/frogjump3.png" type="Texture" id=9]
 
 [resource]
 animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 4 ) ],
-"loop": false,
-"name": "air die",
-"speed": 15.0
-}, {
-"frames": [ ExtResource( 4 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 1 ) ],
-"loop": false,
-"name": "revive",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "air",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "walk",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 1 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 4 ) ],
-"loop": false,
-"name": "die",
-"speed": 15.0
-}, {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "air",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": false,
+"name": "revive",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 4 ) ],
+"loop": false,
+"name": "air die",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 3 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "walk",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 4 ) ],
+"loop": false,
+"name": "die",
+"speed": 15.0
 } ]
