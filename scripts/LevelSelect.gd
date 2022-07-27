@@ -5,6 +5,9 @@ export (int) var total_levels = 0
 export (NodePath) var grid
 
 func _ready():
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("BGM"), false)
+	yield(get_tree().create_timer(0.5), "timeout")
+	$AudioStreamPlayer.play()
 	grid = get_node(grid)
 	
 	if !total_levels <= 4:

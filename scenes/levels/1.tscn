@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://ASSETS/blocks/top right block.png" type="Texture" id=1]
 [ext_resource path="res://ASSETS/white.png" type="Texture" id=2]
@@ -10,7 +10,6 @@
 [ext_resource path="res://ASSETS/blocks/middle right block.png" type="Texture" id=8]
 [ext_resource path="res://ASSETS/HUD & fonts/HUD/coin_gold.png" type="Texture" id=9]
 [ext_resource path="res://HUD.gd" type="Script" id=10]
-[ext_resource path="res://ASSETS/bgm/Komiku - Poupi Great Adventures _ The Arcade Game.mp3" type="AudioStream" id=11]
 [ext_resource path="res://ASSETS/blocks/middle block.png" type="Texture" id=12]
 [ext_resource path="res://ASSETS/blocks/top left block.png" type="Texture" id=13]
 [ext_resource path="res://ASSETS/blocks/middle left block.png" type="Texture" id=14]
@@ -20,10 +19,7 @@
 [ext_resource path="res://GUI.tscn" type="PackedScene" id=18]
 [ext_resource path="res://ASSETS/flag pole/FlagPolev2.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Snake.tscn" type="PackedScene" id=20]
-
-[sub_resource type="GDScript" id=45]
-script/source = "extends Node2D
-"
+[ext_resource path="res://scenes/levels/1.gd" type="Script" id=21]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 511.5, 26 )
@@ -239,7 +235,7 @@ points = PoolVector2Array( 0, 50, 0, 40, 15, 0, 20, 0, 50, 0, 55, 5, 65, 35, 65,
 1/z_index = 0
 
 [node name="Level1" type="Node2D"]
-script = SubResource( 45 )
+script = ExtResource( 21 )
 __meta__ = {
 "_edit_horizontal_guides_": [  ]
 }
@@ -380,11 +376,6 @@ tile_data = PoolIntArray( -130955, 1, 0, 1048628, 1, 0 )
 
 [node name="FlagPolev2" parent="." instance=ExtResource( 19 )]
 position = Vector2( 4268, -171 )
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 11 )
-volume_db = 0.024
-autoplay = true
 
 [connection signal="coin_collected" from="Coins/Coin2" to="HUD" method="_on_coin_collected"]
 [connection signal="coin_collected" from="Coins/Coin3" to="HUD" method="_on_coin_collected"]

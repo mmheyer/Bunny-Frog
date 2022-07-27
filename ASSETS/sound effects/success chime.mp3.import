@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/success chime.mp3-5e200ea68e77201d92de7598de758b8f.mp3str"
+
+[deps]
+
+source_file="res://ASSETS/sound effects/success chime.mp3"
+dest_files=[ "res://.import/success chime.mp3-5e200ea68e77201d92de7598de758b8f.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Komiku - Mushrooms.mp3-a6ed1563c36e422c999a23a55c1cf313.mp3str"
+
+[deps]
+
+source_file="res://ASSETS/bgm/Komiku - Mushrooms.mp3"
+dest_files=[ "res://.import/Komiku - Mushrooms.mp3-a6ed1563c36e422c999a23a55c1cf313.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
