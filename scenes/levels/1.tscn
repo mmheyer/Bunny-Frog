@@ -10,7 +10,7 @@
 [ext_resource path="res://ASSETS/blocks/middle right block.png" type="Texture" id=8]
 [ext_resource path="res://ASSETS/HUD & fonts/HUD/coin_gold.png" type="Texture" id=9]
 [ext_resource path="res://HUD.gd" type="Script" id=10]
-[ext_resource path="res://ASSETS/bgm/Pixelland.mp3" type="AudioStream" id=11]
+[ext_resource path="res://ASSETS/bgm/Komiku - Poupi Great Adventures _ The Arcade Game.mp3" type="AudioStream" id=11]
 [ext_resource path="res://ASSETS/blocks/middle block.png" type="Texture" id=12]
 [ext_resource path="res://ASSETS/blocks/top left block.png" type="Texture" id=13]
 [ext_resource path="res://ASSETS/blocks/middle left block.png" type="Texture" id=14]
@@ -360,8 +360,8 @@ position = Vector2( 3439, 296 )
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Area2D" parent="Enemies" instance=ExtResource( 20 )]
-position = Vector2( 2887, 264 )
-scale = Vector2( 2.7, 2.7 )
+position = Vector2( 2887, 268 )
+scale = Vector2( 2.5, 2.5 )
 
 [node name="Blocks" type="TileMap" parent="."]
 scale = Vector2( 0.4, 0.4 )
@@ -383,6 +383,8 @@ position = Vector2( 4268, -171 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
+volume_db = 0.024
+autoplay = true
 
 [connection signal="coin_collected" from="Coins/Coin2" to="HUD" method="_on_coin_collected"]
 [connection signal="coin_collected" from="Coins/Coin3" to="HUD" method="_on_coin_collected"]

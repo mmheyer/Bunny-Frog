@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Komiku - Poupi Great Adventures _ The Arcade Game.mp3-d6d9788fd2cf277a521d091e4c3e4e91.mp3str"
+
+[deps]
+
+source_file="res://ASSETS/bgm/Komiku - Poupi Great Adventures _ The Arcade Game.mp3"
+dest_files=[ "res://.import/Komiku - Poupi Great Adventures _ The Arcade Game.mp3-d6d9788fd2cf277a521d091e4c3e4e91.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

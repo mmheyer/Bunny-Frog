@@ -16,7 +16,7 @@ func _on_ResumeButton_pressed():
 
 func _on_RestartButton_pressed():
 	self.is_paused = false
-	Transition.fade("res://MainGame.tscn")
+	Transition.fade2()
 
 func _on_QuitButton_pressed():
 	self.is_paused = false
