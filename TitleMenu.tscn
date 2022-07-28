@@ -5,7 +5,7 @@
 [ext_resource path="res://ASSETS/background/title screen.v2.png" type="Texture" id=3]
 [ext_resource path="res://ASSETS/UI/play button.png" type="Texture" id=4]
 [ext_resource path="res://ASSETS/bgm/Komiku - Mushrooms.mp3" type="AudioStream" id=5]
-[ext_resource path="res://ASSETS/UI/gear icon.png" type="Texture" id=6]
+[ext_resource path="res://ASSETS/UI/settings.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 70
@@ -33,10 +33,10 @@ texture = ExtResource( 3 )
 expand = true
 
 [node name="Label" type="Label" parent="."]
-margin_left = 436.0
-margin_top = 43.0
-margin_right = 969.0
-margin_bottom = 126.0
+margin_left = 479.0
+margin_top = 48.0
+margin_right = 1012.0
+margin_bottom = 131.0
 custom_colors/font_color = Color( 0.92549, 0.92549, 0.964706, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "Easter Frog"
@@ -64,10 +64,10 @@ texture = SubResource( 3 )
 
 [node name="SettingsButton" type="MenuButton" parent="."]
 anchor_right = 0.545
-margin_left = 805.0
-margin_top = 460.0
-margin_right = 567.92
-margin_bottom = 655.0
+margin_left = 832.0
+margin_top = 416.0
+margin_right = 467.92
+margin_bottom = 586.0
 icon = ExtResource( 6 )
 expand_icon = true
 items = [ "Music", null, 1, true, false, 0, 0, null, "", false ]

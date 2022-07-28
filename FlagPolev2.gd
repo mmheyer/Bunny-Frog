@@ -19,4 +19,5 @@ func _on_FlagPolev2_body_entered(body):
 	AudioServer.set_bus_mute(AudioServer.get_bus_index("BGM"), true)
 	flag_pole.play("default")
 	yield(flag_pole, "animation_finished")
-	Transition.fade("res://scenes/levels/world 1 template..tscn")
+	Music.stop()
+	Transition.fade("res://scenes/levels/LevelSelect.tscn")

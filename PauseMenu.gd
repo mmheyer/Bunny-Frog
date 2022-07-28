@@ -16,8 +16,11 @@ func _on_ResumeButton_pressed():
 
 func _on_RestartButton_pressed():
 	self.is_paused = false
+	Music.stop()
 	Transition.fade2()
 
 func _on_QuitButton_pressed():
 	self.is_paused = false
 	Transition.fade("res://TitleMenu.tscn")
+	Music.stop()
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("BGM"), false)

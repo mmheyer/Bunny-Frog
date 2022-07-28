@@ -17,6 +17,7 @@ func fade(scn):
 func fade2():
 	fade_to(get_tree().get_current_scene().get_name())
 	AudioServer.set_bus_mute(AudioServer.get_bus_index("BGM"), true)
+	Music.stop()
 	$AudioStreamPlayer.play()
 	yield(get_node("AnimatedSprite"), "animation_finished")
 	get_tree().reload_current_scene()

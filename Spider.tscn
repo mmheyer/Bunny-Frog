@@ -5,13 +5,8 @@
 [ext_resource path="res://ASSETS/enemies/spider 1.png" type="Texture" id=4]
 [ext_resource path="res://ASSETS/enemies/spider 2.png" type="Texture" id=5]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 28.0
-height = 52.0
-
 [sub_resource type="StreamTexture" id=3]
 flags = 4
-load_path = "res://.import/spider1.png-27af55734aa7a8bbb99f4889cc91f399.stex"
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -21,18 +16,14 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 28.0
+height = 58.0
+
 [node name="Area2D" type="Area2D"]
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 speed = 200
 moveDist = 450
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -1, 2 )
-rotation = 1.5708
-shape = SubResource( 1 )
 
 [node name="EnemyTemp" type="Sprite" parent="."]
 visible = false
@@ -41,10 +32,16 @@ scale = Vector2( 1.54766, 1.54766 )
 texture = SubResource( 3 )
 
 [node name="Spider" type="AnimatedSprite" parent="."]
-position = Vector2( 17, -42 )
-scale = Vector2( 0.884375, 0.884375 )
+position = Vector2( 2, -4 )
+scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 2 )
 animation = "walking"
+frame = 1
 playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 2, -3 )
+rotation = 1.5708
+shape = SubResource( 1 )
 
 [connection signal="body_entered" from="." to="." method="_on_Area2D_body_entered"]
