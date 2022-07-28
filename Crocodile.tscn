@@ -27,6 +27,7 @@ script = ExtResource( 12 )
 [node name="Crocodile" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 frame = 2
+playing = true
 
 [node name="Coll0" type="CollisionPolygon2D" parent="."]
 visible = false
