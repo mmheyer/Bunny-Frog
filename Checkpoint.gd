@@ -16,5 +16,5 @@ func _ready():
 #	pass
 
 
-func _on_Checkpoint_body_entered(body):
+func _on_Checkpoint_body_entered(_body):
 	pass # Replace with function body.
