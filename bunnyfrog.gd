@@ -23,6 +23,7 @@ func _physics_process(delta):
 		$Sprite.play("air")
 	elif Input.is_action_pressed("jump") and is_on_floor():
 		$Sprite.play("air")
+		Music.jumpsound()
 		velocity.y = jumpforce
 	elif Input.is_action_pressed("right"):
 		facing_r = true
