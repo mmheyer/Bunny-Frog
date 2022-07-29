@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://ASSETS/blocks/top right block.png" type="Texture" id=1]
 [ext_resource path="res://ASSETS/white.png" type="Texture" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://scenes/levels/1.gd" type="Script" id=21]
 [ext_resource path="res://tutorial2.tscn" type="PackedScene" id=22]
 [ext_resource path="res://key.tscn" type="PackedScene" id=23]
+[ext_resource path="res://temp block.tscn" type="PackedScene" id=24]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 511.5, 26 )
@@ -245,7 +246,7 @@ __meta__ = {
 
 [node name="tut1" parent="." instance=ExtResource( 22 )]
 modulate = Color( 1, 1, 1, 0.862745 )
-position = Vector2( 850, -50 )
+position = Vector2( 1009, -12 )
 scale = Vector2( 0.8, 0.8 )
 
 [node name="tut2" parent="." instance=ExtResource( 11 )]
@@ -389,6 +390,10 @@ tile_data = PoolIntArray( -130955, 1, 0, 1048634, 1, 0 )
 
 [node name="FlagPolev2" parent="." instance=ExtResource( 19 )]
 position = Vector2( 4268, -171 )
+
+[node name="Area2D" parent="." instance=ExtResource( 24 )]
+position = Vector2( 835, 388 )
+scale = Vector2( 0.4, 0.4 )
 
 [connection signal="coin_collected" from="Coins/Coin2" to="HUD" method="_on_coin_collected"]
 [connection signal="coin_collected" from="Coins/Coin3" to="HUD" method="_on_coin_collected"]

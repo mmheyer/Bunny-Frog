@@ -13,18 +13,11 @@ script = ExtResource( 2 )
 scale = Vector2( 0.8, 0.8 )
 frames = ExtResource( 1 )
 animation = "air"
-frame = 4
 script = SubResource( 2 )
 
 [node name="normal" type="CollisionPolygon2D" parent="."]
 visible = false
 position = Vector2( 0, -1 )
-polygon = PoolVector2Array( -29, -10, -21, -19, 28, -20, 36, -28, 56, -28, 63, -20, 74, -20, 79, -15, 79, 0, 61, 19, 61, 23, 65, 23, 70, 28, 70, 32, 69, 33, -31, 33, -31, -10 )
-
-[node name="flip" type="CollisionPolygon2D" parent="."]
-visible = false
-position = Vector2( 0, -1 )
-scale = Vector2( -1, 1 )
 polygon = PoolVector2Array( -29, -10, -21, -19, 28, -20, 36, -28, 56, -28, 63, -20, 74, -20, 79, -15, 79, 0, 61, 19, 61, 23, 65, 23, 70, 28, 70, 32, 69, 33, -31, 33, -31, -10 )
 
 [node name="jump" type="CollisionPolygon2D" parent="."]
@@ -38,20 +31,4 @@ polygon = PoolVector2Array( -36, 12, -40, 2, -32, -41, 29, -46, 52, -45, 74, -32
 
 [node name="jump3" type="CollisionPolygon2D" parent="."]
 visible = false
-polygon = PoolVector2Array( -36, 9, -27, -32, -10, -39, 55, -27, 78, -14, 79, -1, 69, 37, 60, 38, 46, 26, 21, 9, 13, 19, -36, 20 )
-
-[node name="jumpflip" type="CollisionPolygon2D" parent="."]
-visible = false
-position = Vector2( 1, -2 )
-scale = Vector2( -1, 1 )
-polygon = PoolVector2Array( -31, 46, -33, 10, -13, -7, 37, -34, 55, -33, 79, -20, 78, 6, 60, 16, 47, 23, 36, 27, 29, 30, 35, 47 )
-
-[node name="jumpflip2" type="CollisionPolygon2D" parent="."]
-visible = false
-scale = Vector2( -1, 1 )
-polygon = PoolVector2Array( -36, 12, -40, 2, -32, -41, 29, -46, 52, -45, 74, -32, 79, 11, 60, 10, 45, 3, 29, 3, 11, 1, 5, 11 )
-
-[node name="jumpflip3" type="CollisionPolygon2D" parent="."]
-visible = false
-scale = Vector2( -1, 1 )
 polygon = PoolVector2Array( -36, 9, -27, -32, -10, -39, 55, -27, 78, -14, 79, -1, 69, 37, 60, 38, 46, 26, 21, 9, 13, 19, -36, 20 )
