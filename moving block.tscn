@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://ASSETS/blocks/moving block.png" type="Texture" id=1]
+[ext_resource path="res://moving block.gd" type="Script" id=2]
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -134, -50, 136, -50, 135, 50, -134, 50 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )

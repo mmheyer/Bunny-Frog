@@ -10,11 +10,12 @@ func _on_block_body_entered(body):
 		yield(get_tree().create_timer(0.6), "timeout")
 		$AnimatedSprite.play("break")
 		Music.breaking()
-		yield($AnimatedSprite, "animation_finished")
-		$AnimatedSprite.visible = not $AnimatedSprite.visible
+		yield(get_tree().create_timer(0.43), "timeout")
 		coll0.disabled = true
 		coll1.disabled = true
-		yield(get_tree().create_timer(2), "timeout")
+		yield($AnimatedSprite, "animation_finished")
+		$AnimatedSprite.visible = not $AnimatedSprite.visible
+		yield(get_tree().create_timer(2.5), "timeout")
 		$AnimatedSprite.visible = not $AnimatedSprite.visible
 		coll0.disabled = false
 		coll1.disabled = false

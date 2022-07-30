@@ -31,9 +31,9 @@ func coin_collect():
 	$Sounds.play()
 
 func spring():
-	$Sounds.stream = springj
-	$Sounds.volume_db = 0
-	$Sounds.play()
+	$Jumps.stream = springj
+	$Jumps.volume_db = 0
+	$Jumps.play()
 
 func keysound():
 	$Sounds.stream = key
@@ -41,11 +41,11 @@ func keysound():
 	$Sounds.play()
 
 func jumpsound():
-	$Sounds.stream = jump
-	$Sounds.volume_db = -5
-	$Sounds.play()
+	$Jumps.stream = jump
+	$Jumps.volume_db = -5
+	$Jumps.play()
 
 func breaking():
-	$Sounds.stream = breaksound
-	$Sounds.volume_db = 0
-	$Sounds.play()
+	$Sounds2.stream = breaksound
+	$Sounds2.volume_db = 0
+	$Sounds2.play()
