@@ -8,9 +8,9 @@
 [ext_resource path="res://ASSETS/blocks/small spikes.png" type="Texture" id=6]
 [ext_resource path="res://ASSETS/background/backgroundfull.png" type="Texture" id=7]
 [ext_resource path="res://ASSETS/blocks/middle right block.png" type="Texture" id=8]
-[ext_resource path="res://ASSETS/egg/egg (1).png" type="Texture" id=9]
+[ext_resource path="res://ASSETS/egg/egg.png" type="Texture" id=9]
 [ext_resource path="res://HUD.gd" type="Script" id=10]
-[ext_resource path="res://tutorial box.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Spider.tscn" type="PackedScene" id=11]
 [ext_resource path="res://ASSETS/blocks/middle block.png" type="Texture" id=12]
 [ext_resource path="res://ASSETS/blocks/top left block.png" type="Texture" id=13]
 [ext_resource path="res://ASSETS/blocks/middle left block.png" type="Texture" id=14]
@@ -21,9 +21,9 @@
 [ext_resource path="res://ASSETS/flag pole/FlagPolev2.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Snake.tscn" type="PackedScene" id=20]
 [ext_resource path="res://scenes/levels/1.gd" type="Script" id=21]
-[ext_resource path="res://tutorial2.tscn" type="PackedScene" id=22]
 [ext_resource path="res://key.tscn" type="PackedScene" id=23]
-[ext_resource path="res://temp block.tscn" type="PackedScene" id=24]
+[ext_resource path="res://ASSETS/egg/key.png" type="Texture" id=25]
+[ext_resource path="res://scenes/levels/Key Collect.gd" type="Script" id=26]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 511.5, 26 )
@@ -244,16 +244,6 @@ __meta__ = {
 "_edit_horizontal_guides_": [  ]
 }
 
-[node name="tut1" parent="." instance=ExtResource( 22 )]
-modulate = Color( 1, 1, 1, 0.862745 )
-position = Vector2( 1009, -12 )
-scale = Vector2( 0.8, 0.8 )
-
-[node name="tut2" parent="." instance=ExtResource( 11 )]
-modulate = Color( 1, 1, 1, 0.862745 )
-position = Vector2( 1800, -100 )
-scale = Vector2( 0.8, 0.8 )
-
 [node name="bunnyfrog" parent="." instance=ExtResource( 16 )]
 position = Vector2( 450, 340 )
 scale = Vector2( 0.7, 0.7 )
@@ -317,17 +307,17 @@ texture = ExtResource( 2 )
 position = Vector2( 5000, 8 )
 shape = SubResource( 26 )
 
-[node name="HUD" type="CanvasLayer" parent="."]
+[node name="Coin Counter" type="CanvasLayer" parent="."]
 script = ExtResource( 10 )
 
-[node name="Panel" type="Panel" parent="HUD"]
+[node name="Panel" type="Panel" parent="Coin Counter"]
 margin_left = 43.0
 margin_top = 29.0
 margin_right = 159.0
 margin_bottom = 93.0
 custom_styles/panel = SubResource( 11 )
 
-[node name="TextureRect" type="TextureRect" parent="HUD"]
+[node name="TextureRect" type="TextureRect" parent="Coin Counter"]
 margin_left = 1.0
 margin_top = -12.0
 margin_right = 124.0
@@ -335,7 +325,7 @@ margin_bottom = 111.0
 texture = ExtResource( 9 )
 expand = true
 
-[node name="Coins" type="Label" parent="HUD"]
+[node name="Coins" type="Label" parent="Coin Counter"]
 margin_left = 97.0
 margin_top = 40.0
 margin_right = 155.0
@@ -344,19 +334,40 @@ custom_colors/font_color = Color( 0.921569, 0.921569, 0.921569, 1 )
 custom_fonts/font = SubResource( 13 )
 text = "##"
 
+[node name="Key Collect" type="CanvasLayer" parent="."]
+script = ExtResource( 26 )
+
+[node name="KeyImg" type="TextureRect" parent="Key Collect"]
+margin_left = 210.0
+margin_top = 23.0
+margin_right = 466.0
+margin_bottom = 151.0
+rect_rotation = 90.0
+rect_scale = Vector2( 0.28, 0.35 )
+texture = ExtResource( 25 )
+flip_v = true
+
 [node name="Coins" type="Node2D" parent="."]
 
 [node name="Coin2" parent="Coins" instance=ExtResource( 17 )]
-position = Vector2( 1890, 408 )
-scale = Vector2( 0.5625, 0.5625 )
+position = Vector2( 995, 408 )
+scale = Vector2( 0.8, 0.8 )
 
 [node name="Coin3" parent="Coins" instance=ExtResource( 17 )]
-position = Vector2( 1797, 507 )
-scale = Vector2( 0.5625, 0.5625 )
+position = Vector2( 890, 507 )
+scale = Vector2( 0.8, 0.8 )
 
 [node name="Coin4" parent="Coins" instance=ExtResource( 17 )]
-position = Vector2( 1981, 505 )
-scale = Vector2( 0.5625, 0.5625 )
+position = Vector2( 1100, 507 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="Coin5" parent="Coins" instance=ExtResource( 17 )]
+position = Vector2( 2120, 526 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="Coin6" parent="Coins" instance=ExtResource( 17 )]
+position = Vector2( 3162, 271 )
+scale = Vector2( 0.8, 0.8 )
 
 [node name="key" parent="Coins" instance=ExtResource( 23 )]
 position = Vector2( 4024, -38 )
@@ -369,9 +380,13 @@ position = Vector2( 3439, 296 )
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="Area2D" parent="Enemies" instance=ExtResource( 20 )]
+[node name="Snake" parent="Enemies" instance=ExtResource( 20 )]
 position = Vector2( 2883, 266 )
 scale = Vector2( 2.8, 2.8 )
+
+[node name="Spider" parent="Enemies" instance=ExtResource( 11 )]
+position = Vector2( 1410, 533 )
+moveDist = 800
 
 [node name="Blocks" type="TileMap" parent="."]
 scale = Vector2( 0.4, 0.4 )
@@ -386,15 +401,14 @@ tile_data = PoolIntArray( -130517, 6, 0, -130497, 3, 0, -130477, 3, 0, -130457, 
 tile_set = SubResource( 43 )
 cell_size = Vector2( 32, 32 )
 format = 1
-tile_data = PoolIntArray( -130955, 1, 0, 1048634, 1, 0 )
+tile_data = PoolIntArray( -130955, 1, 0, 1048606, 1, 0 )
 
 [node name="FlagPolev2" parent="." instance=ExtResource( 19 )]
 position = Vector2( 4268, -171 )
 
-[node name="Area2D" parent="." instance=ExtResource( 24 )]
-position = Vector2( 835, 388 )
-scale = Vector2( 0.4, 0.4 )
-
-[connection signal="coin_collected" from="Coins/Coin2" to="HUD" method="_on_coin_collected"]
-[connection signal="coin_collected" from="Coins/Coin3" to="HUD" method="_on_coin_collected"]
-[connection signal="coin_collected" from="Coins/Coin4" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/Coin2" to="Coin Counter" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/Coin3" to="Coin Counter" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/Coin4" to="Coin Counter" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/Coin5" to="Coin Counter" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/Coin6" to="Coin Counter" method="_on_coin_collected"]
+[connection signal="key_collected" from="Coins/key" to="Key Collect" method="_on_key_key_collected"]

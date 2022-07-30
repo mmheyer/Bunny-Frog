@@ -6,8 +6,7 @@ onready var startX : float = position.x
 onready var targetX : float = position.x + moveDist
 
 func _physics_process (delta):
-	var sprite:AnimatedSprite = $Spider
-	$Spider.play("default")
+	$Spider.play("walking")
 	# move to the "targetX" position
 	position.x = move_to(position.x, targetX, speed * delta)
 	# if we're at our target, move in the other direction

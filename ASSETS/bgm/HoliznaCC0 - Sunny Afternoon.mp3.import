@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/HoliznaCC0 - Sunny Afternoon.mp3-54b683008c9b7fef7ea4f8d71f1ad4c4.mp3str"
+
+[deps]
+
+source_file="res://ASSETS/bgm/HoliznaCC0 - Sunny Afternoon.mp3"
+dest_files=[ "res://.import/HoliznaCC0 - Sunny Afternoon.mp3-54b683008c9b7fef7ea4f8d71f1ad4c4.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

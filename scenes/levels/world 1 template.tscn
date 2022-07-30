@@ -1,0 +1,401 @@
+[gd_scene load_steps=39 format=2]
+
+[ext_resource path="res://ASSETS/blocks/top right block.png" type="Texture" id=1]
+[ext_resource path="res://ASSETS/white.png" type="Texture" id=2]
+[ext_resource path="res://Spring.tscn" type="PackedScene" id=3]
+[ext_resource path="res://ASSETS/HUD & fonts/fonts/upheavtt.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://ASSETS/blocks/spikes.png" type="Texture" id=5]
+[ext_resource path="res://ASSETS/blocks/small spikes.png" type="Texture" id=6]
+[ext_resource path="res://ASSETS/background/backgroundfull.png" type="Texture" id=7]
+[ext_resource path="res://ASSETS/blocks/middle right block.png" type="Texture" id=8]
+[ext_resource path="res://ASSETS/egg/egg.png" type="Texture" id=9]
+[ext_resource path="res://HUD.gd" type="Script" id=10]
+[ext_resource path="res://ASSETS/blocks/middle block.png" type="Texture" id=12]
+[ext_resource path="res://ASSETS/blocks/top left block.png" type="Texture" id=13]
+[ext_resource path="res://ASSETS/blocks/middle left block.png" type="Texture" id=14]
+[ext_resource path="res://ASSETS/blocks/middle top block.png" type="Texture" id=15]
+[ext_resource path="res://bunnyfrog.tscn" type="PackedScene" id=16]
+[ext_resource path="res://coin.tscn" type="PackedScene" id=17]
+[ext_resource path="res://GUI.tscn" type="PackedScene" id=18]
+[ext_resource path="res://ASSETS/flag pole/FlagPolev2.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Snake.tscn" type="PackedScene" id=20]
+[ext_resource path="res://key.tscn" type="PackedScene" id=23]
+[ext_resource path="res://temp block.tscn" type="PackedScene" id=24]
+[ext_resource path="res://ASSETS/egg/key.png" type="Texture" id=25]
+[ext_resource path="res://scenes/levels/Key Collect.gd" type="Script" id=26]
+
+[sub_resource type="GDScript" id=45]
+script/source = "extends Node2D
+
+func _ready():
+	AudioServer.set_bus_mute(AudioServer.get_bus_index(\"BGM\"), false)
+	yield(get_tree().create_timer(0.6), \"timeout\")
+	Music.play_music()
+"
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 511.5, 26 )
+
+[sub_resource type="RectangleShape2D" id=26]
+extents = Vector2( 43, 678 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0, 0, 0, 0.352941 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="DynamicFont" id=13]
+size = 40
+font_data = ExtResource( 4 )
+
+[sub_resource type="ConvexPolygonShape2D" id=41]
+points = PoolVector2Array( 310, 160, 0, 160, 0, 0, 310, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=31]
+points = PoolVector2Array( 320, 160, 0, 160, 0, 0, 320, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=32]
+points = PoolVector2Array( 320, 160, 0, 160, 0, 0, 320, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=34]
+points = PoolVector2Array( 0, 16, 16, 0, 320, 0, 320, 160, 16, 160, 16, 80, 0, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=35]
+points = PoolVector2Array( 0, 0, 0, 0, 320, 0, 336, 16, 336, 64, 320, 96, 320, 160, 0, 160 )
+
+[sub_resource type="ConvexPolygonShape2D" id=37]
+points = PoolVector2Array( 320, 160, 0, 160, 0, 0, 320, 0 )
+
+[sub_resource type="TileSet" id=5]
+2/name = "middle right block.png 2"
+2/texture = ExtResource( 8 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 320, 160 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape = SubResource( 31 )
+2/shape_one_way = false
+2/shape_one_way_margin = 1.0
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 31 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+2/z_index = 0
+3/name = "middle top block.png 3"
+3/texture = ExtResource( 15 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 0, 0, 320, 160 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape = SubResource( 32 )
+3/shape_one_way = false
+3/shape_one_way_margin = 1.0
+3/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 32 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+3/z_index = 0
+6/name = "top left block.png 6"
+6/texture = ExtResource( 13 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 0, 0, 320, 160 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape = SubResource( 34 )
+6/shape_one_way = false
+6/shape_one_way_margin = 1.0
+6/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 34 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+6/z_index = 0
+7/name = "top right block.png 7"
+7/texture = ExtResource( 1 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 0, 0, 336, 160 )
+7/tile_mode = 0
+7/occluder_offset = Vector2( 0, 0 )
+7/navigation_offset = Vector2( 0, 0 )
+7/shape_offset = Vector2( 0, 0 )
+7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+7/shape = SubResource( 35 )
+7/shape_one_way = false
+7/shape_one_way_margin = 1.0
+7/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 35 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+7/z_index = 0
+9/name = "middle block.png 9"
+9/texture = ExtResource( 12 )
+9/tex_offset = Vector2( 0, 0 )
+9/modulate = Color( 1, 1, 1, 1 )
+9/region = Rect2( 0, 0, 320, 160 )
+9/tile_mode = 0
+9/occluder_offset = Vector2( 0, 0 )
+9/navigation_offset = Vector2( 0, 0 )
+9/shape_offset = Vector2( 0, 0 )
+9/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+9/shape = SubResource( 37 )
+9/shape_one_way = false
+9/shape_one_way_margin = 1.0
+9/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 37 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+9/z_index = 0
+10/name = "middle left block.png 10"
+10/texture = ExtResource( 14 )
+10/tex_offset = Vector2( 0, 0 )
+10/modulate = Color( 1, 1, 1, 1 )
+10/region = Rect2( 0, 0, 310, 160 )
+10/tile_mode = 0
+10/occluder_offset = Vector2( 0, 0 )
+10/navigation_offset = Vector2( 0, 0 )
+10/shape_offset = Vector2( 0, 0 )
+10/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+10/shape = SubResource( 41 )
+10/shape_one_way = false
+10/shape_one_way_margin = 1.0
+10/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 41 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+10/z_index = 0
+
+[sub_resource type="ConvexPolygonShape2D" id=42]
+points = PoolVector2Array( 0, 50, 0, 50, 15, 0, 20, 0, 35, 35, 40, 0, 140, 0, 155, 35, 155, 50 )
+
+[sub_resource type="ConvexPolygonShape2D" id=44]
+points = PoolVector2Array( 0, 50, 0, 40, 15, 0, 20, 0, 50, 0, 55, 5, 65, 35, 65, 50 )
+
+[sub_resource type="TileSet" id=43]
+0/name = "spikes.png 0"
+0/texture = ExtResource( 5 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 155, 50 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 42 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 42 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "small spikes.png 1"
+1/texture = ExtResource( 6 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 65, 50 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 44 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 44 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+
+[node name="Level1" type="Node2D"]
+script = SubResource( 45 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+
+[node name="bunnyfrog" parent="." instance=ExtResource( 16 )]
+position = Vector2( 450, 340 )
+scale = Vector2( 0.7, 0.7 )
+
+[node name="Camera2D" type="Camera2D" parent="bunnyfrog"]
+position = Vector2( 10, 133 )
+scale = Vector2( 0.7, 0.7 )
+current = true
+limit_left = 0
+limit_top = -600
+limit_bottom = 593
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+smoothing_speed = 10.0
+drag_margin_left = 0.1
+drag_margin_top = 0.46
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Forest 2" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+light_mask = 7
+position = Vector2( 6088, 10 )
+scale = Vector2( 0.991, 1.026 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 12288, 1200 )
+
+[node name="Floor" type="StaticBody2D" parent="."]
+visible = false
+position = Vector2( 515, 580 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Floor"]
+position = Vector2( 5000, 8 )
+scale = Vector2( 80, 0.19 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2( 6999, 8 )
+scale = Vector2( 40, 1 )
+shape = SubResource( 2 )
+
+[node name="Left wall" type="StaticBody2D" parent="."]
+visible = false
+position = Vector2( -5043, -78 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Left wall"]
+position = Vector2( 5000, 8 )
+scale = Vector2( 0.19, 5 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left wall"]
+position = Vector2( 5000, 8 )
+shape = SubResource( 26 )
+
+[node name="Coin Counter" type="CanvasLayer" parent="."]
+script = ExtResource( 10 )
+
+[node name="Panel" type="Panel" parent="Coin Counter"]
+margin_left = 43.0
+margin_top = 29.0
+margin_right = 159.0
+margin_bottom = 93.0
+custom_styles/panel = SubResource( 11 )
+
+[node name="TextureRect" type="TextureRect" parent="Coin Counter"]
+margin_left = 1.0
+margin_top = -12.0
+margin_right = 124.0
+margin_bottom = 111.0
+texture = ExtResource( 9 )
+expand = true
+
+[node name="Coins" type="Label" parent="Coin Counter"]
+margin_left = 97.0
+margin_top = 40.0
+margin_right = 155.0
+margin_bottom = 95.0
+custom_colors/font_color = Color( 0.921569, 0.921569, 0.921569, 1 )
+custom_fonts/font = SubResource( 13 )
+text = "##"
+
+[node name="Key Collect" type="CanvasLayer" parent="."]
+script = ExtResource( 26 )
+
+[node name="KeyImg" type="TextureRect" parent="Key Collect"]
+margin_left = 210.0
+margin_top = 23.0
+margin_right = 466.0
+margin_bottom = 151.0
+rect_rotation = 90.0
+rect_scale = Vector2( 0.28, 0.35 )
+texture = ExtResource( 25 )
+flip_v = true
+
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="Coin2" parent="Coins" instance=ExtResource( 17 )]
+position = Vector2( 385, 333 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="key" parent="Coins" instance=ExtResource( 23 )]
+position = Vector2( 310, 292 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="Spring" parent="." instance=ExtResource( 3 )]
+position = Vector2( 302, 346 )
+
+[node name="GUI" parent="." instance=ExtResource( 18 )]
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Area2D" parent="Enemies" instance=ExtResource( 20 )]
+position = Vector2( 902, 535 )
+scale = Vector2( 2.8, 2.8 )
+
+[node name="Blocks" type="TileMap" parent="."]
+scale = Vector2( 0.4, 0.4 )
+tile_set = SubResource( 5 )
+cell_size = Vector2( 16, 16 )
+cell_quadrant_size = 10
+cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
+format = 1
+tile_data = PoolIntArray( 1179645, 3, 0, 1114129, 7, 0, 1769472, 9, 0, 1769489, 1073741826, 0, 2424832, 9, 0, 2424849, 1073741826, 0, 3080192, 9, 0, 3080209, 1073741826, 0, 3670016, 9, 0, 3670033, 9, 0, 3670053, 3, 0, 3670073, 3, 0, 3670093, 7, 0, 4325376, 9, 0, 4325394, 9, 0, 4325414, 9, 0, 4325433, 9, 0, 4325453, 2, 0, 4980736, 9, 0, 4980754, 9, 0, 4980774, 9, 0, 4980793, 9, 0, 4980813, 2, 0, 5636096, 9, 0, 5636115, 9, 0, 5636134, 9, 0, 5636153, 9, 0, 5636173, 2, 0 )
+
+[node name="Spikes" type="TileMap" parent="."]
+tile_set = SubResource( 43 )
+cell_size = Vector2( 32, 32 )
+format = 1
+
+[node name="FlagPolev2" parent="." instance=ExtResource( 19 )]
+position = Vector2( 1034, 403 )
+
+[node name="Area2D" parent="." instance=ExtResource( 24 )]
+position = Vector2( 735, 494 )
+scale = Vector2( 0.4, 0.4 )
+
+[connection signal="coin_collected" from="Coins/Coin2" to="Coin Counter" method="_on_coin_collected"]
+[connection signal="key_collected" from="Coins/key" to="Key Collect" method="_on_key_key_collected"]

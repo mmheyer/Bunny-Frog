@@ -6,6 +6,7 @@ var springj = load("res://ASSETS/sound effects/springjump.wav")
 var key = load("res://ASSETS/sound effects/key collect sound.wav")
 var jump = load("res://ASSETS/sound effects/jump.wav")
 var breaksound = load("res://ASSETS/sound effects/breaking.wav")
+var christmas = load("res://ASSETS/bgm/christmas cutscene.mp3")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,6 +17,12 @@ func stop():
 
 func play_music():
 	$Music.stream = world1
+	$Music.volume_db = 0
+	$Music.play()
+	
+func play_ch():
+	$Music.stream = christmas
+	$Music.volume_db = -5
 	$Music.play()
 
 func coin_collect():
