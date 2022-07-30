@@ -1,4 +1,4 @@
-[gd_scene load_steps=174 format=2]
+[gd_scene load_steps=177 format=2]
 
 [ext_resource path="res://ASSETS/cutscene 1/cutscene1_6.png" type="Texture" id=1]
 [ext_resource path="res://ASSETS/cutscene 1/cutscene1_8.png" type="Texture" id=2]
@@ -92,7 +92,7 @@
 [ext_resource path="res://ASSETS/cutscene 1/easterbunny dialogue2.png" type="Texture" id=90]
 [ext_resource path="res://ASSETS/bgm/HoliznaCC0 - Sunny Afternoon.mp3" type="AudioStream" id=91]
 [ext_resource path="res://ASSETS/sound effects/surprise.wav" type="AudioStream" id=92]
-[ext_resource path="res://ASSETS/bgm/christmas cutscene.mp3" type="AudioStream" id=93]
+[ext_resource path="res://ASSETS/cutscene 1/frame1dialoguep2.png" type="Texture" id=93]
 [ext_resource path="res://ASSETS/cutscene 1/cutscene1.3_50.png" type="Texture" id=94]
 [ext_resource path="res://ASSETS/cutscene 1/frog dialogue2.png" type="Texture" id=95]
 [ext_resource path="res://ASSETS/cutscene 1/cutscene1.3_29.png" type="Texture" id=96]
@@ -169,17 +169,28 @@
 [ext_resource path="res://ASSETS/cutscene 1/cutscene1.3_54.png" type="Texture" id=167]
 [ext_resource path="res://ASSETS/cutscene 1/frog dialogue1.png" type="Texture" id=168]
 [ext_resource path="res://ASSETS/cutscene 1/cutscene1.3_60.png" type="Texture" id=169]
+[ext_resource path="res://ASSETS/cutscene 1/frame1dialogue.png" type="Texture" id=170]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 9 ) ],
+"frames": [ ExtResource( 165 ), ExtResource( 165 ), ExtResource( 165 ), ExtResource( 165 ), ExtResource( 165 ), ExtResource( 165 ), ExtResource( 165 ), ExtResource( 165 ), ExtResource( 99 ), ExtResource( 167 ), ExtResource( 164 ), ExtResource( 163 ), ExtResource( 162 ), ExtResource( 150 ), ExtResource( 111 ), ExtResource( 169 ), ExtResource( 116 ), ExtResource( 151 ), ExtResource( 122 ), ExtResource( 146 ), ExtResource( 118 ), ExtResource( 119 ), ExtResource( 120 ), ExtResource( 123 ), ExtResource( 124 ), ExtResource( 125 ), ExtResource( 103 ), ExtResource( 104 ), ExtResource( 106 ), ExtResource( 145 ) ],
+"loop": false,
+"name": "scene3",
+"speed": 14.0
+}, {
+"frames": [ ExtResource( 12 ) ],
 "loop": true,
-"name": "default",
+"name": "bunny1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 89 ), ExtResource( 20 ) ],
+"frames": [ ExtResource( 13 ), ExtResource( 9 ), ExtResource( 14 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 1 ), ExtResource( 15 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 85 ), ExtResource( 84 ), ExtResource( 62 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 83 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 61 ), ExtResource( 71 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 88 ), ExtResource( 22 ), ExtResource( 21 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ) ],
 "loop": true,
-"name": "santa1.1",
+"name": "scene1",
+"speed": 14.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 90 ) ],
+"loop": true,
+"name": "bunny1.1",
 "speed": 2.5
 }, {
 "frames": [ ExtResource( 148 ), ExtResource( 149 ), ExtResource( 155 ), ExtResource( 97 ), ExtResource( 98 ), ExtResource( 105 ), ExtResource( 132 ), ExtResource( 112 ), ExtResource( 156 ), ExtResource( 157 ), ExtResource( 160 ), ExtResource( 121 ), ExtResource( 142 ), ExtResource( 130 ), ExtResource( 113 ), ExtResource( 143 ), ExtResource( 137 ), ExtResource( 138 ), ExtResource( 139 ), ExtResource( 140 ), ExtResource( 133 ), ExtResource( 134 ), ExtResource( 135 ), ExtResource( 161 ), ExtResource( 147 ), ExtResource( 159 ), ExtResource( 152 ), ExtResource( 136 ), ExtResource( 96 ), ExtResource( 117 ), ExtResource( 115 ), ExtResource( 126 ), ExtResource( 153 ), ExtResource( 144 ), ExtResource( 109 ), ExtResource( 154 ), ExtResource( 131 ), ExtResource( 114 ), ExtResource( 158 ), ExtResource( 108 ), ExtResource( 127 ), ExtResource( 128 ), ExtResource( 141 ), ExtResource( 100 ), ExtResource( 101 ), ExtResource( 102 ), ExtResource( 110 ), ExtResource( 129 ), ExtResource( 166 ), ExtResource( 94 ), ExtResource( 107 ), ExtResource( 165 ) ],
@@ -192,38 +203,46 @@ animations = [ {
 "name": "santa1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 12 ), ExtResource( 90 ) ],
+"frames": [ ExtResource( 89 ), ExtResource( 20 ) ],
 "loop": true,
-"name": "bunny1.1",
+"name": "santa1.1",
 "speed": 2.5
 }, {
-"frames": [ ExtResource( 12 ) ],
+"frames": [ ExtResource( 168 ) ],
 "loop": true,
-"name": "bunny1",
+"name": "frog2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 13 ), ExtResource( 9 ), ExtResource( 14 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 1 ), ExtResource( 15 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 85 ), ExtResource( 84 ), ExtResource( 62 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 83 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 61 ), ExtResource( 71 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 88 ), ExtResource( 22 ), ExtResource( 21 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ) ],
-"loop": true,
-"name": "scene1",
-"speed": 14.0
-}, {
-"frames": [ ExtResource( 165 ), ExtResource( 165 ), ExtResource( 165 ), ExtResource( 165 ), ExtResource( 165 ), ExtResource( 165 ), ExtResource( 165 ), ExtResource( 165 ), ExtResource( 99 ), ExtResource( 167 ), ExtResource( 164 ), ExtResource( 163 ), ExtResource( 162 ), ExtResource( 150 ), ExtResource( 111 ), ExtResource( 169 ), ExtResource( 116 ), ExtResource( 151 ), ExtResource( 122 ), ExtResource( 146 ), ExtResource( 118 ), ExtResource( 119 ), ExtResource( 120 ), ExtResource( 123 ), ExtResource( 124 ), ExtResource( 125 ), ExtResource( 103 ), ExtResource( 104 ), ExtResource( 106 ), ExtResource( 145 ) ],
-"loop": false,
-"name": "scene3",
-"speed": 14.0
-}, {
-"frames": [ ExtResource( 168 ) ],
+"frames": [ ExtResource( 170 ) ],
 "loop": true,
 "name": "frog1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 168 ), ExtResource( 95 ) ],
+"frames": [ ExtResource( 170 ), ExtResource( 93 ) ],
 "loop": true,
 "name": "frog1.1",
 "speed": 2.5
+}, {
+"frames": [ ExtResource( 168 ), ExtResource( 95 ) ],
+"loop": true,
+"name": "frog2.1",
+"speed": 2.5
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
 } ]
 
 [sub_resource type="DynamicFont" id=4]
+size = 40
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 40
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=7]
 size = 40
 font_data = ExtResource( 3 )
 
@@ -245,15 +264,35 @@ frames = SubResource( 1 )
 animation = "frog1.1"
 
 [node name="SantaDialogue1" type="RichTextLabel" parent="."]
+margin_left = 209.0
+margin_top = 31.0
+margin_right = 988.0
+margin_bottom = 149.0
+custom_colors/default_color = Color( 0.647059, 0.207843, 0.207843, 1 )
+custom_fonts/normal_font = SubResource( 4 )
+text = "with you out of the way, i'll be one step closer to being the best and only holiday!"
+
+[node name="FrogDialogue1" type="RichTextLabel" parent="."]
+margin_left = 55.0
+margin_top = 30.0
+margin_right = 999.0
+margin_bottom = 147.0
+custom_colors/default_color = Color( 0.0784314, 0.372549, 0.164706, 1 )
+custom_fonts/normal_font = SubResource( 6 )
+bbcode_enabled = true
+bbcode_text = "<it's a nice day outside. you see your new neighbor's house in the distance - you should go visit them.>"
+text = "<it's a nice day outside. you see your new neighbor's house in the distance - you should go visit them.>"
+
+[node name="FrogDialogue3" type="RichTextLabel" parent="."]
 margin_left = 214.0
 margin_top = 34.0
 margin_right = 993.0
-margin_bottom = 84.0
-custom_colors/default_color = Color( 0.647059, 0.207843, 0.207843, 1 )
-custom_fonts/normal_font = SubResource( 4 )
-text = "hello this is a test"
+margin_bottom = 208.0
+custom_colors/default_color = Color( 0.0784314, 0.372549, 0.164706, 1 )
+custom_fonts/normal_font = SubResource( 7 )
+text = "<you should probably help out...>"
 
-[node name="FrogDialogue1" type="RichTextLabel" parent="."]
+[node name="FrogDialogue2" type="RichTextLabel" parent="."]
 margin_left = 225.0
 margin_top = 31.0
 margin_right = 1004.0
@@ -269,7 +308,11 @@ margin_right = 970.0
 margin_bottom = 144.0
 custom_colors/default_color = Color( 0.537255, 0.282353, 0.498039, 1 )
 custom_fonts/normal_font = SubResource( 3 )
-text = "hello this is a test"
+bbcode_enabled = true
+bbcode_text = "what...?
+(why is this guy so weird?)"
+text = "what...?
+(why is this guy so weird?)"
 
 [node name="TypeAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
@@ -280,7 +323,3 @@ stream = ExtResource( 91 )
 
 [node name="Surprise" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 92 )
-
-[node name="Christmas" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 93 )
-volume_db = -5.0
