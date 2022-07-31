@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://ASSETS/enemies/bee 2.png" type="Texture" id=1]
+[ext_resource path="res://ASSETS/enemies/bee 3.png" type="Texture" id=2]
+[ext_resource path="res://ASSETS/enemies/bee 1.png" type="Texture" id=3]
+[ext_resource path="res://Bee.gd" type="Script" id=4]
+[ext_resource path="res://BeePathFollow2D.gd" type="Script" id=5]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -5, 5, 0, 0, 0, 0, 180, -108, 0, 0, 0, 0, 18, -170, 0, 0, 0, 0, -140, 10, 0, 0, 0, 0, 172, 117, 0, 0, 0, 0, -127, 204, 0, 0, 0, 0, -5, 282, 0, 0, 0, 0, 174, 212, 0, 0, 0, 0, -139, -112, 0, 0, 0, 0, 169, 3, 0, 0, 0, 0, -138, 135, 0, 0, 0, 0, -45, -166, 0, 0, 0, 0, 153, -158, 0, 0, 0, 0, -136, 56, 0, 0, 0, 0, 176, 138, 0, 0, 0, 0, 101, 278, 0, 0, 0, 0, -136, 151, 0, 0, 0, 0, 173, 179, 0, 0, 0, 0, -72, 279, 0, 0, 0, 0, -137, 94, 0, 0, 0, 0, 99, -164, 0, 0, 0, 0, 160, -32, 0, 0, 0, 0, -137, -20, 0, 0, 0, 0, -84, -161, 0, 0, 0, 0, 173, 26, 0, 0, 0, 0, -140, 233, 0, 0, 0, 0, -99, 279, 0, 0, 0, 0, 178, -79, 0, 0, 0, 0, -8, -163, 0, 0, 0, 0, -131, -71, 0, 0, 0, 0, 178, 105, 0, 0, 0, 0, 66, 273, 0, 0, 0, 0, -68, -161, 0, 0, 0, 0, -144, -47, 0, 0, 0, 0, 170, 46, 0, 0, 0, 0, 172, 79, 0, 0, 0, 0, -5, 5 )
+}
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 1 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource( 1 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2( -5, 5 )
+rotation = -0.548331
+rotate = false
+script = ExtResource( 5 )
+
+[node name="Area2D" type="Area2D" parent="Path2D/PathFollow2D"]
+scale = Vector2( 0.75, 0.75 )
+script = ExtResource( 4 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Path2D/PathFollow2D/Area2D"]
+rotation = 0.549779
+frames = SubResource( 2 )
+frame = 2
+playing = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Path2D/PathFollow2D/Area2D"]
+rotation = 0.549779
+polygon = PoolVector2Array( -54, 16, -50, 6, -30, 0, -30, -25, -25, -29, 5, -35, 30, -35, 30, -4, 21, 2, 30, 5, 41, 24, 50, 25, 51, 30, 42, 31, 31, 49, 10, 60, -30, 60, -49, 51, -55, 40 )

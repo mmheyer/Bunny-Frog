@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://ASSETS/blocks/top right block.png" type="Texture" id=1]
 [ext_resource path="res://ASSETS/white.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://ASSETS/blocks/middle right block.png" type="Texture" id=8]
 [ext_resource path="res://ASSETS/egg/egg.png" type="Texture" id=9]
 [ext_resource path="res://HUD.gd" type="Script" id=10]
+[ext_resource path="res://Bee.tscn" type="PackedScene" id=11]
 [ext_resource path="res://ASSETS/blocks/middle block.png" type="Texture" id=12]
 [ext_resource path="res://ASSETS/blocks/top left block.png" type="Texture" id=13]
 [ext_resource path="res://ASSETS/blocks/middle left block.png" type="Texture" id=14]
@@ -374,6 +375,9 @@ position = Vector2( 302, 346 )
 [node name="Area2D" parent="Enemies" instance=ExtResource( 20 )]
 position = Vector2( 902, 535 )
 scale = Vector2( 2.8, 2.8 )
+
+[node name="Node2D" parent="Enemies" instance=ExtResource( 11 )]
+position = Vector2( 783, 275 )
 
 [node name="Blocks" type="TileMap" parent="."]
 scale = Vector2( 0.4, 0.4 )
