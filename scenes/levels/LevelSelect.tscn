@@ -55,6 +55,15 @@ margin_bottom = 446.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
+[node name="back_button" type="Button" parent="."]
+margin_left = 4.0
+margin_top = 5.0
+margin_right = 125.0
+margin_bottom = 90.0
+flat = true
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 bus = "BGM"
+
+[connection signal="pressed" from="back_button" to="." method="_on_back_button_pressed"]

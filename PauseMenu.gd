@@ -24,3 +24,7 @@ func _on_QuitButton_pressed():
 	Transition.fade("res://TitleMenu.tscn")
 	Music.stop()
 	AudioServer.set_bus_mute(AudioServer.get_bus_index("BGM"), false)
+
+
+func _on_Button_pressed():
+	self.is_paused = !is_paused
