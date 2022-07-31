@@ -24,7 +24,7 @@ animations = [ {
 "frames": [ ExtResource( 8 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "default",
-"speed": 7.0
+"speed": 10.0
 } ]
 
 [node name="block" type="Area2D"]
@@ -32,8 +32,6 @@ script = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
-animation = "revive"
-frame = 4
 playing = true
 
 [node name="Coll1" type="CollisionPolygon2D" parent="."]

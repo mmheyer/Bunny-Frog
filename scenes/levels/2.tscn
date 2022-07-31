@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=2]
+[gd_scene load_steps=71 format=2]
 
 [ext_resource path="res://ASSETS/blocks/top right block.png" type="Texture" id=1]
 [ext_resource path="res://ASSETS/white.png" type="Texture" id=2]
@@ -35,6 +35,10 @@
 [ext_resource path="res://ASSETS/water/water_anim_middle2.tres" type="Texture" id=33]
 [ext_resource path="res://moving block.tscn" type="PackedScene" id=34]
 [ext_resource path="res://breaking block.tscn" type="PackedScene" id=35]
+[ext_resource path="res://ASSETS/blocks/top right block 2.png" type="Texture" id=36]
+[ext_resource path="res://ASSETS/blocks/top left block 2.png" type="Texture" id=37]
+[ext_resource path="res://ASSETS/blocks/middle top block 2.png" type="Texture" id=38]
+[ext_resource path="res://moving block 2.tscn" type="PackedScene" id=39]
 
 [sub_resource type="GDScript" id=45]
 script/source = "extends Node2D
@@ -96,6 +100,15 @@ points = PoolVector2Array( 312, 160, 0, 160, 0, 0, 312, 0 )
 points = PoolVector2Array( 312, 160, 0, 160, 0, 0, 312, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=55]
+points = PoolVector2Array( 320, 160, 0, 160, 0, 0, 320, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=58]
+points = PoolVector2Array( 320, 160, 0, 160, 0, 0, 320, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=59]
+points = PoolVector2Array( 320, 160, 0, 160, 0, 0, 320, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=60]
 points = PoolVector2Array( 320, 160, 0, 160, 0, 0, 320, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=31]
@@ -303,6 +316,95 @@ points = PoolVector2Array( 320, 160, 0, 160, 0, 0, 320, 0 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 13/z_index = 0
+14/name = "middle top block 2.png 14"
+14/texture = ExtResource( 38 )
+14/tex_offset = Vector2( 0, 0 )
+14/modulate = Color( 1, 1, 1, 1 )
+14/region = Rect2( 0, 0, 320, 160 )
+14/tile_mode = 0
+14/occluder_offset = Vector2( 0, 0 )
+14/navigation_offset = Vector2( 0, 0 )
+14/shape_offset = Vector2( 0, 0 )
+14/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+14/shape = SubResource( 58 )
+14/shape_one_way = false
+14/shape_one_way_margin = 1.0
+14/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 58 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+14/z_index = 0
+16/name = "top left block 2.png 16"
+16/texture = ExtResource( 37 )
+16/tex_offset = Vector2( 0, 0 )
+16/modulate = Color( 1, 1, 1, 1 )
+16/region = Rect2( 0, 0, 320, 160 )
+16/tile_mode = 0
+16/occluder_offset = Vector2( 0, 0 )
+16/navigation_offset = Vector2( 0, 0 )
+16/shape_offset = Vector2( 0, 0 )
+16/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+16/shape = SubResource( 59 )
+16/shape_one_way = false
+16/shape_one_way_margin = 1.0
+16/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 59 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+16/z_index = 0
+17/name = "top right block 2.png 17"
+17/texture = ExtResource( 36 )
+17/tex_offset = Vector2( 0, 0 )
+17/modulate = Color( 1, 1, 1, 1 )
+17/region = Rect2( 0, 0, 320, 160 )
+17/tile_mode = 0
+17/occluder_offset = Vector2( 0, 0 )
+17/navigation_offset = Vector2( 0, 0 )
+17/shape_offset = Vector2( 0, 0 )
+17/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+17/shape = SubResource( 60 )
+17/shape_one_way = false
+17/shape_one_way_margin = 1.0
+17/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 60 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+17/z_index = 0
+
+[sub_resource type="ConvexPolygonShape2D" id=61]
+points = PoolVector2Array( 320, 160, 0, 160, 0, 0, 320, 0 )
+
+[sub_resource type="TileSet" id=62]
+0/name = "middle block.png 0"
+0/texture = ExtResource( 12 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 320, 160 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 61 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 61 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
 
 [sub_resource type="ConvexPolygonShape2D" id=42]
 points = PoolVector2Array( 0, 50, 0, 50, 15, 0, 20, 0, 35, 35, 40, 0, 140, 0, 155, 35, 155, 50 )
@@ -622,11 +724,12 @@ position = Vector2( 2014, 40 )
 position = Vector2( 2818, 494 )
 scale = Vector2( -2.8, 2.8 )
 
-[node name="Spider" parent="Enemies" instance=ExtResource( 11 )]
-position = Vector2( 688, 464 )
-
 [node name="Croc" parent="Enemies" instance=ExtResource( 21 )]
 position = Vector2( 2455, -364 )
+
+[node name="Spider" parent="Enemies" instance=ExtResource( 11 )]
+position = Vector2( 685, 462 )
+moveDist = 360
 
 [node name="Large Blocks" type="TileMap" parent="."]
 scale = Vector2( 1.8, 1.8 )
@@ -642,13 +745,20 @@ cell_size = Vector2( 16, 16 )
 cell_quadrant_size = 10
 cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
 format = 1
-tile_data = PoolIntArray( -4980363, 6, 0, -4980343, 3, 0, -4980323, 3, 0, -4980303, 3, 0, -4980283, 7, 0, -4455995, 2, 0, -4390464, 9, 0, -4390459, 2, 0, -4324946, 10, 0, -4259395, 9, 0, -4193851, 2, 0, -4128338, 10, 0, -4062779, 2, 0, -3931730, 10, 0, -3604034, 9, 0, -3407539, 6, 0, -3407519, 3, 0, -3407419, 2, 0, -3276370, 9, 0, -2752178, 10, 0, -2752059, 2, 0, -2096818, 10, 0, -2096699, 2, 0, -1441458, 10, 0, -1441339, 2, 0, -786098, 10, 0, -785979, 2, 0, -130738, 10, 0, -130619, 2, 0, 524582, 6, 0, 524602, 3, 0, 524622, 9, 0, 524741, 2, 0, 1179645, 3, 0, 1114129, 7, 0, 1114447, 9, 0, 1179943, 10, 0, 1179962, 9, 0, 1179965, 9, 0, 1180101, 2, 0, 1245518, 9, 0, 1769472, 9, 0, 1769489, 1073741826, 0, 1835303, 10, 0, 1835322, 9, 0, 1835329, 9, 0, 1835461, 2, 0, 1900803, 10, 0, 2294138, 12, 0, 2294156, 12, 0, 2294175, 12, 0, 2294194, 12, 0, 2294213, 13, 0, 2424832, 9, 0, 2424849, 1073741826, 0, 2490663, 10, 0, 2490682, 9, 0, 2490690, 9, 0, 2621782, 9, 0, 2621797, 9, 0, 2949337, 10, 0, 2949478, 2, 0, 3014991, 9, 0, 3014992, 9, 0, 3014993, 9, 0, 3014994, 9, 0, 3014995, 9, 0, 3014996, 9, 0, 3014997, 9, 0, 3014998, 9, 0, 3014999, 9, 0, 3015000, 9, 0, 3015001, 9, 0, 3015002, 9, 0, 3015003, 9, 0, 3015004, 9, 0, 3015005, 9, 0, 3015006, 9, 0, 3015007, 9, 0, 3015008, 9, 0, 3015009, 9, 0, 3015010, 9, 0, 3015011, 9, 0, 3015012, 9, 0, 3015013, 9, 0, 3080192, 9, 0, 3080209, 1073741826, 0, 3080507, 9, 0, 3146023, 10, 0, 3146041, 9, 0, 3473722, 9, 0, 3473766, 2, 0, 3604813, 9, 0, 3604833, 9, 0, 3670016, 9, 0, 3670033, 9, 0, 3670053, 3, 0, 3670073, 3, 0, 3670093, 7, 0, 3801383, 10, 0, 3866938, 9, 0, 3866982, 2, 0, 4063527, 10, 0, 4129102, 9, 0, 4129122, 9, 0, 4260198, 2, 0, 4325376, 9, 0, 4325394, 9, 0, 4325414, 9, 0, 4325433, 9, 0, 4325453, 2, 0, 4325552, 6, 0, 4325553, 7, 0, 4325556, 7, 0, 4522298, 9, 0, 4718887, 10, 0, 4784423, 10, 0, 4784462, 9, 0, 4784470, 2, 0, 4784486, 2, 0, 4980736, 9, 0, 4980754, 9, 0, 4980774, 9, 0, 4980793, 9, 0, 4980813, 9, 0, 4980833, 3, 0, 4980853, 3, 0, 4980873, 3, 0, 4980893, 3, 0, 4980913, 2, 0, 4980916, 2, 0, 5177658, 9, 0, 5439783, 10, 0, 5439802, 9, 0, 5439822, 9, 0, 5439842, 9, 0, 5439862, 9, 0, 5439882, 9, 0, 5439902, 9, 0, 5439922, 2, 0, 5439941, 2, 0, 5636096, 9, 0, 5636115, 9, 0, 5636134, 9, 0, 5636153, 9, 0, 5636173, 9, 0, 5636193, 9, 0, 5636213, 9, 0, 5636233, 2, 0, 5636235, 9, 0, 5636253, 2, 0, 5636271, 2, 0, 5636273, 2, 0, 5636276, 2, 0 )
+tile_data = PoolIntArray( -4980363, 16, 0, -4980343, 536870926, 0, -4980323, 536870926, 0, -4980303, 3, 0, -4980283, 7, 0, -4456017, 9, 0, -4455995, 2, 0, -4390464, 9, 0, -4390459, 2, 0, -4324946, 10, 0, -4259395, 9, 0, -4193851, 2, 0, -4128338, 10, 0, -4062779, 2, 0, -3931730, 10, 0, -3604034, 9, 0, -3407539, 6, 0, -3407519, 3, 0, -3407419, 2, 0, -3276370, 9, 0, -2752178, 10, 0, -2752059, 2, 0, -2096818, 10, 0, -2096699, 2, 0, -1441458, 10, 0, -1441339, 2, 0, -786098, 10, 0, -785979, 2, 0, -130738, 10, 0, -130619, 2, 0, 524582, 6, 0, 524602, 3, 0, 524622, 9, 0, 524741, 2, 0, 1179645, 3, 0, 1114129, 7, 0, 1114447, 9, 0, 1179943, 10, 0, 1179962, 9, 0, 1179965, 9, 0, 1180101, 2, 0, 1245518, 9, 0, 1769472, 9, 0, 1769489, 1073741826, 0, 1835303, 10, 0, 1835322, 9, 0, 1835329, 9, 0, 1835461, 2, 0, 2294138, 12, 0, 2294156, 12, 0, 2294175, 12, 0, 2294194, 12, 0, 2294213, 13, 0, 2424832, 9, 0, 2424849, 1073741826, 0, 2490663, 10, 0, 2490682, 9, 0, 2490690, 9, 0, 2621782, 9, 0, 2621797, 9, 0, 2949478, 2, 0, 3014991, 9, 0, 3014992, 9, 0, 3014993, 9, 0, 3014994, 9, 0, 3014995, 9, 0, 3014996, 9, 0, 3014997, 9, 0, 3014998, 9, 0, 3014999, 9, 0, 3015000, 9, 0, 3015001, 9, 0, 3015002, 9, 0, 3015003, 9, 0, 3015004, 9, 0, 3015005, 9, 0, 3015006, 9, 0, 3015007, 9, 0, 3015008, 9, 0, 3015009, 9, 0, 3015010, 9, 0, 3015011, 9, 0, 3015012, 9, 0, 3015013, 9, 0, 3080192, 9, 0, 3080209, 1073741826, 0, 3080507, 9, 0, 3146023, 10, 0, 3146041, 9, 0, 3473722, 9, 0, 3473766, 2, 0, 3604813, 9, 0, 3604833, 9, 0, 3670016, 9, 0, 3670033, 9, 0, 3670053, 3, 0, 3670073, 3, 0, 3670093, 7, 0, 3801383, 10, 0, 3866938, 9, 0, 3866982, 2, 0, 4063527, 10, 0, 4129102, 9, 0, 4129122, 9, 0, 4260198, 2, 0, 4325376, 9, 0, 4325394, 9, 0, 4325414, 9, 0, 4325433, 9, 0, 4325453, 2, 0, 4325552, 6, 0, 4325553, 7, 0, 4325556, 7, 0, 4522298, 9, 0, 4718887, 10, 0, 4784423, 10, 0, 4784462, 9, 0, 4784470, 2, 0, 4784486, 2, 0, 4980736, 9, 0, 4980754, 9, 0, 4980774, 9, 0, 4980793, 9, 0, 4980813, 9, 0, 4980833, 3, 0, 4980853, 3, 0, 4980873, 3, 0, 4980893, 3, 0, 4980913, 2, 0, 4980916, 2, 0, 5177658, 9, 0, 5439783, 10, 0, 5439802, 9, 0, 5439822, 9, 0, 5439842, 9, 0, 5439846, 1610612745, 0, 5439866, 1610612748, 0, 5439885, 1610612748, 0, 5439904, 1610612748, 0, 5439923, 1610612748, 0, 5439942, 1073741836, 0, 5439961, 1073741837, 0, 5636096, 9, 0, 5636115, 9, 0, 5636134, 9, 0, 5636153, 9, 0, 5636173, 9, 0, 5636193, 9, 0, 5636213, 9, 0, 5636233, 2, 0, 5636235, 9, 0, 5636253, 2, 0, 5636271, 2, 0, 5636273, 2, 0, 5636276, 2, 0 )
+
+[node name="Small Blocks" type="TileMap" parent="."]
+scale = Vector2( 0.1, 0.1 )
+tile_set = SubResource( 62 )
+cell_size = Vector2( 4, 4 )
+format = 1
+tile_data = PoolIntArray( -69985563, 0, 0, -35385998, 0, 0 )
 
 [node name="Spikes" type="TileMap" parent="."]
 tile_set = SubResource( 43 )
 cell_size = Vector2( 32, 32 )
 format = 1
-tile_data = PoolIntArray( 1114152, 0, 0, 1114157, 0, 0, 1114162, 0, 0, 1114167, 1, 0, 1114169, 1, 0 )
+tile_data = PoolIntArray( 1114152, 0, 0, 1114157, 0, 0, 1114162, 0, 0, 1114167, 1, 0, 1114169, 1, 0, 1114211, 0, 0, 1114216, 0, 0, 1114221, 0, 0, 1114226, 0, 0, 1114231, 0, 0, 1114236, 0, 0 )
 
 [node name="Water" type="TileMap" parent="."]
 tile_set = SubResource( 48 )
@@ -661,15 +771,43 @@ position = Vector2( 1011, -507 )
 
 [node name="Other Blocks" type="Node2D" parent="."]
 
-[node name="Moving Block 1" parent="Other Blocks" instance=ExtResource( 34 )]
+[node name="Moving Block 1" parent="Other Blocks" instance=ExtResource( 39 )]
 position = Vector2( 3250, -440 )
 scale = Vector2( 0.4, 0.4 )
 speed = 180
 moveDist = 800
 
-[node name="block" parent="Other Blocks" instance=ExtResource( 35 )]
-position = Vector2( 816, 334 )
-scale = Vector2( 0.2, 0.2 )
+[node name="Moving Block 2" parent="Other Blocks" instance=ExtResource( 34 )]
+position = Vector2( 3500, -440 )
+scale = Vector2( 0.4, 0.4 )
+speed = 150
+moveDist = 800
+
+[node name="Moving Block 3" parent="Other Blocks" instance=ExtResource( 34 )]
+position = Vector2( 3750, 360 )
+scale = Vector2( 0.4, 0.4 )
+speed = 160
+moveDist = -800
+
+[node name="Moving Block 4" parent="Other Blocks" instance=ExtResource( 34 )]
+position = Vector2( 4000, 360 )
+scale = Vector2( 0.4, 0.4 )
+speed = 180
+moveDist = -800
+
+[node name="Moving Block 5" parent="Other Blocks" instance=ExtResource( 34 )]
+position = Vector2( 4250, -440 )
+scale = Vector2( 0.4, 0.4 )
+speed = 150
+moveDist = 800
+
+[node name="Breaking 1" parent="Other Blocks" instance=ExtResource( 35 )]
+position = Vector2( 1430, 290 )
+scale = Vector2( 0.25, 0.25 )
+
+[node name="Breaking 2" parent="Other Blocks" instance=ExtResource( 35 )]
+position = Vector2( 1650, 168 )
+scale = Vector2( 0.25, 0.25 )
 
 [connection signal="coin_collected" from="Coins/Coin2" to="Coin Counter" method="_on_coin_collected"]
 [connection signal="key_collected" from="Coins/key" to="Key Collect" method="_on_key_key_collected"]
