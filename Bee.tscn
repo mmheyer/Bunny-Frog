@@ -39,8 +39,11 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Path2D/PathFollow2D/Area2D"]
+position = Vector2( 0.521263, -0.853394 )
 rotation = 0.549779
+scale = Vector2( 0.53, 0.53 )
 frames = SubResource( 2 )
+frame = 2
 playing = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Path2D/PathFollow2D/Area2D"]
