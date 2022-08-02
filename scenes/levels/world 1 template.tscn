@@ -373,11 +373,11 @@ position = Vector2( 302, 346 )
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Area2D" parent="Enemies" instance=ExtResource( 20 )]
-position = Vector2( 902, 535 )
+position = Vector2( 888, 511 )
 scale = Vector2( 2.8, 2.8 )
 
 [node name="Node2D" parent="Enemies" instance=ExtResource( 11 )]
-position = Vector2( 783, 275 )
+position = Vector2( 738, 251 )
 
 [node name="Blocks" type="TileMap" parent="."]
 scale = Vector2( 0.4, 0.4 )
@@ -394,7 +394,7 @@ cell_size = Vector2( 32, 32 )
 format = 1
 
 [node name="FlagPolev2" parent="." instance=ExtResource( 19 )]
-position = Vector2( 1034, 403 )
+position = Vector2( 1037, 399 )
 
 [connection signal="coin_collected" from="Coins/Coin2" to="Coin Counter" method="_on_coin_collected"]
 [connection signal="key_collected" from="Coins/key" to="Key Collect" method="_on_key_key_collected"]
