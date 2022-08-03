@@ -11,11 +11,6 @@
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 1 ), ExtResource( 8 ) ],
-"loop": false,
-"name": "revive",
-"speed": 7.0
-}, {
 "frames": [ ExtResource( 8 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "break",
@@ -25,6 +20,11 @@ animations = [ {
 "loop": true,
 "name": "default",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 1 ), ExtResource( 8 ) ],
+"loop": false,
+"name": "revive",
+"speed": 7.0
 } ]
 
 [node name="block" type="Area2D"]
@@ -32,6 +32,7 @@ script = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
+frame = 1
 playing = true
 
 [node name="Coll1" type="CollisionPolygon2D" parent="."]
