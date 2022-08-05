@@ -30,6 +30,5 @@ func column_size():
 	else:
 		grid.columns = total_levels/2 + 1
 
-
 func _on_back_button_pressed():
 	Transition.fade("res://TitleMenu.tscn")

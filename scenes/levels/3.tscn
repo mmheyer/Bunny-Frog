@@ -1,16 +1,16 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://ASSETS/blocks/top right block.png" type="Texture" id=1]
 [ext_resource path="res://ASSETS/white.png" type="Texture" id=2]
 [ext_resource path="res://Spring.tscn" type="PackedScene" id=3]
 [ext_resource path="res://ASSETS/HUD & fonts/fonts/upheavtt.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://ASSETS/blocks/spikes.png" type="Texture" id=5]
-[ext_resource path="res://ASSETS/blocks/3 spikes.png" type="Texture" id=6]
+[ext_resource path="res://ASSETS/blocks/small spikes.png" type="Texture" id=6]
 [ext_resource path="res://ASSETS/background/backgroundfull.png" type="Texture" id=7]
 [ext_resource path="res://ASSETS/blocks/middle right block.png" type="Texture" id=8]
 [ext_resource path="res://ASSETS/egg/egg.png" type="Texture" id=9]
 [ext_resource path="res://HUD.gd" type="Script" id=10]
-[ext_resource path="res://Spider.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/levels/3.gd" type="Script" id=11]
 [ext_resource path="res://ASSETS/blocks/middle block.png" type="Texture" id=12]
 [ext_resource path="res://ASSETS/blocks/top left block.png" type="Texture" id=13]
 [ext_resource path="res://ASSETS/blocks/middle left block.png" type="Texture" id=14]
@@ -20,7 +20,6 @@
 [ext_resource path="res://GUI.tscn" type="PackedScene" id=18]
 [ext_resource path="res://ASSETS/flag pole/FlagPolev2.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Snake.tscn" type="PackedScene" id=20]
-[ext_resource path="res://scenes/levels/1.gd" type="Script" id=21]
 [ext_resource path="res://key.tscn" type="PackedScene" id=23]
 [ext_resource path="res://ASSETS/egg/key.png" type="Texture" id=25]
 [ext_resource path="res://scenes/levels/Key Collect.gd" type="Script" id=26]
@@ -41,56 +40,6 @@ corner_radius_bottom_left = 20
 [sub_resource type="DynamicFont" id=13]
 size = 40
 font_data = ExtResource( 4 )
-
-[sub_resource type="ConvexPolygonShape2D" id=44]
-points = PoolVector2Array( 0, 200, 0, 200, 0, 175, 50, 0, 60, 0, 105, 180, 105, 200 )
-
-[sub_resource type="ConvexPolygonShape2D" id=45]
-points = PoolVector2Array( 0, 200, 0, 200, 0, 175, 50, 0, 55, 0, 105, 180, 155, 0, 160, 0, 210, 180, 260, 0, 265, 0, 315, 180, 315, 200 )
-
-[sub_resource type="TileSet" id=43]
-0/name = "spikes.png 0"
-0/texture = ExtResource( 5 )
-0/tex_offset = Vector2( 0, 0 )
-0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 105, 200 )
-0/tile_mode = 0
-0/occluder_offset = Vector2( 0, 0 )
-0/navigation_offset = Vector2( 0, 0 )
-0/shape_offset = Vector2( 0, 0 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 44 )
-0/shape_one_way = false
-0/shape_one_way_margin = 1.0
-0/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 44 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-0/z_index = 0
-1/name = "3 spikes.png 1"
-1/texture = ExtResource( 6 )
-1/tex_offset = Vector2( 0, 0 )
-1/modulate = Color( 1, 1, 1, 1 )
-1/region = Rect2( 0, 0, 315, 200 )
-1/tile_mode = 0
-1/occluder_offset = Vector2( 0, 0 )
-1/navigation_offset = Vector2( 0, 0 )
-1/shape_offset = Vector2( 0, 0 )
-1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-1/shape = SubResource( 45 )
-1/shape_one_way = false
-1/shape_one_way_margin = 1.0
-1/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 45 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-1/z_index = 0
 
 [sub_resource type="ConvexPolygonShape2D" id=41]
 points = PoolVector2Array( 310, 160, 0, 160, 0, 0, 310, 0 )
@@ -238,8 +187,58 @@ points = PoolVector2Array( 320, 160, 0, 160, 0, 0, 320, 0 )
 } ]
 10/z_index = 0
 
+[sub_resource type="ConvexPolygonShape2D" id=42]
+points = PoolVector2Array( 0, 50, 0, 50, 15, 0, 20, 0, 35, 35, 40, 0, 140, 0, 155, 35, 155, 50 )
+
+[sub_resource type="ConvexPolygonShape2D" id=44]
+points = PoolVector2Array( 0, 50, 0, 40, 15, 0, 20, 0, 50, 0, 55, 5, 65, 35, 65, 50 )
+
+[sub_resource type="TileSet" id=43]
+0/name = "spikes.png 0"
+0/texture = ExtResource( 5 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 155, 50 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 42 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 42 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "small spikes.png 1"
+1/texture = ExtResource( 6 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 65, 50 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 44 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 44 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+
 [node name="Level1" type="Node2D"]
-script = ExtResource( 21 )
+script = ExtResource( 11 )
 __meta__ = {
 "_edit_horizontal_guides_": [  ]
 }
@@ -350,50 +349,23 @@ flip_v = true
 [node name="Coins" type="Node2D" parent="."]
 
 [node name="Coin2" parent="Coins" instance=ExtResource( 17 )]
-position = Vector2( 995, 408 )
-scale = Vector2( 0.8, 0.8 )
-
-[node name="Coin3" parent="Coins" instance=ExtResource( 17 )]
-position = Vector2( 890, 507 )
-scale = Vector2( 0.8, 0.8 )
-
-[node name="Coin4" parent="Coins" instance=ExtResource( 17 )]
-position = Vector2( 1100, 507 )
-scale = Vector2( 0.8, 0.8 )
-
-[node name="Coin5" parent="Coins" instance=ExtResource( 17 )]
-position = Vector2( 2120, 526 )
-scale = Vector2( 0.8, 0.8 )
-
-[node name="Coin6" parent="Coins" instance=ExtResource( 17 )]
-position = Vector2( 3162, 271 )
+position = Vector2( 385, 333 )
 scale = Vector2( 0.8, 0.8 )
 
 [node name="key" parent="Coins" instance=ExtResource( 23 )]
-position = Vector2( 4024, -38 )
+position = Vector2( 310, 292 )
 scale = Vector2( 0.6, 0.6 )
 
 [node name="Spring" parent="." instance=ExtResource( 3 )]
-position = Vector2( 3439, 296 )
+position = Vector2( 302, 346 )
 
 [node name="GUI" parent="." instance=ExtResource( 18 )]
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="Snake" parent="Enemies" instance=ExtResource( 20 )]
-position = Vector2( 2883, 266 )
+[node name="Area2D" parent="Enemies" instance=ExtResource( 20 )]
+position = Vector2( 888, 511 )
 scale = Vector2( 2.8, 2.8 )
-
-[node name="Spider" parent="Enemies" instance=ExtResource( 11 )]
-position = Vector2( 1410, 533 )
-moveDist = 800
-
-[node name="Spikes" type="TileMap" parent="."]
-scale = Vector2( 0.3, 0.3 )
-tile_set = SubResource( 43 )
-cell_size = Vector2( 32, 32 )
-format = 1
-tile_data = PoolIntArray( -458366, 1, 0, 3473507, 1, 0 )
 
 [node name="Blocks" type="TileMap" parent="."]
 scale = Vector2( 0.4, 0.4 )
@@ -402,18 +374,17 @@ cell_size = Vector2( 16, 16 )
 cell_quadrant_size = 10
 cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
 format = 1
-tile_data = PoolIntArray( -130517, 6, 0, -130497, 3, 0, -130477, 3, 0, -130457, 3, 0, -130437, 3, 0, -130417, 7, 0, 524844, 10, 0, 524863, 9, 0, 524883, 9, 0, 524903, 9, 0, 524923, 9, 0, 524943, 2, 0, 1179645, 3, 0, 1114129, 7, 0, 1180204, 10, 0, 1180223, 9, 0, 1180230, 9, 0, 1180245, 9, 0, 1180265, 9, 0, 1180284, 9, 0, 1180303, 2, 0, 1769472, 9, 0, 1769489, 1073741826, 0, 1835564, 10, 0, 1835583, 9, 0, 1835603, 9, 0, 1835623, 9, 0, 1835643, 9, 0, 1835663, 2, 0, 2424832, 9, 0, 2424849, 1073741826, 0, 2490924, 10, 0, 2490943, 9, 0, 2490963, 9, 0, 2490983, 9, 0, 2491003, 9, 0, 2491023, 2, 0, 3080192, 9, 0, 3080209, 1073741826, 0, 3146124, 6, 0, 3146144, 3, 0, 3146164, 3, 0, 3146184, 3, 0, 3146204, 3, 0, 3146224, 3, 0, 3146244, 3, 0, 3146264, 3, 0, 3146284, 9, 0, 3146304, 9, 0, 3146324, 9, 0, 3146344, 9, 0, 3146364, 9, 0, 3146383, 2, 0, 3670016, 9, 0, 3670033, 9, 0, 3670053, 3, 0, 3670073, 3, 0, 3670093, 7, 0, 3801485, 10, 0, 3801504, 9, 0, 3801524, 9, 0, 3801544, 9, 0, 3801564, 9, 0, 3801584, 9, 0, 3801604, 9, 0, 3801624, 9, 0, 3801644, 9, 0, 3801664, 9, 0, 3801684, 9, 0, 3801703, 9, 0, 3801723, 9, 0, 3801743, 2, 0, 4325376, 9, 0, 4325394, 9, 0, 4325414, 9, 0, 4325433, 9, 0, 4325453, 2, 0, 4391468, 9, 0, 4456825, 6, 0, 4456845, 9, 0, 4456864, 9, 0, 4456884, 9, 0, 4456904, 9, 0, 4456924, 9, 0, 4456944, 9, 0, 4456964, 9, 0, 4456984, 9, 0, 4457004, 9, 0, 4457024, 9, 0, 4457044, 9, 0, 4457064, 9, 0, 4457083, 9, 0, 4457103, 2, 0, 4980736, 9, 0, 4980754, 9, 0, 4980774, 9, 0, 4980793, 9, 0, 4980813, 2, 0, 5046688, 9, 0, 5112186, 10, 0, 5112205, 9, 0, 5112224, 9, 0, 5112244, 9, 0, 5112264, 9, 0, 5112284, 9, 0, 5112304, 9, 0, 5112324, 9, 0, 5112344, 9, 0, 5112364, 9, 0, 5112384, 9, 0, 5112404, 9, 0, 5112424, 9, 0, 5112443, 9, 0, 5112463, 2, 0, 5636096, 9, 0, 5636115, 9, 0, 5636134, 9, 0, 5636153, 9, 0, 5636173, 2, 0, 5767546, 10, 0, 5767565, 9, 0, 5767584, 9, 0, 5767604, 9, 0, 5767624, 9, 0, 5767644, 9, 0, 5767664, 9, 0, 5767684, 9, 0, 5767704, 9, 0, 5767724, 9, 0, 5767744, 9, 0, 5767764, 9, 0, 5767784, 9, 0, 5767804, 9, 0, 5767823, 2, 0 )
+tile_data = PoolIntArray( 1179645, 3, 0, 1114129, 7, 0, 1769472, 9, 0, 1769489, 1073741826, 0, 2424832, 9, 0, 2424849, 1073741826, 0, 3080192, 9, 0, 3080209, 1073741826, 0, 3670016, 9, 0, 3670033, 9, 0, 3670053, 3, 0, 3670073, 3, 0, 3670093, 7, 0, 4325376, 9, 0, 4325394, 9, 0, 4325414, 9, 0, 4325433, 9, 0, 4325453, 2, 0, 4980736, 9, 0, 4980754, 9, 0, 4980774, 9, 0, 4980793, 9, 0, 4980813, 2, 0, 5636096, 9, 0, 5636115, 9, 0, 5636134, 9, 0, 5636153, 9, 0, 5636173, 2, 0 )
+
+[node name="Spikes" type="TileMap" parent="."]
+tile_set = SubResource( 43 )
+cell_size = Vector2( 32, 32 )
+format = 1
 
 [node name="FlagPolev2" parent="." instance=ExtResource( 19 )]
-position = Vector2( 4268, -171 )
+position = Vector2( 1037, 399 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.6
 
 [connection signal="coin_collected" from="Coins/Coin2" to="Coin Counter" method="_on_coin_collected"]
-[connection signal="coin_collected" from="Coins/Coin3" to="Coin Counter" method="_on_coin_collected"]
-[connection signal="coin_collected" from="Coins/Coin4" to="Coin Counter" method="_on_coin_collected"]
-[connection signal="coin_collected" from="Coins/Coin5" to="Coin Counter" method="_on_coin_collected"]
-[connection signal="coin_collected" from="Coins/Coin6" to="Coin Counter" method="_on_coin_collected"]
 [connection signal="key_collected" from="Coins/key" to="Key Collect" method="_on_key_key_collected"]
-[connection signal="next_level" from="FlagPolev2" to="." method="_on_FlagPolev2_next_level"]

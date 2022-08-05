@@ -7,6 +7,7 @@ var key = load("res://ASSETS/sound effects/key collect sound.wav")
 var jump = load("res://ASSETS/sound effects/jump.wav")
 var breaksound = load("res://ASSETS/sound effects/breaking.wav")
 var christmas = load("res://ASSETS/bgm/christmas cutscene.mp3")
+var is_playing = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,11 +15,13 @@ func _ready():
 	
 func stop():
 	$Music.stop()
+	is_playing = false
 
 func play_music():
 	$Music.stream = world1
 	$Music.volume_db = 0
 	$Music.play()
+	is_playing = true
 	
 func play_ch():
 	$Music.stream = christmas

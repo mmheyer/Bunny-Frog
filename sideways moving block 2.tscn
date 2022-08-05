@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://ASSETS/blocks/moving block.png" type="Texture" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends KinematicBody2D
+
+export var speed : int = 100
+export var moveDist : int = 100
+onready var startX : float = position.x
+onready var targetX : float = position.x + moveDist
+var frog_on = false
+
+func _physics_process (delta):
+	# move to the \"targetX\" position
+	if(frog_on == true):
+		position.x = move_to(position.x, targetX, speed * delta)
+	# if we're at our target, move in the other direction
+	if position.x == targetX:
+		if targetX == startX:
+			targetX = position.x + moveDist
+		else:
+			targetX = startX
+			
+# moves \"current\" towards \"to\" in an increment of \"step\"
+func move_to (current, to, step):
+	var new = current
+	# are we moving positive?
+	if new < to:
+		new += step
+		if new > to:
+			new = to
+	# are we moving negative?
+	else:
+		new -= step
+		if new < to:
+			new = to
+	return new
+
+
+func _on_Area2D_body_entered(body):
+	if(body.name == \"bunnyfrog\"):
+		frog_on = true
+"
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+script = SubResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -134, -50, 136, -50, 135, 50, -134, 50 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( -130, -59, 127, -57, 90, 36, -99, 37 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

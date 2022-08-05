@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bee 1.png-98bd362d2e58d5a17d50e755402135d0.stex"
+path="res://.import/level 4.png-015d4f38a17a1de96c22e3b9a4de9a40.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/bee 1.png"
-dest_files=[ "res://.import/bee 1.png-98bd362d2e58d5a17d50e755402135d0.stex" ]
+source_file="res://level plans/level 4.png"
+dest_files=[ "res://.import/level 4.png-015d4f38a17a1de96c22e3b9a4de9a40.stex" ]
 
 [params]
 

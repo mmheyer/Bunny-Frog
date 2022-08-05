@@ -29,7 +29,9 @@ script/source = "extends Node2D
 
 func _ready():
 	AudioServer.set_bus_mute(AudioServer.get_bus_index(\"BGM\"), false)
-	yield(get_tree().create_timer(0.6), \"timeout\")
+	$Timer.wait_time = 0.6
+	$Timer.start()
+	yield($Timer, \"timeout\")
 	Music.play_music()
 "
 
@@ -395,6 +397,8 @@ format = 1
 
 [node name="FlagPolev2" parent="." instance=ExtResource( 19 )]
 position = Vector2( 1037, 399 )
+
+[node name="Timer" type="Timer" parent="."]
 
 [connection signal="coin_collected" from="Coins/Coin2" to="Coin Counter" method="_on_coin_collected"]
 [connection signal="key_collected" from="Coins/key" to="Key Collect" method="_on_key_key_collected"]
