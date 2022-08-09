@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://ASSETS/blocks/top right block.png" type="Texture" id=1]
 [ext_resource path="res://ASSETS/white.png" type="Texture" id=2]
@@ -20,6 +20,8 @@
 [ext_resource path="res://GUI.tscn" type="PackedScene" id=18]
 [ext_resource path="res://ASSETS/flag pole/FlagPolev2.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Snake.tscn" type="PackedScene" id=20]
+[ext_resource path="res://RotatingSpikes.tscn" type="PackedScene" id=21]
+[ext_resource path="res://RotatingSpikePlatform.tscn" type="PackedScene" id=22]
 [ext_resource path="res://key.tscn" type="PackedScene" id=23]
 [ext_resource path="res://ASSETS/egg/key.png" type="Texture" id=25]
 [ext_resource path="res://scenes/levels/Key Collect.gd" type="Script" id=26]
@@ -379,7 +381,10 @@ position = Vector2( 888, 511 )
 scale = Vector2( 2.8, 2.8 )
 
 [node name="Node2D" parent="Enemies" instance=ExtResource( 11 )]
-position = Vector2( 738, 251 )
+position = Vector2( 1433, 286 )
+
+[node name="Area2D" parent="Enemies/Node2D" instance=ExtResource( 22 )]
+position = Vector2( -573, 37 )
 
 [node name="Blocks" type="TileMap" parent="."]
 scale = Vector2( 0.4, 0.4 )
@@ -399,6 +404,10 @@ format = 1
 position = Vector2( 1037, 399 )
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="Area2D2" parent="." instance=ExtResource( 21 )]
+position = Vector2( 1387, 276 )
+scale = Vector2( 0.35, 0.35 )
 
 [connection signal="coin_collected" from="Coins/Coin2" to="Coin Counter" method="_on_coin_collected"]
 [connection signal="key_collected" from="Coins/key" to="Key Collect" method="_on_key_key_collected"]

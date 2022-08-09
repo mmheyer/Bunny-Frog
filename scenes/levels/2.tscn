@@ -667,10 +667,10 @@ margin_bottom = 93.0
 custom_styles/panel = SubResource( 11 )
 
 [node name="TextureRect" type="TextureRect" parent="Coin Counter"]
-margin_left = 1.0
-margin_top = -12.0
-margin_right = 124.0
-margin_bottom = 111.0
+margin_left = -1.0
+margin_top = -15.0
+margin_right = 126.0
+margin_bottom = 112.0
 texture = ExtResource( 9 )
 expand = true
 
