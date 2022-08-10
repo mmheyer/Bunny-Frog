@@ -21,3 +21,7 @@ func _on_Group_body_entered(body):
 		body.die()
 		$AnimationPlayer.stop()
 		rotation_speed = 0
+
+func _on_Area2D_body_entered(body):
+	if body.name == "bunnyfrog":
+		body.velocity == $KinematicBody2D.get_linear_velocity
