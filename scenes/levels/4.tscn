@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://ASSETS/blocks/top right block.png" type="Texture" id=1]
 [ext_resource path="res://ASSETS/white.png" type="Texture" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://SpikePillar.tscn" type="PackedScene" id=21]
 [ext_resource path="res://sideways moving block 2.tscn" type="PackedScene" id=22]
 [ext_resource path="res://key.tscn" type="PackedScene" id=23]
+[ext_resource path="res://breaking block.tscn" type="PackedScene" id=24]
 [ext_resource path="res://ASSETS/egg/key.png" type="Texture" id=25]
 [ext_resource path="res://scenes/levels/Key Collect.gd" type="Script" id=26]
 
@@ -386,8 +387,16 @@ scale = Vector2( 2.8, 2.8 )
 [node name="SpikePillar" parent="Enemies" instance=ExtResource( 21 )]
 position = Vector2( 1880, 481 )
 
+[node name="SpikePillar4" parent="Enemies" instance=ExtResource( 21 )]
+position = Vector2( 2963, 496 )
+
 [node name="SpikePillar2" parent="Enemies" instance=ExtResource( 21 )]
 position = Vector2( 1880, -22 )
+rotation = 3.14159
+moveDist = -200
+
+[node name="SpikePillar3" parent="Enemies" instance=ExtResource( 21 )]
+position = Vector2( 2963, -6 )
 rotation = 3.14159
 moveDist = -200
 
@@ -398,23 +407,35 @@ cell_size = Vector2( 16, 16 )
 cell_quadrant_size = 10
 cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
 format = 1
-tile_data = PoolIntArray( 1179645, 3, 0, 1114129, 7, 0, 1769472, 9, 0, 1769489, 1073741826, 0, 2424832, 9, 0, 2424849, 1073741826, 0, 3080192, 9, 0, 3080209, 1073741826, 0, 3604786, 6, 0, 3604788, 7, 0, 3670016, 9, 0, 3670033, 9, 0, 3670053, 3, 0, 3670073, 3, 0, 3670093, 3, 0, 3670113, 3, 0, 3670133, 3, 0, 3670153, 3, 0, 3670173, 3, 0, 3670193, 3, 0, 3670213, 3, 0, 3670233, 3, 0, 3670253, 3, 0, 3670273, 7, 0, 4260147, 10, 0, 4260148, 2, 0, 4325376, 9, 0, 4325394, 9, 0, 4325414, 9, 0, 4325433, 9, 0, 4325453, 9, 0, 4325473, 9, 0, 4325493, 9, 0, 4325513, 9, 0, 4325533, 9, 0, 4325553, 9, 0, 4325573, 9, 0, 4325593, 9, 0, 4325613, 9, 0, 4325633, 2, 0, 4915277, 9, 0, 4915507, 10, 0, 4915508, 2, 0, 4980736, 9, 0, 4980754, 9, 0, 4980774, 9, 0, 4980793, 9, 0, 4980813, 9, 0, 4980833, 9, 0, 4980853, 9, 0, 4980873, 9, 0, 4980893, 9, 0, 4980913, 9, 0, 4980933, 9, 0, 4980953, 9, 0, 4980973, 9, 0, 4980993, 2, 0, 5570867, 10, 0, 5570868, 2, 0, 5636096, 9, 0, 5636115, 9, 0, 5636134, 9, 0, 5636153, 9, 0, 5636173, 9, 0, 5636193, 9, 0, 5636213, 9, 0, 5636233, 9, 0, 5636253, 9, 0, 5636273, 9, 0, 5636293, 9, 0, 5636313, 9, 0, 5636333, 9, 0, 5636353, 2, 0 )
+tile_data = PoolIntArray( 1179645, 3, 0, 1114129, 7, 0, 1769472, 9, 0, 1769489, 1073741826, 0, 2424832, 9, 0, 2424849, 1073741826, 0, 3080192, 9, 0, 3080209, 1073741826, 0, 3604786, 6, 0, 3604788, 7, 0, 3604908, 6, 0, 3604909, 7, 0, 3604910, 7, 0, 3670016, 9, 0, 3670033, 9, 0, 3670053, 3, 0, 3670073, 3, 0, 3670093, 3, 0, 3670113, 3, 0, 3670133, 3, 0, 3670153, 3, 0, 3670173, 3, 0, 3670193, 3, 0, 3670213, 3, 0, 3670233, 3, 0, 3670253, 3, 0, 3670273, 7, 0, 4260147, 10, 0, 4260148, 2, 0, 4260269, 10, 0, 4260270, 2, 0, 4325376, 9, 0, 4325394, 9, 0, 4325414, 9, 0, 4325433, 9, 0, 4325453, 9, 0, 4325473, 9, 0, 4325493, 9, 0, 4325513, 9, 0, 4325533, 9, 0, 4325553, 9, 0, 4325573, 9, 0, 4325593, 9, 0, 4325613, 9, 0, 4325633, 2, 0, 4915277, 9, 0, 4915507, 10, 0, 4915508, 2, 0, 4915629, 10, 0, 4915630, 2, 0, 4980736, 9, 0, 4980754, 9, 0, 4980774, 9, 0, 4980793, 9, 0, 4980813, 9, 0, 4980833, 9, 0, 4980853, 9, 0, 4980873, 9, 0, 4980893, 9, 0, 4980913, 9, 0, 4980933, 9, 0, 4980953, 9, 0, 4980973, 9, 0, 4980993, 2, 0, 5570867, 10, 0, 5570868, 2, 0, 5570989, 10, 0, 5570990, 2, 0, 5636096, 9, 0, 5636115, 9, 0, 5636134, 9, 0, 5636153, 9, 0, 5636173, 9, 0, 5636193, 9, 0, 5636213, 9, 0, 5636233, 9, 0, 5636253, 9, 0, 5636273, 9, 0, 5636293, 9, 0, 5636313, 9, 0, 5636333, 9, 0, 5636353, 2, 0 )
 
 [node name="Spikes" type="TileMap" parent="."]
 tile_set = SubResource( 43 )
 cell_size = Vector2( 32, 32 )
 format = 1
-tile_data = PoolIntArray( 1114167, 0, 0, 1114171, 0, 0 )
+tile_data = PoolIntArray( 1114167, 0, 0, 1114171, 0, 0, 1114201, 0, 0 )
 
 [node name="FlagPolev2" parent="." instance=ExtResource( 19 )]
-position = Vector2( 2665, 381 )
+position = Vector2( 3768, 381 )
 
 [node name="Timer" type="Timer" parent="."]
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 22 )]
-position = Vector2( 2210, 402 )
-scale = Vector2( 0.75, 1 )
+position = Vector2( 2183, 382 )
+scale = Vector2( 0.5, 0.5 )
 moveDist = 500
+
+[node name="block" parent="." instance=ExtResource( 24 )]
+position = Vector2( 3105, 385 )
+scale = Vector2( 0.25, 0.25 )
+
+[node name="block2" parent="." instance=ExtResource( 24 )]
+position = Vector2( 3382, 288 )
+scale = Vector2( 0.25, 0.25 )
+
+[node name="block3" parent="." instance=ExtResource( 24 )]
+position = Vector2( 3658, 377 )
+scale = Vector2( 0.25, 0.25 )
 
 [connection signal="coin_collected" from="Coins/Coin2" to="Coin Counter" method="_on_coin_collected"]
 [connection signal="key_collected" from="Coins/key" to="Key Collect" method="_on_key_key_collected"]

@@ -10,7 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
 base_button = ExtResource( 1 )
-total_levels = 1
+total_levels = 2
 grid = NodePath("divider/center_buttons/button_grid")
 
 [node name="TextureRect" type="TextureRect" parent="."]
