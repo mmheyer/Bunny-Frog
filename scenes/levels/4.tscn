@@ -38,10 +38,14 @@ script/source = "extends Node2D
 
 func _ready():
 	AudioServer.set_bus_mute(AudioServer.get_bus_index(\"BGM\"), false)
-	$Timer.wait_time = 0.6
-	$Timer.start()
-	yield($Timer, \"timeout\")
-	Music.play_music()
+	if(not Music.is_playing):
+		$Timer.wait_time = 0.6
+		$Timer.start()
+		yield($Timer, \"timeout\")
+		Music.play_music()
+
+func _on_FlagPolev2_next_level():
+	Transition.fade_soundcont(\"res://scenes/levels/4.tscn\")
 "
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -679,3 +683,4 @@ position = Vector2( 5911, 526 )
 [connection signal="coin_collected" from="Coins/Coin12" to="Coin Counter" method="_on_coin_collected"]
 [connection signal="coin_collected" from="Coins/Coin13" to="Coin Counter" method="_on_coin_collected"]
 [connection signal="key_collected" from="Coins/key" to="Key Collect" method="_on_key_key_collected"]
+[connection signal="next_level" from="FlagPolev2" to="." method="_on_FlagPolev2_next_level"]

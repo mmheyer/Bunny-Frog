@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://ASSETS/blocks/top right block.png" type="Texture" id=1]
 [ext_resource path="res://ASSETS/white.png" type="Texture" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://RotatingSpikes.tscn" type="PackedScene" id=21]
 [ext_resource path="res://RotatingSpikePlatform.tscn" type="PackedScene" id=22]
 [ext_resource path="res://key.tscn" type="PackedScene" id=23]
+[ext_resource path="res://bubble.tscn" type="PackedScene" id=24]
 [ext_resource path="res://ASSETS/egg/key.png" type="Texture" id=25]
 [ext_resource path="res://scenes/levels/Key Collect.gd" type="Script" id=26]
 
@@ -31,10 +32,11 @@ script/source = "extends Node2D
 
 func _ready():
 	AudioServer.set_bus_mute(AudioServer.get_bus_index(\"BGM\"), false)
-	$Timer.wait_time = 0.6
-	$Timer.start()
-	yield($Timer, \"timeout\")
-	Music.play_music()
+	if(not Music.is_playing):
+		$Timer.wait_time = 0.6
+		$Timer.start()
+		yield($Timer, \"timeout\")
+		Music.play_music()
 "
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -407,6 +409,10 @@ position = Vector2( 1656, 306 )
 
 [node name="Area2D" parent="." instance=ExtResource( 22 )]
 position = Vector2( 922, 299 )
+
+[node name="Area2D3" parent="." instance=ExtResource( 24 )]
+position = Vector2( 542, 279 )
+scale = Vector2( 0.4, 0.4 )
 
 [connection signal="coin_collected" from="Coins/Coin2" to="Coin Counter" method="_on_coin_collected"]
 [connection signal="key_collected" from="Coins/key" to="Key Collect" method="_on_key_key_collected"]
