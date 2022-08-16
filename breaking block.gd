@@ -6,7 +6,7 @@ func _ready():
 func _on_block_body_entered(body):
 	var coll0 := get_node(str("StaticBody2D/Coll0")) as CollisionPolygon2D
 	var coll1 := get_node(str("Coll1")) as CollisionPolygon2D
-	if(body.name == "bunnyfrog"):
+	if(body.name == "bunnyfrog" and $AnimatedSprite.get_animation() == "default"):
 		Music.breaking()
 		yield(get_tree().create_timer(0.4), "timeout")
 		$AnimatedSprite.play("break")
@@ -15,7 +15,7 @@ func _on_block_body_entered(body):
 		coll1.disabled = true
 		yield($AnimatedSprite, "animation_finished")
 		$AnimatedSprite.visible = not $AnimatedSprite.visible
-		yield(get_tree().create_timer(2.5), "timeout")
+		yield(get_tree().create_timer(3), "timeout")
 		$AnimatedSprite.visible = not $AnimatedSprite.visible
 		coll0.disabled = false
 		coll1.disabled = false
