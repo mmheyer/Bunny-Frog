@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://ASSETS/blocks/top right block.png" type="Texture" id=1]
 [ext_resource path="res://ASSETS/white.png" type="Texture" id=2]
@@ -19,7 +19,8 @@
 [ext_resource path="res://coin.tscn" type="PackedScene" id=17]
 [ext_resource path="res://GUI.tscn" type="PackedScene" id=18]
 [ext_resource path="res://ASSETS/flag pole/FlagPolev2.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Snake.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Spider.tscn" type="PackedScene" id=20]
+[ext_resource path="res://breaking block.tscn" type="PackedScene" id=21]
 [ext_resource path="res://key.tscn" type="PackedScene" id=23]
 [ext_resource path="res://ASSETS/egg/key.png" type="Texture" id=25]
 [ext_resource path="res://scenes/levels/Key Collect.gd" type="Script" id=26]
@@ -348,7 +349,7 @@ flip_v = true
 
 [node name="Coins" type="Node2D" parent="."]
 
-[node name="Coin2" parent="Coins" instance=ExtResource( 17 )]
+[node name="Coin1" parent="Coins" instance=ExtResource( 17 )]
 position = Vector2( 385, 333 )
 scale = Vector2( 0.8, 0.8 )
 
@@ -356,16 +357,13 @@ scale = Vector2( 0.8, 0.8 )
 position = Vector2( 310, 292 )
 scale = Vector2( 0.6, 0.6 )
 
-[node name="Spring" parent="." instance=ExtResource( 3 )]
-position = Vector2( 302, 346 )
-
 [node name="GUI" parent="." instance=ExtResource( 18 )]
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="Area2D" parent="Enemies" instance=ExtResource( 20 )]
-position = Vector2( 888, 511 )
-scale = Vector2( 2.8, 2.8 )
+[node name="Spider" parent="Enemies" instance=ExtResource( 20 )]
+position = Vector2( 1469, 327 )
+moveDist = 300
 
 [node name="Blocks" type="TileMap" parent="."]
 scale = Vector2( 0.4, 0.4 )
@@ -374,17 +372,36 @@ cell_size = Vector2( 16, 16 )
 cell_quadrant_size = 10
 cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
 format = 1
-tile_data = PoolIntArray( 1179645, 3, 0, 1114129, 7, 0, 1769472, 9, 0, 1769489, 1073741826, 0, 2424832, 9, 0, 2424849, 1073741826, 0, 3080192, 9, 0, 3080209, 1073741826, 0, 3670016, 9, 0, 3670033, 9, 0, 3670053, 3, 0, 3670073, 3, 0, 3670093, 7, 0, 4325376, 9, 0, 4325394, 9, 0, 4325414, 9, 0, 4325433, 9, 0, 4325453, 2, 0, 4980736, 9, 0, 4980754, 9, 0, 4980774, 9, 0, 4980793, 9, 0, 4980813, 2, 0, 5636096, 9, 0, 5636115, 9, 0, 5636134, 9, 0, 5636153, 9, 0, 5636173, 2, 0 )
+tile_data = PoolIntArray( -851688, 9, 0, -851668, 9, 0, -851648, 9, 0, -851628, 9, 0, -851608, 9, 0, -327400, 9, 0, 327902, 10, 0, 327920, 9, 0, 327940, 9, 0, 327960, 9, 0, 1179645, 3, 0, 1114129, 7, 0, 1769472, 9, 0, 1769489, 1073741826, 0, 2424832, 9, 0, 2424849, 1073741826, 0, 2949419, 6, 0, 2949439, 3, 0, 2949472, 3, 0, 2949492, 3, 0, 2949512, 3, 0, 2949539, 3, 0, 2949559, 3, 0, 3080192, 9, 0, 3080209, 1073741826, 0, 3277139, 9, 0, 3604700, 6, 0, 3604720, 3, 0, 3604740, 3, 0, 3604760, 3, 0, 3604820, 9, 0, 3604840, 9, 0, 3670016, 9, 0, 3670033, 9, 0, 3670053, 3, 0, 3670073, 3, 0, 3670093, 7, 0, 4260061, 10, 0, 4325376, 9, 0, 4325394, 9, 0, 4325414, 9, 0, 4325433, 9, 0, 4325453, 2, 0, 4915421, 10, 0, 4980736, 9, 0, 4980754, 9, 0, 4980774, 9, 0, 4980793, 9, 0, 4980813, 2, 0, 5570781, 10, 0, 5636096, 9, 0, 5636115, 9, 0, 5636134, 9, 0, 5636153, 9, 0, 5636173, 2, 0 )
 
 [node name="Spikes" type="TileMap" parent="."]
 tile_set = SubResource( 43 )
 cell_size = Vector2( 32, 32 )
 format = 1
+tile_data = PoolIntArray( -196694, 1, 0, -196692, 1, 0, -196690, 1, 0, -196688, 1, 0, -196686, 1, 0, -196684, 1, 0, -196682, 1, 0, -196680, 1, 0, -196678, 1, 0, 1114132, 1, 0, 1114134, 1, 0, 1114136, 1, 0, 1114138, 1, 0, 1114140, 1, 0, 1114142, 1, 0, 1114144, 1, 0, 1114146, 1, 0, 1114148, 1, 0, 1114150, 1, 0, 1114152, 1, 0, 1114154, 1, 0 )
+
+[node name="Spikes2" type="TileMap" parent="."]
+rotation = 3.14159
+tile_set = SubResource( 43 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( -74, 1, 0, -72, 1, 0, -70, 1, 0, -68, 1, 0, -66, 1, 0, -64, 1, 0, -62, 1, 0, 1114132, 1, 0, 1114134, 1, 0, 1114136, 1, 0, 1114138, 1, 0, 1114140, 1, 0, 1114142, 1, 0, 1114144, 1, 0, 1114146, 1, 0, 1114148, 1, 0, 1114150, 1, 0, 1114152, 1, 0, 1114154, 1, 0 )
 
 [node name="FlagPolev2" parent="." instance=ExtResource( 19 )]
-position = Vector2( 1037, 399 )
+position = Vector2( 2551, 429 )
 
 [node name="Timer" type="Timer" parent="."]
 
-[connection signal="coin_collected" from="Coins/Coin2" to="Coin Counter" method="_on_coin_collected"]
+[node name="block" parent="." instance=ExtResource( 21 )]
+position = Vector2( 852, 389 )
+scale = Vector2( 0.25, 0.25 )
+
+[node name="block2" parent="." instance=ExtResource( 21 )]
+position = Vector2( 1161, 386 )
+scale = Vector2( 0.25, 0.25 )
+
+[node name="Spring" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2212, 310 )
+
+[connection signal="coin_collected" from="Coins/Coin1" to="Coin Counter" method="_on_coin_collected"]
 [connection signal="key_collected" from="Coins/key" to="Key Collect" method="_on_key_key_collected"]
