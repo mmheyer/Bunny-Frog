@@ -86,7 +86,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 115.714, 48.5714 )
+extents = Vector2( 122.857, 52.8571 )
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 118.571, 50 )
@@ -105,7 +105,6 @@ __meta__ = {
 }
 
 [node name="Group" type="Area2D" parent="."]
-scale = Vector2( 1, 1 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -114,7 +113,6 @@ __meta__ = {
 polygon = PoolVector2Array( 45.7143, -525.714, 45.7143, -502.857, 8.57143, -465.714, 45.7143, -425.714, 45.7143, -405.714, 0, -365.714, 42.8571, -328.571, 45.7143, -305.714, 8.57143, -262.857, 45.7143, -225.714, 45.7143, -208.571, 5.71429, -162.857, 45.7143, -122.857, 45.7143, -108.571, 8.57143, -68.5714, 65.7143, -20, 71.4286, -8.57143, 105.714, -45.7143, 120, -45.7143, 165.714, -5.71429, 205.714, -45.7143, 222.857, -45.7143, 265.714, -2.85714, 305.714, -45.7143, 320, -45.7143, 365.714, -5.71429, 405.714, -45.7143, 425.714, -45.7143, 465.714, -5.71429, 505.714, -45.7143, 522.857, -45.7143, 565.714, -5.71429, 565.714, 8.57143, 522.857, 45.7143, 505.714, 45.7143, 465.714, 5.71429, 422.857, 45.7143, 408.571, 45.7143, 365.714, 2.85714, 322.857, 45.7143, 308.571, 45.7143, 265.714, 8.57143, 222.857, 42.8571, 205.714, 45.7143, 165.714, 5.71429, 122.857, 45.7143, 105.714, 45.7143, 68.5714, 8.57143, 20, 65.7143, 45.7143, 102.857, 45.7143, 122.857, 5.71429, 168.571, 42.8571, 202.857, 45.7143, 225.714, 5.71429, 262.857, 45.7143, 305.714, 45.7143, 325.714, 5.71429, 365.714, 42.8571, 405.714, 45.7143, 425.714, 5.71429, 465.714, 45.7143, 502.857, 45.7143, 522.857, 5.71429, 565.714, -2.85714, 565.714, -45.7143, 522.857, -45.7143, 502.857, -5.71429, 462.857, -45.7143, 425.714, -45.7143, 408.571, -2.85714, 362.857, -45.7143, 325.714, -45.7143, 305.714, -5.71429, 265.714, -45.7143, 225.714, -45.7143, 205.714, -5.71429, 165.714, -45.7143, 125.714, -45.7143, 102.857, -11.4286, 68.5714, -68.5714, 20, -74.2857, 14.2857, -102.857, 45.7143, -122.857, 45.7143, -165.714, 5.71429, -205.714, 45.7143, -222.857, 45.7143, -265.714, 2.85714, -305.714, 45.7143, -322.857, 45.7143, -365.714, 2.85714, -405.714, 42.8571, -422.857, 45.7143, -462.857, 8.57143, -505.714, 45.7143, -522.857, 45.7143, -565.714, 2.85714, -565.714, -8.57143, -525.714, -45.7143, -505.714, -45.7143, -468.571, -8.57143, -460, -8.57143, -422.857, -45.7143, -405.714, -48.5714, -362.857, -5.71429, -325.714, -45.7143, -305.714, -45.7143, -265.714, -8.57143, -222.857, -48.5714, -208.571, -48.5714, -165.714, -5.71429, -122.857, -45.7143, -102.857, -45.7143, -71.4286, -11.4286, -17.1429, -71.4286, -45.7143, -105.714, -45.7143, -122.857, -5.71429, -165.714, -42.8571, -202.857, -45.7143, -225.714, -8.57143, -268.571, -45.7143, -305.714, -45.7143, -325.714, -5.71429, -365.714, -45.7143, -405.714, -45.7143, -422.857, -5.71429, -465.714, -45.7143, -505.714, -45.7143, -525.714, -2.85714, -562.857 )
 
 [node name="Spikes" type="Sprite" parent="Group"]
-scale = Vector2( 1, 1 )
 texture = ExtResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -122,8 +120,7 @@ playback_speed = 0.7
 anims/RESET = SubResource( 1 )
 anims/rotate = SubResource( 3 )
 
-[node name="KinematicBody2D" type="StaticBody2D" parent="."]
-scale = Vector2( 1, 1 )
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 __meta__ = {
 "_edit_group_": true
 }
@@ -135,7 +132,6 @@ texture = ExtResource( 4 )
 
 [node name="pivot" type="Node2D" parent="KinematicBody2D"]
 rotation = 1.74846e-07
-scale = Vector2( 1, 1 )
 
 [node name="Block1" type="Sprite" parent="KinematicBody2D/pivot"]
 position = Vector2( 0, -700 )
@@ -154,7 +150,8 @@ position = Vector2( -700, 0 )
 texture = ExtResource( 2 )
 
 [node name="Collision1" type="CollisionShape2D" parent="KinematicBody2D"]
-position = Vector2( 1.42857, -700 )
+position = Vector2( -5.71443, -704.286 )
+scale = Vector2( 1, 1 )
 shape = SubResource( 4 )
 
 [node name="Collision2" type="CollisionShape2D" parent="KinematicBody2D"]
@@ -170,6 +167,7 @@ position = Vector2( -4.28572, 701.429 )
 shape = SubResource( 7 )
 
 [node name="Area2D" type="Area2D" parent="KinematicBody2D"]
+visible = false
 
 [node name="Collision1" type="CollisionShape2D" parent="KinematicBody2D/Area2D"]
 position = Vector2( 0, -711.429 )
@@ -186,6 +184,3 @@ shape = SubResource( 6 )
 [node name="Collision4" type="CollisionShape2D" parent="KinematicBody2D/Area2D"]
 position = Vector2( 0, 685.714 )
 shape = SubResource( 7 )
-
-[connection signal="body_entered" from="Group" to="." method="_on_Group_body_entered"]
-[connection signal="body_entered" from="KinematicBody2D/Area2D" to="." method="_on_Area2D_body_entered"]

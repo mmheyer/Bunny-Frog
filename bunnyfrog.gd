@@ -55,15 +55,6 @@ func _physics_process(delta):
 			die()
 		elif not is_on_floor() and collision.collider.name == "Water":
 			die()
-			
-			
-	get_input()
-	velocity.y += gravity * delta
-	var snap = Vector2.DOWN * 16 if is_on_floor() else Vector2.ZERO
-	velocity = move_and_slide_with_snap(velocity, snap, Vector2.UP)
-	if Input.is_action_just_pressed("jump"):
-		if is_on_floor():
-			velocity.y = jumpforce
 	
 func die():
 	dying = true
@@ -122,9 +113,3 @@ func collision_jump():
 		coll_jump2.disabled = true
 		coll_jump3.disabled = false
 
-func get_input():
-	velocity.x = 0
-	if Input.is_action_pressed("walk_right"):
-		velocity.x += speed
-	if Input.is_action_pressed("walk_left"):
-		velocity.x -= speed
