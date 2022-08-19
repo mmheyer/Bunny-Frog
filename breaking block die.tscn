@@ -2,12 +2,31 @@
 
 [ext_resource path="res://ASSETS/blocks/breaking block_4.png" type="Texture" id=1]
 [ext_resource path="res://ASSETS/blocks/breaking block_3.png" type="Texture" id=2]
-[ext_resource path="res://breaking block.gd" type="Script" id=3]
 [ext_resource path="res://ASSETS/blocks/breaking block_2.png" type="Texture" id=4]
 [ext_resource path="res://ASSETS/blocks/breaking block_7.png" type="Texture" id=5]
 [ext_resource path="res://ASSETS/blocks/breaking block_6.png" type="Texture" id=6]
 [ext_resource path="res://ASSETS/blocks/breaking block_5.png" type="Texture" id=7]
 [ext_resource path="res://ASSETS/blocks/breaking block_1.png" type="Texture" id=8]
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends Area2D
+
+func _ready():
+	$AnimatedSprite.play(\"default\")
+
+func _on_block_body_entered(body):
+	var coll0 := get_node(str(\"StaticBody2D/Coll0\")) as CollisionPolygon2D
+	var coll1 := get_node(str(\"Coll1\")) as CollisionPolygon2D
+	if(body.name == \"bunnyfrog\" and $AnimatedSprite.get_animation() == \"default\"):
+		Music.breaking()
+		yield(get_tree().create_timer(0.4), \"timeout\")
+		$AnimatedSprite.play(\"break\")
+		yield(get_tree().create_timer(0.43), \"timeout\")
+		coll0.disabled = true
+		coll1.disabled = true
+		yield($AnimatedSprite, \"animation_finished\")
+		$AnimatedSprite.visible = not $AnimatedSprite.visible
+"
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -28,7 +47,7 @@ animations = [ {
 } ]
 
 [node name="block" type="Area2D"]
-script = ExtResource( 3 )
+script = SubResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
