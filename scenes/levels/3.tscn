@@ -5,7 +5,6 @@
 [ext_resource path="res://Spring.tscn" type="PackedScene" id=3]
 [ext_resource path="res://ASSETS/HUD & fonts/fonts/upheavtt.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://ASSETS/blocks/spikes.png" type="Texture" id=5]
-[ext_resource path="res://ASSETS/blocks/small spikes.png" type="Texture" id=6]
 [ext_resource path="res://ASSETS/background/backgroundfull.png" type="Texture" id=7]
 [ext_resource path="res://ASSETS/blocks/middle right block.png" type="Texture" id=8]
 [ext_resource path="res://ASSETS/egg/egg.png" type="Texture" id=9]
@@ -194,6 +193,10 @@ points = PoolVector2Array( 0, 50, 0, 50, 15, 0, 20, 0, 35, 35, 40, 0, 140, 0, 15
 [sub_resource type="ConvexPolygonShape2D" id=44]
 points = PoolVector2Array( 0, 50, 0, 40, 15, 0, 20, 0, 50, 0, 55, 5, 65, 35, 65, 50 )
 
+[sub_resource type="StreamTexture" id=53]
+flags = 4
+load_path = "res://.import/small spikes.png-32de6e541e509f22248ea7ed8792e72f.stex"
+
 [sub_resource type="TileSet" id=43]
 0/name = "spikes.png 0"
 0/texture = ExtResource( 5 )
@@ -217,7 +220,7 @@ points = PoolVector2Array( 0, 50, 0, 40, 15, 0, 20, 0, 50, 0, 55, 5, 65, 35, 65,
 } ]
 0/z_index = 0
 1/name = "small spikes.png 1"
-1/texture = ExtResource( 6 )
+1/texture = SubResource( 53 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 0, 0, 65, 50 )

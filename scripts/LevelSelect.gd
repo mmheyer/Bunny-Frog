@@ -5,6 +5,8 @@ export (int) var total_levels = 0
 export (NodePath) var grid
 
 func _ready():
+	print("level select")
+	$AudioStreamPlayer.stop()
 	AudioServer.set_bus_mute(AudioServer.get_bus_index("BGM"), false)
 	yield(get_tree().create_timer(0.5), "timeout")
 	$AudioStreamPlayer.play()

@@ -10,10 +10,12 @@ export var moveDist : int = 100
 onready var startX : float = position.x
 onready var targetX : float = position.x + moveDist
 var frog_on = false
+signal started
 
 func _physics_process (delta):
 	# move to the \"targetX\" position
 	if(frog_on == true):
+		emit_signal(\"started\")
 		position.x = move_to(position.x, targetX, speed * delta)
 	# if we're at our target, move in the other direction
 	if position.x == targetX:
@@ -41,6 +43,10 @@ func move_to (current, to, step):
 func _on_Area2D_body_entered(body):
 	if(body.name == \"bunnyfrog\"):
 		frog_on = true
+
+
+func _on_moving1_started():
+	frog_on = true
 "
 
 [node name="KinematicBody2D" type="KinematicBody2D"]

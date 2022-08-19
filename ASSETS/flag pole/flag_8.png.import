@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/small spikes.png-32de6e541e509f22248ea7ed8792e72f.stex"
+path="res://.import/flag_8.png-1444a0e060ceff9b4ef25229feb86a4a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/blocks/small spikes.png"
-dest_files=[ "res://.import/small spikes.png-32de6e541e509f22248ea7ed8792e72f.stex" ]
+source_file="res://ASSETS/flag pole/flag_8.png"
+dest_files=[ "res://.import/flag_8.png-1444a0e060ceff9b4ef25229feb86a4a.stex" ]
 
 [params]
 

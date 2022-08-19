@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://ASSETS/boss fights/gingerboss2.png" type="Texture" id=1]
 [ext_resource path="res://ASSETS/boss fights/gingerboss1.png" type="Texture" id=2]
 [ext_resource path="res://ASSETS/boss fights/gingerboss3.png" type="Texture" id=3]
 [ext_resource path="res://ASSETS/boss fights/gingerboss4.png" type="Texture" id=4]
+[ext_resource path="res://gingerboss.gd" type="Script" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -14,11 +15,13 @@ animations = [ {
 } ]
 
 [node name="Area2D" type="Area2D"]
+script = ExtResource( 5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-frame = 3
+frame = 1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-visible = false
 polygon = PoolVector2Array( -158, 47, -150, 0, -19, -125, -19, -182, 19, -233, 56, -244, 88, -243, 140, -217, 160, -182, 160, -142, 132, -80, 118, -82, 138, 33, 141, 79, 131, 88, 104, 88, 143, 240, 91, 249, -76, 251, -139, 138, -148, 97 )
+
+[connection signal="body_entered" from="." to="." method="_on_Area2D_body_entered"]

@@ -804,9 +804,6 @@ cell_size = Vector2( 8, 8 )
 format = 1
 tile_data = PoolIntArray( -2752214, 3, 0, -2752198, 4, 0, -2752182, 5, 0 )
 
-[node name="FlagPolev2" parent="." instance=ExtResource( 19 )]
-position = Vector2( 7105, -424 )
-
 [node name="Other Blocks" type="Node2D" parent="."]
 
 [node name="Moving Block 1" parent="Other Blocks" instance=ExtResource( 39 )]
@@ -855,6 +852,9 @@ moveDist = 600
 
 [node name="Timer" type="Timer" parent="."]
 
+[node name="FlagPolev2" parent="." instance=ExtResource( 19 )]
+position = Vector2( 7118, -387 )
+
 [connection signal="coin_collected" from="Coins/Coin2" to="Coin Counter" method="_on_coin_collected"]
 [connection signal="coin_collected" from="Coins/Coin3" to="Coin Counter" method="_on_coin_collected"]
 [connection signal="coin_collected" from="Coins/Coin4" to="Coin Counter" method="_on_coin_collected"]
@@ -865,4 +865,4 @@ moveDist = 600
 [connection signal="coin_collected" from="Coins/Coin9" to="Coin Counter" method="_on_coin_collected"]
 [connection signal="coin_collected" from="Coins/Coin10" to="Coin Counter" method="_on_coin_collected"]
 [connection signal="key_collected" from="Coins/key" to="Key Collect" method="_on_key_key_collected"]
-[connection signal="next_level" from="FlagPolev2" to="." method="_on_FlagPolev2_next_level"]
+[connection signal="next_level" from="FlagPolev2" to="." method="_on_FlagPolev2_next_level2"]
