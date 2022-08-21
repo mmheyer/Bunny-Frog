@@ -1,52 +1,46 @@
-<<<<<<< HEAD
-[gd_scene load_steps=54 format=2]
+[gd_scene load_steps=53 format=2]
 
-[ext_resource path="res://ASSETS/blocks/top right block.png" type="Texture" id=1]
+[ext_resource path="res://ASSETS/HUD & fonts/fonts/upheavtt.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://ASSETS/white.png" type="Texture" id=2]
-[ext_resource path="res://Spring.tscn" type="PackedScene" id=3]
-[ext_resource path="res://ASSETS/HUD & fonts/fonts/upheavtt.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://ASSETS/blocks/spikes.png" type="Texture" id=5]
-[ext_resource path="res://ASSETS/blocks/small spikes.png" type="Texture" id=6]
-[ext_resource path="res://ASSETS/background/backgroundfull.png" type="Texture" id=7]
-[ext_resource path="res://ASSETS/blocks/middle right block.png" type="Texture" id=8]
-[ext_resource path="res://ASSETS/egg/egg.png" type="Texture" id=9]
-[ext_resource path="res://HUD.gd" type="Script" id=10]
-[ext_resource path="res://Bee.tscn" type="PackedScene" id=11]
-[ext_resource path="res://ASSETS/blocks/middle block.png" type="Texture" id=12]
-[ext_resource path="res://ASSETS/blocks/top left block.png" type="Texture" id=13]
+[ext_resource path="res://Bee.tscn" type="PackedScene" id=3]
+[ext_resource path="res://breaking block.tscn" type="PackedScene" id=4]
+[ext_resource path="res://bunnyfrog.tscn" type="PackedScene" id=5]
+[ext_resource path="res://coin.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Snake.tscn" type="PackedScene" id=7]
+[ext_resource path="res://SpikePillar.tscn" type="PackedScene" id=8]
+[ext_resource path="res://ASSETS/flag pole/FlagPolev2.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Spring.tscn" type="PackedScene" id=10]
+[ext_resource path="res://key.tscn" type="PackedScene" id=11]
+[ext_resource path="res://sideways moving block 2.tscn" type="PackedScene" id=12]
+[ext_resource path="res://GUI.tscn" type="PackedScene" id=13]
 [ext_resource path="res://ASSETS/blocks/middle left block.png" type="Texture" id=14]
-[ext_resource path="res://ASSETS/blocks/middle top block.png" type="Texture" id=15]
-[ext_resource path="res://bunnyfrog.tscn" type="PackedScene" id=16]
-[ext_resource path="res://coin.tscn" type="PackedScene" id=17]
-[ext_resource path="res://GUI.tscn" type="PackedScene" id=18]
-[ext_resource path="res://ASSETS/flag pole/FlagPolev2.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Snake.tscn" type="PackedScene" id=20]
-[ext_resource path="res://SpikePillar.tscn" type="PackedScene" id=21]
-[ext_resource path="res://sideways moving block 2.tscn" type="PackedScene" id=22]
-[ext_resource path="res://key.tscn" type="PackedScene" id=23]
-[ext_resource path="res://breaking block.tscn" type="PackedScene" id=24]
+[ext_resource path="res://ASSETS/egg/egg.png" type="Texture" id=15]
+[ext_resource path="res://ASSETS/blocks/top left block.png" type="Texture" id=16]
+[ext_resource path="res://ASSETS/blocks/middle top block.png" type="Texture" id=17]
+[ext_resource path="res://ASSETS/blocks/middle right block.png" type="Texture" id=18]
+[ext_resource path="res://ASSETS/blocks/middle block.png" type="Texture" id=19]
+[ext_resource path="res://ASSETS/background/backgroundfull.png" type="Texture" id=20]
+[ext_resource path="res://HUD.gd" type="Script" id=21]
+[ext_resource path="res://ASSETS/blocks/spikes.png" type="Texture" id=22]
+[ext_resource path="res://ASSETS/blocks/top right block.png" type="Texture" id=23]
+[ext_resource path="res://scenes/levels/Key Collect.gd" type="Script" id=24]
 [ext_resource path="res://ASSETS/egg/key.png" type="Texture" id=25]
-[ext_resource path="res://scenes/levels/Key Collect.gd" type="Script" id=26]
-[ext_resource path="res://ASSETS/water/water_anim_left.tres" type="Texture" id=27]
-[ext_resource path="res://ASSETS/water/water_anim_right.tres" type="Texture" id=28]
-[ext_resource path="res://ASSETS/water/water_anim_middle.tres" type="Texture" id=29]
-[ext_resource path="res://ASSETS/water/water_anim_left2.tres" type="Texture" id=30]
-[ext_resource path="res://ASSETS/water/water_anim_middle2.tres" type="Texture" id=31]
-[ext_resource path="res://ASSETS/water/water_anim_right2.tres" type="Texture" id=32]
+[ext_resource path="res://ASSETS/water/water_anim_left.tres" type="Texture" id=26]
+[ext_resource path="res://ASSETS/water/water_anim_middle2.tres" type="Texture" id=27]
+[ext_resource path="res://ASSETS/water/water_anim_middle.tres" type="Texture" id=28]
+[ext_resource path="res://ASSETS/water/water_anim_left2.tres" type="Texture" id=29]
+[ext_resource path="res://ASSETS/water/water_anim_right.tres" type="Texture" id=30]
+[ext_resource path="res://ASSETS/water/water_anim_right2.tres" type="Texture" id=31]
 
 [sub_resource type="GDScript" id=45]
 script/source = "extends Node2D
 
 func _ready():
 	AudioServer.set_bus_mute(AudioServer.get_bus_index(\"BGM\"), false)
-	if(not Music.is_playing):
-		$Timer.wait_time = 0.6
-		$Timer.start()
-		yield($Timer, \"timeout\")
-		Music.play_music()
-
-func _on_FlagPolev2_next_level():
-	Transition.fade_soundcont(\"res://scenes/levels/4.tscn\")
+	$Timer.wait_time = 0.6
+	$Timer.start()
+	yield($Timer, \"timeout\")
+	Music.play_music()
 "
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -64,7 +58,7 @@ corner_radius_bottom_left = 20
 
 [sub_resource type="DynamicFont" id=13]
 size = 40
-font_data = ExtResource( 4 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="ConvexPolygonShape2D" id=41]
 points = PoolVector2Array( 310, 160, 0, 160, 0, 0, 310, 0 )
@@ -86,7 +80,7 @@ points = PoolVector2Array( 320, 160, 0, 160, 0, 0, 320, 0 )
 
 [sub_resource type="TileSet" id=5]
 2/name = "middle right block.png 2"
-2/texture = ExtResource( 8 )
+2/texture = ExtResource( 18 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 0, 0, 320, 160 )
@@ -107,7 +101,7 @@ points = PoolVector2Array( 320, 160, 0, 160, 0, 0, 320, 0 )
 } ]
 2/z_index = 0
 3/name = "middle top block.png 3"
-3/texture = ExtResource( 15 )
+3/texture = ExtResource( 17 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
 3/region = Rect2( 0, 0, 320, 160 )
@@ -128,7 +122,7 @@ points = PoolVector2Array( 320, 160, 0, 160, 0, 0, 320, 0 )
 } ]
 3/z_index = 0
 6/name = "top left block.png 6"
-6/texture = ExtResource( 13 )
+6/texture = ExtResource( 16 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
 6/region = Rect2( 0, 0, 320, 160 )
@@ -149,7 +143,7 @@ points = PoolVector2Array( 320, 160, 0, 160, 0, 0, 320, 0 )
 } ]
 6/z_index = 0
 7/name = "top right block.png 7"
-7/texture = ExtResource( 1 )
+7/texture = ExtResource( 23 )
 7/tex_offset = Vector2( 0, 0 )
 7/modulate = Color( 1, 1, 1, 1 )
 7/region = Rect2( 0, 0, 336, 160 )
@@ -170,7 +164,7 @@ points = PoolVector2Array( 320, 160, 0, 160, 0, 0, 320, 0 )
 } ]
 7/z_index = 0
 9/name = "middle block.png 9"
-9/texture = ExtResource( 12 )
+9/texture = ExtResource( 19 )
 9/tex_offset = Vector2( 0, 0 )
 9/modulate = Color( 1, 1, 1, 1 )
 9/region = Rect2( 0, 0, 320, 160 )
@@ -220,7 +214,7 @@ points = PoolVector2Array( 0, 50, 0, 40, 15, 0, 20, 0, 50, 0, 55, 5, 65, 35, 65,
 
 [sub_resource type="TileSet" id=43]
 0/name = "spikes.png 0"
-0/texture = ExtResource( 5 )
+0/texture = ExtResource( 22 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 155, 50 )
@@ -241,7 +235,6 @@ points = PoolVector2Array( 0, 50, 0, 40, 15, 0, 20, 0, 50, 0, 55, 5, 65, 35, 65,
 } ]
 0/z_index = 0
 1/name = "small spikes.png 1"
-1/texture = ExtResource( 6 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 0, 0, 65, 50 )
@@ -262,24 +255,24 @@ points = PoolVector2Array( 0, 50, 0, 40, 15, 0, 20, 0, 50, 0, 55, 5, 65, 35, 65,
 } ]
 1/z_index = 0
 
-[sub_resource type="ConvexPolygonShape2D" id=46]
+[sub_resource type="ConvexPolygonShape2D" id=56]
 points = PoolVector2Array( 128, 72, 0, 72, 0, 0, 128, 0 )
 
-[sub_resource type="ConvexPolygonShape2D" id=47]
+[sub_resource type="ConvexPolygonShape2D" id=57]
 points = PoolVector2Array( 112, 72, 0, 72, 0, 0, 112, 0 )
 
-[sub_resource type="ConvexPolygonShape2D" id=52]
+[sub_resource type="ConvexPolygonShape2D" id=58]
 points = PoolVector2Array( 128, 72, 0, 72, 0, 0, 128, 0 )
 
-[sub_resource type="ConvexPolygonShape2D" id=53]
+[sub_resource type="ConvexPolygonShape2D" id=59]
 points = PoolVector2Array( 128, 72, 0, 72, 0, 0, 128, 0 )
 
-[sub_resource type="ConvexPolygonShape2D" id=54]
+[sub_resource type="ConvexPolygonShape2D" id=60]
 points = PoolVector2Array( 112, 72, 0, 72, 0, 0, 112, 0 )
 
 [sub_resource type="TileSet" id=55]
 0/name = "water_anim_left.tres 0"
-0/texture = ExtResource( 27 )
+0/texture = ExtResource( 26 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 128, 72 )
@@ -288,19 +281,19 @@ points = PoolVector2Array( 112, 72, 0, 72, 0, 0, 112, 0 )
 0/navigation_offset = Vector2( 0, 0 )
 0/shape_offset = Vector2( 0, 0 )
 0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 46 )
+0/shape = SubResource( 56 )
 0/shape_one_way = false
 0/shape_one_way_margin = 1.0
 0/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 46 ),
+"shape": SubResource( 56 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
 1/name = "water_anim_middle.tres 1"
-1/texture = ExtResource( 29 )
+1/texture = ExtResource( 28 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 0, 0, 128, 72 )
@@ -314,7 +307,7 @@ points = PoolVector2Array( 112, 72, 0, 72, 0, 0, 112, 0 )
 1/shapes = [  ]
 1/z_index = 0
 2/name = "water_anim_right.tres 2"
-2/texture = ExtResource( 28 )
+2/texture = ExtResource( 30 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 0, 0, 112, 72 )
@@ -323,19 +316,19 @@ points = PoolVector2Array( 112, 72, 0, 72, 0, 0, 112, 0 )
 2/navigation_offset = Vector2( 0, 0 )
 2/shape_offset = Vector2( 0, 0 )
 2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-2/shape = SubResource( 47 )
+2/shape = SubResource( 57 )
 2/shape_one_way = false
 2/shape_one_way_margin = 1.0
 2/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 47 ),
+"shape": SubResource( 57 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 2/z_index = 0
 3/name = "water_anim_left2.tres 3"
-3/texture = ExtResource( 30 )
+3/texture = ExtResource( 29 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
 3/region = Rect2( 0, 0, 128, 72 )
@@ -344,19 +337,19 @@ points = PoolVector2Array( 112, 72, 0, 72, 0, 0, 112, 0 )
 3/navigation_offset = Vector2( 0, 0 )
 3/shape_offset = Vector2( 0, 0 )
 3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-3/shape = SubResource( 52 )
+3/shape = SubResource( 58 )
 3/shape_one_way = false
 3/shape_one_way_margin = 1.0
 3/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 52 ),
+"shape": SubResource( 58 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 3/z_index = 0
 4/name = "water_anim_middle2.tres 4"
-4/texture = ExtResource( 31 )
+4/texture = ExtResource( 27 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
 4/region = Rect2( 0, 0, 128, 72 )
@@ -365,19 +358,19 @@ points = PoolVector2Array( 112, 72, 0, 72, 0, 0, 112, 0 )
 4/navigation_offset = Vector2( 0, 0 )
 4/shape_offset = Vector2( 0, 0 )
 4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-4/shape = SubResource( 53 )
+4/shape = SubResource( 59 )
 4/shape_one_way = false
 4/shape_one_way_margin = 1.0
 4/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 53 ),
+"shape": SubResource( 59 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 4/z_index = 0
 5/name = "water_anim_right2.tres 5"
-5/texture = ExtResource( 32 )
+5/texture = ExtResource( 31 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
 5/region = Rect2( 0, 0, 112, 72 )
@@ -386,14 +379,14 @@ points = PoolVector2Array( 112, 72, 0, 72, 0, 0, 112, 0 )
 5/navigation_offset = Vector2( 0, 0 )
 5/shape_offset = Vector2( 0, 0 )
 5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-5/shape = SubResource( 54 )
+5/shape = SubResource( 60 )
 5/shape_one_way = false
 5/shape_one_way_margin = 1.0
 5/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 54 ),
+"shape": SubResource( 60 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 5/z_index = 0
@@ -404,7 +397,7 @@ __meta__ = {
 "_edit_horizontal_guides_": [  ]
 }
 
-[node name="bunnyfrog" parent="." instance=ExtResource( 16 )]
+[node name="bunnyfrog" parent="." instance=ExtResource( 5 )]
 position = Vector2( 450, 340 )
 scale = Vector2( 0.7, 0.7 )
 
@@ -430,7 +423,7 @@ drag_margin_top = 0.46
 light_mask = 7
 position = Vector2( 6088, 10 )
 scale = Vector2( 0.991, 1.026 )
-texture = ExtResource( 7 )
+texture = ExtResource( 20 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 12288, 1200 )
 
@@ -468,7 +461,7 @@ position = Vector2( 5000, 8 )
 shape = SubResource( 26 )
 
 [node name="Coin Counter" type="CanvasLayer" parent="."]
-script = ExtResource( 10 )
+script = ExtResource( 21 )
 
 [node name="Panel" type="Panel" parent="Coin Counter"]
 margin_left = 43.0
@@ -482,7 +475,7 @@ margin_left = 1.0
 margin_top = -12.0
 margin_right = 124.0
 margin_bottom = 111.0
-texture = ExtResource( 9 )
+texture = ExtResource( 15 )
 expand = true
 
 [node name="Coins" type="Label" parent="Coin Counter"]
@@ -495,7 +488,7 @@ custom_fonts/font = SubResource( 13 )
 text = "##"
 
 [node name="Key Collect" type="CanvasLayer" parent="."]
-script = ExtResource( 26 )
+script = ExtResource( 24 )
 
 [node name="KeyImg" type="TextureRect" parent="Key Collect"]
 margin_left = 210.0
@@ -509,115 +502,115 @@ flip_v = true
 
 [node name="Coins" type="Node2D" parent="."]
 
-[node name="Coin3" parent="Coins" instance=ExtResource( 17 )]
+[node name="Coin3" parent="Coins" instance=ExtResource( 6 )]
 position = Vector2( 2181, 330 )
 scale = Vector2( 0.8, 0.8 )
 
-[node name="Coin4" parent="Coins" instance=ExtResource( 17 )]
+[node name="Coin4" parent="Coins" instance=ExtResource( 6 )]
 position = Vector2( 2661, 331 )
 scale = Vector2( 0.8, 0.8 )
 
-[node name="Coin5" parent="Coins" instance=ExtResource( 17 )]
+[node name="Coin5" parent="Coins" instance=ExtResource( 6 )]
 position = Vector2( 3107, 334 )
 scale = Vector2( 0.8, 0.8 )
 
-[node name="Coin6" parent="Coins" instance=ExtResource( 17 )]
+[node name="Coin6" parent="Coins" instance=ExtResource( 6 )]
 position = Vector2( 3383, 236 )
 scale = Vector2( 0.8, 0.8 )
 
-[node name="Coin7" parent="Coins" instance=ExtResource( 17 )]
+[node name="Coin7" parent="Coins" instance=ExtResource( 6 )]
 position = Vector2( 3632, 326 )
 scale = Vector2( 0.8, 0.8 )
 
-[node name="Coin8" parent="Coins" instance=ExtResource( 17 )]
+[node name="Coin8" parent="Coins" instance=ExtResource( 6 )]
 position = Vector2( 4063, 325 )
 scale = Vector2( 0.8, 0.8 )
 
-[node name="Coin9" parent="Coins" instance=ExtResource( 17 )]
+[node name="Coin9" parent="Coins" instance=ExtResource( 6 )]
 position = Vector2( 4266, 325 )
 scale = Vector2( 0.8, 0.8 )
 
-[node name="Coin10" parent="Coins" instance=ExtResource( 17 )]
+[node name="Coin10" parent="Coins" instance=ExtResource( 6 )]
 position = Vector2( 5144, 515 )
 scale = Vector2( 0.8, 0.8 )
 
-[node name="Coin11" parent="Coins" instance=ExtResource( 17 )]
+[node name="Coin11" parent="Coins" instance=ExtResource( 6 )]
 position = Vector2( 5362, 515 )
 scale = Vector2( 0.8, 0.8 )
 
-[node name="Coin12" parent="Coins" instance=ExtResource( 17 )]
+[node name="Coin12" parent="Coins" instance=ExtResource( 6 )]
 position = Vector2( 5576, 515 )
 scale = Vector2( 0.8, 0.8 )
 
-[node name="Coin13" parent="Coins" instance=ExtResource( 17 )]
+[node name="Coin13" parent="Coins" instance=ExtResource( 6 )]
 position = Vector2( 5804, 515 )
 scale = Vector2( 0.8, 0.8 )
 
-[node name="key" parent="Coins" instance=ExtResource( 23 )]
+[node name="key" parent="Coins" instance=ExtResource( 11 )]
 position = Vector2( 4352, 505 )
 scale = Vector2( 0.6, 0.6 )
 
-[node name="GUI" parent="." instance=ExtResource( 18 )]
+[node name="GUI" parent="." instance=ExtResource( 13 )]
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="Node2D" parent="Enemies" instance=ExtResource( 11 )]
+[node name="Node2D" parent="Enemies" instance=ExtResource( 3 )]
 position = Vector2( 1330, 26 )
 
-[node name="Area2D" parent="Enemies" instance=ExtResource( 20 )]
+[node name="Area2D" parent="Enemies" instance=ExtResource( 7 )]
 position = Vector2( 800, 321 )
 scale = Vector2( 2.5, 2.5 )
 
-[node name="SpikePillar" parent="Enemies" instance=ExtResource( 21 )]
+[node name="SpikePillar" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 1880, 481 )
 
-[node name="SpikePillar4" parent="Enemies" instance=ExtResource( 21 )]
+[node name="SpikePillar4" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 2963, 496 )
 
-[node name="SpikePillar2" parent="Enemies" instance=ExtResource( 21 )]
+[node name="SpikePillar2" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 1880, -22 )
 rotation = 3.14159
 moveDist = -200
 
-[node name="SpikePillar3" parent="Enemies" instance=ExtResource( 21 )]
+[node name="SpikePillar3" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 2963, -6 )
 rotation = 3.14159
 moveDist = -200
 
-[node name="SpikePillar5" parent="Enemies" instance=ExtResource( 21 )]
+[node name="SpikePillar5" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 3964, 0 )
 rotation = 3.14159
 moveDist = 96
 
-[node name="SpikePillar6" parent="Enemies" instance=ExtResource( 21 )]
+[node name="SpikePillar6" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 4163, -1 )
 rotation = 3.14159
 moveDist = 96
 
-[node name="SpikePillar7" parent="Enemies" instance=ExtResource( 21 )]
+[node name="SpikePillar7" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 4354, -2 )
 rotation = 3.14159
 moveDist = 96
 
-[node name="SpikePillar8" parent="Enemies" instance=ExtResource( 21 )]
+[node name="SpikePillar8" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 5035, 287 )
 rotation = 3.14159
 moveDist = -100
 
-[node name="SpikePillar10" parent="Enemies" instance=ExtResource( 21 )]
+[node name="SpikePillar10" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 5457, 286 )
 rotation = 3.14159
 moveDist = -100
 
-[node name="SpikePillar9" parent="Enemies" instance=ExtResource( 21 )]
+[node name="SpikePillar9" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 5245, 789 )
 moveDist = -100
 
-[node name="SpikePillar11" parent="Enemies" instance=ExtResource( 21 )]
+[node name="SpikePillar11" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 5669, 789 )
 moveDist = -100
 
-[node name="SpikePillar12" parent="Enemies" instance=ExtResource( 21 )]
+[node name="SpikePillar12" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 6020, 620 )
 moveDist = -100
 
@@ -636,40 +629,40 @@ cell_size = Vector2( 32, 32 )
 format = 1
 tile_data = PoolIntArray( 1114167, 0, 0, 1114171, 0, 0, 1114201, 0, 0 )
 
-[node name="FlagPolev2" parent="." instance=ExtResource( 19 )]
-position = Vector2( 6422, 249 )
+[node name="Water" type="TileMap" parent="."]
+tile_set = SubResource( 55 )
+cell_size = Vector2( 8, 8 )
+format = 1
+tile_data = PoolIntArray( 4325640, 3, 0, 4325656, 4, 0, 4325672, 4, 0, 4325688, 4, 0, 4325704, 2, 0, 4325751, 3, 0, 4325767, 4, 0, 4325783, 4, 0, 4325799, 4, 0, 4325815, 4, 0, 4325831, 5, 0 )
+
+[node name="FlagPolev2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 6421, 292 )
 
 [node name="Timer" type="Timer" parent="."]
 
-[node name="KinematicBody2D" parent="." instance=ExtResource( 22 )]
+[node name="KinematicBody2D" parent="." instance=ExtResource( 12 )]
 position = Vector2( 2183, 382 )
 scale = Vector2( 0.5, 0.5 )
 speed = 150
 moveDist = 475
 
-[node name="block" parent="." instance=ExtResource( 24 )]
+[node name="block" parent="." instance=ExtResource( 4 )]
 position = Vector2( 3106, 386 )
 scale = Vector2( 0.25, 0.25 )
 
-[node name="block2" parent="." instance=ExtResource( 24 )]
+[node name="block2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 3382, 288 )
 scale = Vector2( 0.25, 0.25 )
 
-[node name="block3" parent="." instance=ExtResource( 24 )]
+[node name="block3" parent="." instance=ExtResource( 4 )]
 position = Vector2( 3634, 377 )
 scale = Vector2( 0.25, 0.25 )
 
-[node name="block5" parent="." instance=ExtResource( 24 )]
+[node name="block5" parent="." instance=ExtResource( 4 )]
 position = Vector2( 4357, 378 )
 scale = Vector2( 0.22, 0.27 )
 
-[node name="Water" type="TileMap" parent="."]
-tile_set = SubResource( 55 )
-cell_size = Vector2( 8, 8 )
-format = 1
-tile_data = PoolIntArray( -2752214, 3, 0, -2752198, 4, 0, -2752182, 5, 0, 4325640, 3, 0, 4325656, 4, 0, 4325672, 4, 0, 4325688, 4, 0, 4325704, 2, 0, 4325751, 3, 0, 4325767, 4, 0, 4325783, 4, 0, 4325799, 4, 0, 4325815, 4, 0, 4325831, 5, 0 )
-
-[node name="Spring" parent="." instance=ExtResource( 3 )]
+[node name="Spring" parent="." instance=ExtResource( 10 )]
 position = Vector2( 5911, 526 )
 
 [connection signal="coin_collected" from="Coins/Coin3" to="Coin Counter" method="_on_coin_collected"]
@@ -684,694 +677,3 @@ position = Vector2( 5911, 526 )
 [connection signal="coin_collected" from="Coins/Coin12" to="Coin Counter" method="_on_coin_collected"]
 [connection signal="coin_collected" from="Coins/Coin13" to="Coin Counter" method="_on_coin_collected"]
 [connection signal="key_collected" from="Coins/key" to="Key Collect" method="_on_key_key_collected"]
-[connection signal="next_level" from="FlagPolev2" to="." method="_on_FlagPolev2_next_level"]
-=======
-[gd_scene load_steps=54 format=2]
-
-[ext_resource path="res://ASSETS/blocks/top right block.png" type="Texture" id=1]
-[ext_resource path="res://ASSETS/white.png" type="Texture" id=2]
-[ext_resource path="res://Spring.tscn" type="PackedScene" id=3]
-[ext_resource path="res://ASSETS/HUD & fonts/fonts/upheavtt.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://ASSETS/blocks/spikes.png" type="Texture" id=5]
-[ext_resource path="res://ASSETS/background/backgroundfull.png" type="Texture" id=7]
-[ext_resource path="res://ASSETS/blocks/middle right block.png" type="Texture" id=8]
-[ext_resource path="res://ASSETS/egg/egg.png" type="Texture" id=9]
-[ext_resource path="res://HUD.gd" type="Script" id=10]
-[ext_resource path="res://Bee.tscn" type="PackedScene" id=11]
-[ext_resource path="res://ASSETS/blocks/middle block.png" type="Texture" id=12]
-[ext_resource path="res://ASSETS/blocks/top left block.png" type="Texture" id=13]
-[ext_resource path="res://ASSETS/blocks/middle left block.png" type="Texture" id=14]
-[ext_resource path="res://ASSETS/blocks/middle top block.png" type="Texture" id=15]
-[ext_resource path="res://bunnyfrog.tscn" type="PackedScene" id=16]
-[ext_resource path="res://coin.tscn" type="PackedScene" id=17]
-[ext_resource path="res://GUI.tscn" type="PackedScene" id=18]
-[ext_resource path="res://ASSETS/flag pole/FlagPolev2.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Snake.tscn" type="PackedScene" id=20]
-[ext_resource path="res://SpikePillar.tscn" type="PackedScene" id=21]
-[ext_resource path="res://sideways moving block 2.tscn" type="PackedScene" id=22]
-[ext_resource path="res://key.tscn" type="PackedScene" id=23]
-[ext_resource path="res://breaking block.tscn" type="PackedScene" id=24]
-[ext_resource path="res://ASSETS/egg/key.png" type="Texture" id=25]
-[ext_resource path="res://scenes/levels/Key Collect.gd" type="Script" id=26]
-[ext_resource path="res://ASSETS/water/water_anim_left.tres" type="Texture" id=27]
-[ext_resource path="res://ASSETS/water/water_anim_right.tres" type="Texture" id=28]
-[ext_resource path="res://ASSETS/water/water_anim_middle.tres" type="Texture" id=29]
-[ext_resource path="res://ASSETS/water/water_anim_left2.tres" type="Texture" id=30]
-[ext_resource path="res://ASSETS/water/water_anim_middle2.tres" type="Texture" id=31]
-[ext_resource path="res://ASSETS/water/water_anim_right2.tres" type="Texture" id=32]
-
-[sub_resource type="GDScript" id=57]
-script/source = "extends Node2D
-
-func _ready():
-	AudioServer.set_bus_mute(AudioServer.get_bus_index(\"BGM\"), false)
-	if(not Music.is_playing):
-		$Timer.wait_time = 0.6
-		$Timer.start()
-		yield($Timer, \"timeout\")
-		Music.play_music()
-
-func _on_FlagPolev2_next_level():
-	Transition.fade_soundcont(\"res://scenes/levels/4.tscn\")
-"
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 511.5, 26 )
-
-[sub_resource type="RectangleShape2D" id=26]
-extents = Vector2( 43, 678 )
-
-[sub_resource type="StyleBoxFlat" id=11]
-bg_color = Color( 0, 0, 0, 0.352941 )
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="DynamicFont" id=13]
-size = 40
-font_data = ExtResource( 4 )
-
-[sub_resource type="ConvexPolygonShape2D" id=41]
-points = PoolVector2Array( 310, 160, 0, 160, 0, 0, 310, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=31]
-points = PoolVector2Array( 320, 160, 0, 160, 0, 0, 320, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=32]
-points = PoolVector2Array( 320, 160, 0, 160, 0, 0, 320, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=34]
-points = PoolVector2Array( 0, 16, 16, 0, 320, 0, 320, 160, 16, 160, 16, 80, 0, 64 )
-
-[sub_resource type="ConvexPolygonShape2D" id=35]
-points = PoolVector2Array( 0, 0, 0, 0, 320, 0, 336, 16, 336, 64, 320, 96, 320, 160, 0, 160 )
-
-[sub_resource type="ConvexPolygonShape2D" id=37]
-points = PoolVector2Array( 320, 160, 0, 160, 0, 0, 320, 0 )
-
-[sub_resource type="TileSet" id=5]
-2/name = "middle right block.png 2"
-2/texture = ExtResource( 8 )
-2/tex_offset = Vector2( 0, 0 )
-2/modulate = Color( 1, 1, 1, 1 )
-2/region = Rect2( 0, 0, 320, 160 )
-2/tile_mode = 0
-2/occluder_offset = Vector2( 0, 0 )
-2/navigation_offset = Vector2( 0, 0 )
-2/shape_offset = Vector2( 0, 0 )
-2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-2/shape = SubResource( 31 )
-2/shape_one_way = false
-2/shape_one_way_margin = 1.0
-2/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 31 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-2/z_index = 0
-3/name = "middle top block.png 3"
-3/texture = ExtResource( 15 )
-3/tex_offset = Vector2( 0, 0 )
-3/modulate = Color( 1, 1, 1, 1 )
-3/region = Rect2( 0, 0, 320, 160 )
-3/tile_mode = 0
-3/occluder_offset = Vector2( 0, 0 )
-3/navigation_offset = Vector2( 0, 0 )
-3/shape_offset = Vector2( 0, 0 )
-3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-3/shape = SubResource( 32 )
-3/shape_one_way = false
-3/shape_one_way_margin = 1.0
-3/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 32 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-3/z_index = 0
-6/name = "top left block.png 6"
-6/texture = ExtResource( 13 )
-6/tex_offset = Vector2( 0, 0 )
-6/modulate = Color( 1, 1, 1, 1 )
-6/region = Rect2( 0, 0, 320, 160 )
-6/tile_mode = 0
-6/occluder_offset = Vector2( 0, 0 )
-6/navigation_offset = Vector2( 0, 0 )
-6/shape_offset = Vector2( 0, 0 )
-6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-6/shape = SubResource( 34 )
-6/shape_one_way = false
-6/shape_one_way_margin = 1.0
-6/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 34 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-6/z_index = 0
-7/name = "top right block.png 7"
-7/texture = ExtResource( 1 )
-7/tex_offset = Vector2( 0, 0 )
-7/modulate = Color( 1, 1, 1, 1 )
-7/region = Rect2( 0, 0, 336, 160 )
-7/tile_mode = 0
-7/occluder_offset = Vector2( 0, 0 )
-7/navigation_offset = Vector2( 0, 0 )
-7/shape_offset = Vector2( 0, 0 )
-7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-7/shape = SubResource( 35 )
-7/shape_one_way = false
-7/shape_one_way_margin = 1.0
-7/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 35 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-7/z_index = 0
-9/name = "middle block.png 9"
-9/texture = ExtResource( 12 )
-9/tex_offset = Vector2( 0, 0 )
-9/modulate = Color( 1, 1, 1, 1 )
-9/region = Rect2( 0, 0, 320, 160 )
-9/tile_mode = 0
-9/occluder_offset = Vector2( 0, 0 )
-9/navigation_offset = Vector2( 0, 0 )
-9/shape_offset = Vector2( 0, 0 )
-9/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-9/shape = SubResource( 37 )
-9/shape_one_way = false
-9/shape_one_way_margin = 1.0
-9/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 37 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-9/z_index = 0
-10/name = "middle left block.png 10"
-10/texture = ExtResource( 14 )
-10/tex_offset = Vector2( 0, 0 )
-10/modulate = Color( 1, 1, 1, 1 )
-10/region = Rect2( 0, 0, 310, 160 )
-10/tile_mode = 0
-10/occluder_offset = Vector2( 0, 0 )
-10/navigation_offset = Vector2( 0, 0 )
-10/shape_offset = Vector2( 0, 0 )
-10/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-10/shape = SubResource( 41 )
-10/shape_one_way = false
-10/shape_one_way_margin = 1.0
-10/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 41 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-10/z_index = 0
-
-[sub_resource type="ConvexPolygonShape2D" id=42]
-points = PoolVector2Array( 0, 50, 0, 50, 15, 0, 20, 0, 35, 35, 40, 0, 140, 0, 155, 35, 155, 50 )
-
-[sub_resource type="ConvexPolygonShape2D" id=44]
-points = PoolVector2Array( 0, 50, 0, 40, 15, 0, 20, 0, 50, 0, 55, 5, 65, 35, 65, 50 )
-
-[sub_resource type="StreamTexture" id=53]
-flags = 4
-
-[sub_resource type="TileSet" id=43]
-0/name = "spikes.png 0"
-0/texture = ExtResource( 5 )
-0/tex_offset = Vector2( 0, 0 )
-0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 155, 50 )
-0/tile_mode = 0
-0/occluder_offset = Vector2( 0, 0 )
-0/navigation_offset = Vector2( 0, 0 )
-0/shape_offset = Vector2( 0, 0 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 42 )
-0/shape_one_way = false
-0/shape_one_way_margin = 1.0
-0/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 42 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-0/z_index = 0
-1/name = "small spikes.png 1"
-1/texture = SubResource( 53 )
-1/tex_offset = Vector2( 0, 0 )
-1/modulate = Color( 1, 1, 1, 1 )
-1/region = Rect2( 0, 0, 65, 50 )
-1/tile_mode = 0
-1/occluder_offset = Vector2( 0, 0 )
-1/navigation_offset = Vector2( 0, 0 )
-1/shape_offset = Vector2( 0, 0 )
-1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-1/shape = SubResource( 44 )
-1/shape_one_way = false
-1/shape_one_way_margin = 1.0
-1/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 44 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-1/z_index = 0
-
-[sub_resource type="ConvexPolygonShape2D" id=46]
-points = PoolVector2Array( 128, 72, 0, 72, 0, 0, 128, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=47]
-points = PoolVector2Array( 112, 72, 0, 72, 0, 0, 112, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=52]
-points = PoolVector2Array( 128, 72, 0, 72, 0, 0, 128, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=56]
-points = PoolVector2Array( 128, 72, 0, 72, 0, 0, 128, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=54]
-points = PoolVector2Array( 112, 72, 0, 72, 0, 0, 112, 0 )
-
-[sub_resource type="TileSet" id=55]
-0/name = "water_anim_left.tres 0"
-0/texture = ExtResource( 27 )
-0/tex_offset = Vector2( 0, 0 )
-0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 128, 72 )
-0/tile_mode = 0
-0/occluder_offset = Vector2( 0, 0 )
-0/navigation_offset = Vector2( 0, 0 )
-0/shape_offset = Vector2( 0, 0 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 46 )
-0/shape_one_way = false
-0/shape_one_way_margin = 1.0
-0/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 46 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-0/z_index = 0
-1/name = "water_anim_middle.tres 1"
-1/texture = ExtResource( 29 )
-1/tex_offset = Vector2( 0, 0 )
-1/modulate = Color( 1, 1, 1, 1 )
-1/region = Rect2( 0, 0, 128, 72 )
-1/tile_mode = 0
-1/occluder_offset = Vector2( 0, 0 )
-1/navigation_offset = Vector2( 0, 0 )
-1/shape_offset = Vector2( 0, 0 )
-1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-1/shape_one_way = false
-1/shape_one_way_margin = 0.0
-1/shapes = [  ]
-1/z_index = 0
-2/name = "water_anim_right.tres 2"
-2/texture = ExtResource( 28 )
-2/tex_offset = Vector2( 0, 0 )
-2/modulate = Color( 1, 1, 1, 1 )
-2/region = Rect2( 0, 0, 112, 72 )
-2/tile_mode = 0
-2/occluder_offset = Vector2( 0, 0 )
-2/navigation_offset = Vector2( 0, 0 )
-2/shape_offset = Vector2( 0, 0 )
-2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-2/shape = SubResource( 47 )
-2/shape_one_way = false
-2/shape_one_way_margin = 1.0
-2/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 47 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-2/z_index = 0
-3/name = "water_anim_left2.tres 3"
-3/texture = ExtResource( 30 )
-3/tex_offset = Vector2( 0, 0 )
-3/modulate = Color( 1, 1, 1, 1 )
-3/region = Rect2( 0, 0, 128, 72 )
-3/tile_mode = 0
-3/occluder_offset = Vector2( 0, 0 )
-3/navigation_offset = Vector2( 0, 0 )
-3/shape_offset = Vector2( 0, 0 )
-3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-3/shape = SubResource( 52 )
-3/shape_one_way = false
-3/shape_one_way_margin = 1.0
-3/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 52 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-3/z_index = 0
-4/name = "water_anim_middle2.tres 4"
-4/texture = ExtResource( 31 )
-4/tex_offset = Vector2( 0, 0 )
-4/modulate = Color( 1, 1, 1, 1 )
-4/region = Rect2( 0, 0, 128, 72 )
-4/tile_mode = 0
-4/occluder_offset = Vector2( 0, 0 )
-4/navigation_offset = Vector2( 0, 0 )
-4/shape_offset = Vector2( 0, 0 )
-4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-4/shape = SubResource( 56 )
-4/shape_one_way = false
-4/shape_one_way_margin = 1.0
-4/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 56 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-4/z_index = 0
-5/name = "water_anim_right2.tres 5"
-5/texture = ExtResource( 32 )
-5/tex_offset = Vector2( 0, 0 )
-5/modulate = Color( 1, 1, 1, 1 )
-5/region = Rect2( 0, 0, 112, 72 )
-5/tile_mode = 0
-5/occluder_offset = Vector2( 0, 0 )
-5/navigation_offset = Vector2( 0, 0 )
-5/shape_offset = Vector2( 0, 0 )
-5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-5/shape = SubResource( 54 )
-5/shape_one_way = false
-5/shape_one_way_margin = 1.0
-5/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 54 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-5/z_index = 0
-
-[node name="Level1" type="Node2D"]
-script = SubResource( 57 )
-__meta__ = {
-"_edit_horizontal_guides_": [  ]
-}
-
-[node name="bunnyfrog" parent="." instance=ExtResource( 16 )]
-position = Vector2( 450, 340 )
-scale = Vector2( 0.7, 0.7 )
-
-[node name="Camera2D" type="Camera2D" parent="bunnyfrog"]
-position = Vector2( 10, 133 )
-scale = Vector2( 0.7, 0.7 )
-current = true
-limit_left = 0
-limit_top = -600
-limit_bottom = 593
-drag_margin_h_enabled = true
-drag_margin_v_enabled = true
-smoothing_enabled = true
-smoothing_speed = 10.0
-drag_margin_left = 0.1
-drag_margin_top = 0.46
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-
-[node name="Forest 2" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-light_mask = 7
-position = Vector2( 6088, 10 )
-scale = Vector2( 0.991, 1.026 )
-texture = ExtResource( 7 )
-region_enabled = true
-region_rect = Rect2( 0, 0, 12288, 1200 )
-
-[node name="Floor" type="StaticBody2D" parent="."]
-visible = false
-position = Vector2( 515, 580 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Floor"]
-position = Vector2( 5000, 8 )
-scale = Vector2( 80, 0.19 )
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
-position = Vector2( 6999, 8 )
-scale = Vector2( 40, 1 )
-shape = SubResource( 2 )
-
-[node name="Left wall" type="StaticBody2D" parent="."]
-visible = false
-position = Vector2( -5043, -78 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Left wall"]
-position = Vector2( 5000, 8 )
-scale = Vector2( 0.19, 5 )
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Left wall"]
-position = Vector2( 5000, 8 )
-shape = SubResource( 26 )
-
-[node name="Coin Counter" type="CanvasLayer" parent="."]
-script = ExtResource( 10 )
-
-[node name="Panel" type="Panel" parent="Coin Counter"]
-margin_left = 43.0
-margin_top = 29.0
-margin_right = 159.0
-margin_bottom = 93.0
-custom_styles/panel = SubResource( 11 )
-
-[node name="TextureRect" type="TextureRect" parent="Coin Counter"]
-margin_left = 1.0
-margin_top = -12.0
-margin_right = 124.0
-margin_bottom = 111.0
-texture = ExtResource( 9 )
-expand = true
-
-[node name="Coins" type="Label" parent="Coin Counter"]
-margin_left = 97.0
-margin_top = 40.0
-margin_right = 155.0
-margin_bottom = 95.0
-custom_colors/font_color = Color( 0.921569, 0.921569, 0.921569, 1 )
-custom_fonts/font = SubResource( 13 )
-text = "##"
-
-[node name="Key Collect" type="CanvasLayer" parent="."]
-script = ExtResource( 26 )
-
-[node name="KeyImg" type="TextureRect" parent="Key Collect"]
-margin_left = 210.0
-margin_top = 23.0
-margin_right = 466.0
-margin_bottom = 151.0
-rect_rotation = 90.0
-rect_scale = Vector2( 0.28, 0.35 )
-texture = ExtResource( 25 )
-flip_v = true
-
-[node name="Coins" type="Node2D" parent="."]
-
-[node name="Coin3" parent="Coins" instance=ExtResource( 17 )]
-position = Vector2( 2181, 330 )
-scale = Vector2( 0.8, 0.8 )
-
-[node name="Coin4" parent="Coins" instance=ExtResource( 17 )]
-position = Vector2( 2661, 331 )
-scale = Vector2( 0.8, 0.8 )
-
-[node name="Coin5" parent="Coins" instance=ExtResource( 17 )]
-position = Vector2( 3107, 334 )
-scale = Vector2( 0.8, 0.8 )
-
-[node name="Coin6" parent="Coins" instance=ExtResource( 17 )]
-position = Vector2( 3383, 236 )
-scale = Vector2( 0.8, 0.8 )
-
-[node name="Coin7" parent="Coins" instance=ExtResource( 17 )]
-position = Vector2( 3632, 326 )
-scale = Vector2( 0.8, 0.8 )
-
-[node name="Coin8" parent="Coins" instance=ExtResource( 17 )]
-position = Vector2( 4063, 325 )
-scale = Vector2( 0.8, 0.8 )
-
-[node name="Coin9" parent="Coins" instance=ExtResource( 17 )]
-position = Vector2( 4266, 325 )
-scale = Vector2( 0.8, 0.8 )
-
-[node name="Coin10" parent="Coins" instance=ExtResource( 17 )]
-position = Vector2( 5144, 515 )
-scale = Vector2( 0.8, 0.8 )
-
-[node name="Coin11" parent="Coins" instance=ExtResource( 17 )]
-position = Vector2( 5362, 515 )
-scale = Vector2( 0.8, 0.8 )
-
-[node name="Coin12" parent="Coins" instance=ExtResource( 17 )]
-position = Vector2( 5576, 515 )
-scale = Vector2( 0.8, 0.8 )
-
-[node name="Coin13" parent="Coins" instance=ExtResource( 17 )]
-position = Vector2( 5804, 515 )
-scale = Vector2( 0.8, 0.8 )
-
-[node name="key" parent="Coins" instance=ExtResource( 23 )]
-position = Vector2( 4352, 505 )
-scale = Vector2( 0.6, 0.6 )
-
-[node name="GUI" parent="." instance=ExtResource( 18 )]
-
-[node name="Enemies" type="Node2D" parent="."]
-
-[node name="Node2D" parent="Enemies" instance=ExtResource( 11 )]
-position = Vector2( 1330, 26 )
-
-[node name="Area2D" parent="Enemies" instance=ExtResource( 20 )]
-position = Vector2( 800, 321 )
-scale = Vector2( 2.5, 2.5 )
-
-[node name="SpikePillar" parent="Enemies" instance=ExtResource( 21 )]
-position = Vector2( 1880, 481 )
-
-[node name="SpikePillar4" parent="Enemies" instance=ExtResource( 21 )]
-position = Vector2( 2963, 496 )
-
-[node name="SpikePillar2" parent="Enemies" instance=ExtResource( 21 )]
-position = Vector2( 1880, -22 )
-rotation = 3.14159
-moveDist = -200
-
-[node name="SpikePillar3" parent="Enemies" instance=ExtResource( 21 )]
-position = Vector2( 2963, -6 )
-rotation = 3.14159
-moveDist = -200
-
-[node name="SpikePillar5" parent="Enemies" instance=ExtResource( 21 )]
-position = Vector2( 3964, 0 )
-rotation = 3.14159
-moveDist = 96
-
-[node name="SpikePillar6" parent="Enemies" instance=ExtResource( 21 )]
-position = Vector2( 4163, -1 )
-rotation = 3.14159
-moveDist = 96
-
-[node name="SpikePillar7" parent="Enemies" instance=ExtResource( 21 )]
-position = Vector2( 4354, -2 )
-rotation = 3.14159
-moveDist = 96
-
-[node name="SpikePillar8" parent="Enemies" instance=ExtResource( 21 )]
-position = Vector2( 5035, 287 )
-rotation = 3.14159
-moveDist = -100
-
-[node name="SpikePillar10" parent="Enemies" instance=ExtResource( 21 )]
-position = Vector2( 5457, 286 )
-rotation = 3.14159
-moveDist = -100
-
-[node name="SpikePillar9" parent="Enemies" instance=ExtResource( 21 )]
-position = Vector2( 5245, 789 )
-moveDist = -100
-
-[node name="SpikePillar11" parent="Enemies" instance=ExtResource( 21 )]
-position = Vector2( 5669, 789 )
-moveDist = -100
-
-[node name="SpikePillar12" parent="Enemies" instance=ExtResource( 21 )]
-position = Vector2( 6020, 620 )
-moveDist = -100
-
-[node name="Blocks" type="TileMap" parent="."]
-scale = Vector2( 0.4, 0.4 )
-tile_set = SubResource( 5 )
-cell_size = Vector2( 16, 16 )
-cell_quadrant_size = 10
-cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
-format = 1
-tile_data = PoolIntArray( 1179645, 3, 0, 1114129, 7, 0, 1769472, 9, 0, 1769489, 1073741826, 0, 2424832, 9, 0, 2424849, 1073741826, 0, 3080192, 9, 0, 3080209, 1073741826, 0, 3539530, 6, 0, 3539550, 3, 0, 3539570, 3, 0, 3539590, 3, 0, 3539597, 3, 0, 3539632, 3, 0, 3539650, 3, 0, 3539670, 3, 0, 3539673, 3, 0, 3539685, 7, 0, 3604786, 6, 0, 3604788, 7, 0, 3604908, 6, 0, 3604909, 7, 0, 3604910, 7, 0, 3670016, 9, 0, 3670033, 9, 0, 3670053, 3, 0, 3670073, 3, 0, 3670093, 3, 0, 3670113, 3, 0, 3670133, 3, 0, 3670153, 3, 0, 3670173, 3, 0, 3670193, 3, 0, 3670213, 3, 0, 3670233, 3, 0, 3670253, 3, 0, 3670273, 7, 0, 4194891, 10, 0, 4194910, 9, 0, 4194930, 9, 0, 4194950, 9, 0, 4194957, 9, 0, 4194992, 9, 0, 4195012, 9, 0, 4195032, 9, 0, 4195040, 9, 0, 4195045, 2, 0, 4195238, 10, 0, 4195251, 3, 0, 4195271, 3, 0, 4195291, 3, 0, 4195311, 7, 0, 4260147, 10, 0, 4260148, 2, 0, 4260269, 10, 0, 4260270, 2, 0, 4325376, 9, 0, 4325394, 9, 0, 4325414, 9, 0, 4325433, 9, 0, 4325453, 9, 0, 4325473, 9, 0, 4325493, 9, 0, 4325513, 9, 0, 4325533, 9, 0, 4325553, 9, 0, 4325573, 9, 0, 4325593, 9, 0, 4325613, 9, 0, 4325633, 2, 0, 4784766, 9, 0, 4784767, 9, 0, 4784768, 9, 0, 4784769, 9, 0, 4784770, 9, 0, 4784771, 9, 0, 4784772, 9, 0, 4784773, 9, 0, 4784774, 9, 0, 4850251, 10, 0, 4850270, 9, 0, 4850271, 9, 0, 4850272, 9, 0, 4850273, 9, 0, 4850274, 9, 0, 4850275, 9, 0, 4850276, 9, 0, 4850277, 9, 0, 4850278, 9, 0, 4850279, 9, 0, 4850280, 9, 0, 4850281, 9, 0, 4850282, 9, 0, 4850283, 9, 0, 4850284, 9, 0, 4850285, 9, 0, 4850286, 9, 0, 4850287, 9, 0, 4850288, 9, 0, 4850289, 9, 0, 4850290, 9, 0, 4850291, 9, 0, 4850292, 9, 0, 4850293, 9, 0, 4850294, 9, 0, 4850295, 9, 0, 4850296, 9, 0, 4850297, 9, 0, 4850298, 9, 0, 4850299, 9, 0, 4850300, 9, 0, 4850301, 9, 0, 4850310, 9, 0, 4850317, 9, 0, 4850352, 9, 0, 4850357, 9, 0, 4850377, 9, 0, 4850397, 9, 0, 4850405, 2, 0, 4850598, 10, 0, 4850617, 9, 0, 4850637, 9, 0, 4850657, 9, 0, 4850671, 2, 0, 4915277, 9, 0, 4915507, 10, 0, 4915508, 2, 0, 4915629, 10, 0, 4915630, 2, 0, 4915846, 9, 0, 4980736, 9, 0, 4980754, 9, 0, 4980774, 9, 0, 4980793, 9, 0, 4980813, 9, 0, 4980833, 9, 0, 4980853, 9, 0, 4980873, 9, 0, 4980893, 9, 0, 4980913, 9, 0, 4980933, 9, 0, 4980953, 9, 0, 4980973, 9, 0, 4980993, 2, 0, 4981382, 9, 0, 5046918, 9, 0, 5112454, 9, 0, 5177988, 9, 0, 5177989, 9, 0, 5243519, 9, 0, 5243520, 9, 0, 5243521, 9, 0, 5243522, 9, 0, 5243523, 9, 0, 5243524, 9, 0, 5309049, 9, 0, 5309050, 9, 0, 5309051, 9, 0, 5309052, 9, 0, 5309053, 9, 0, 5309054, 9, 0, 5374559, 9, 0, 5374560, 9, 0, 5374561, 9, 0, 5374562, 9, 0, 5374563, 9, 0, 5374574, 9, 0, 5374575, 9, 0, 5374576, 9, 0, 5374577, 9, 0, 5374578, 9, 0, 5374579, 9, 0, 5374580, 9, 0, 5374581, 9, 0, 5374582, 9, 0, 5374583, 9, 0, 5374584, 9, 0, 5440094, 9, 0, 5440095, 9, 0, 5440100, 9, 0, 5440101, 9, 0, 5440102, 9, 0, 5440103, 9, 0, 5440104, 9, 0, 5440105, 9, 0, 5440106, 9, 0, 5440107, 9, 0, 5440108, 9, 0, 5440109, 9, 0, 5505611, 10, 0, 5505630, 9, 0, 5505650, 9, 0, 5505664, 9, 0, 5505677, 9, 0, 5505697, 9, 0, 5505717, 9, 0, 5505737, 9, 0, 5505757, 9, 0, 5505772, 9, 0, 5505773, 9, 0, 5505793, 9, 0, 5505808, 9, 0, 5505817, 9, 0, 5505850, 9, 0, 5505863, 9, 0, 5505883, 9, 0, 5505917, 9, 0, 5505937, 9, 0, 5505957, 9, 0, 5505977, 9, 0, 5505997, 9, 0, 5506017, 9, 0, 5506031, 2, 0, 5570867, 10, 0, 5570868, 2, 0, 5570989, 10, 0, 5570990, 2, 0, 5636096, 9, 0, 5636115, 9, 0, 5636134, 9, 0, 5636153, 9, 0, 5636173, 9, 0, 5636193, 9, 0, 5636213, 9, 0, 5636233, 9, 0, 5636253, 9, 0, 5636273, 9, 0, 5636293, 9, 0, 5636313, 9, 0, 5636333, 9, 0, 5636353, 2, 0 )
-
-[node name="Spikes" type="TileMap" parent="."]
-tile_set = SubResource( 43 )
-cell_size = Vector2( 32, 32 )
-format = 1
-tile_data = PoolIntArray( 1114167, 0, 0, 1114171, 0, 0, 1114201, 0, 0 )
-
-[node name="FlagPolev2" parent="." instance=ExtResource( 19 )]
-position = Vector2( 6422, 249 )
-
-[node name="Timer" type="Timer" parent="."]
-
-[node name="KinematicBody2D" parent="." instance=ExtResource( 22 )]
-position = Vector2( 2183, 382 )
-scale = Vector2( 0.5, 0.5 )
-speed = 150
-moveDist = 475
-
-[node name="block" parent="." instance=ExtResource( 24 )]
-position = Vector2( 3106, 386 )
-scale = Vector2( 0.25, 0.25 )
-
-[node name="block2" parent="." instance=ExtResource( 24 )]
-position = Vector2( 3382, 288 )
-scale = Vector2( 0.25, 0.25 )
-
-[node name="block3" parent="." instance=ExtResource( 24 )]
-position = Vector2( 3634, 377 )
-scale = Vector2( 0.25, 0.25 )
-
-[node name="block5" parent="." instance=ExtResource( 24 )]
-position = Vector2( 4357, 378 )
-scale = Vector2( 0.22, 0.27 )
-
-[node name="Water" type="TileMap" parent="."]
-tile_set = SubResource( 55 )
-cell_size = Vector2( 8, 8 )
-format = 1
-tile_data = PoolIntArray( -2752214, 3, 0, -2752198, 4, 0, -2752182, 5, 0, 4325640, 3, 0, 4325656, 4, 0, 4325672, 4, 0, 4325688, 4, 0, 4325704, 2, 0, 4325751, 3, 0, 4325767, 4, 0, 4325783, 4, 0, 4325799, 4, 0, 4325815, 4, 0, 4325831, 5, 0 )
-
-[node name="Spring" parent="." instance=ExtResource( 3 )]
-position = Vector2( 5911, 526 )
-
-[connection signal="coin_collected" from="Coins/Coin3" to="Coin Counter" method="_on_coin_collected"]
-[connection signal="coin_collected" from="Coins/Coin4" to="Coin Counter" method="_on_coin_collected"]
-[connection signal="coin_collected" from="Coins/Coin5" to="Coin Counter" method="_on_coin_collected"]
-[connection signal="coin_collected" from="Coins/Coin6" to="Coin Counter" method="_on_coin_collected"]
-[connection signal="coin_collected" from="Coins/Coin7" to="Coin Counter" method="_on_coin_collected"]
-[connection signal="coin_collected" from="Coins/Coin8" to="Coin Counter" method="_on_coin_collected"]
-[connection signal="coin_collected" from="Coins/Coin9" to="Coin Counter" method="_on_coin_collected"]
-[connection signal="coin_collected" from="Coins/Coin10" to="Coin Counter" method="_on_coin_collected"]
-[connection signal="coin_collected" from="Coins/Coin11" to="Coin Counter" method="_on_coin_collected"]
-[connection signal="coin_collected" from="Coins/Coin12" to="Coin Counter" method="_on_coin_collected"]
-[connection signal="coin_collected" from="Coins/Coin13" to="Coin Counter" method="_on_coin_collected"]
-[connection signal="key_collected" from="Coins/key" to="Key Collect" method="_on_key_key_collected"]
-[connection signal="next_level" from="FlagPolev2" to="." method="_on_FlagPolev2_next_level"]
->>>>>>> 4efee8ff6b4ebf3d203ed4194e4d1350efdbc0ff
