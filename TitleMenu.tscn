@@ -63,6 +63,7 @@ color = Color( 0, 0, 0, 1 )
 texture = SubResource( 3 )
 
 [node name="SettingsButton" type="MenuButton" parent="."]
+visible = false
 anchor_right = 0.545
 margin_left = 832.0
 margin_top = 416.0

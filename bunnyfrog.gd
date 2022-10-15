@@ -58,13 +58,13 @@ func _physics_process(delta):
 	
 func die():
 	pass
-#	dying = true
-#	if not is_on_floor():
-#		$Sprite.play("air die")
-#	else:
-#		$Sprite.play("die")
-#	yield($Sprite, "animation_finished")
-#	Transition.fade2()
+	dying = true
+	if not is_on_floor():
+		$Sprite.play("air die")
+	else:
+		$Sprite.play("die")
+	yield($Sprite, "animation_finished")
+	Transition.fade2()
 
 func add_coin():
 	coins = coins + 1

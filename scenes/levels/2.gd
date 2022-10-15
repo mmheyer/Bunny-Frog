@@ -8,5 +8,7 @@ func _ready():
 		yield($Timer, "timeout")
 		Music.play_music()
 
-func _on_FlagPolev2_next_level2():
+
+
+func _on_FlagPolev2_next_level():
 	Transition.fade_soundcont("res://scenes/levels/3.tscn")

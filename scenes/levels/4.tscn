@@ -41,6 +41,10 @@ func _ready():
 	$Timer.start()
 	yield($Timer, \"timeout\")
 	Music.play_music()
+
+
+func _on_FlagPolev2_next_level():
+	Transition.fade_soundcont(\"res://scenes/levels/5.tscn\")
 "
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -398,7 +402,7 @@ __meta__ = {
 }
 
 [node name="bunnyfrog" parent="." instance=ExtResource( 5 )]
-position = Vector2( 450, 340 )
+position = Vector2( 5800, 450 )
 scale = Vector2( 0.7, 0.7 )
 
 [node name="Camera2D" type="Camera2D" parent="bunnyfrog"]
@@ -580,17 +584,17 @@ moveDist = -200
 [node name="SpikePillar5" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 3964, 0 )
 rotation = 3.14159
-moveDist = 96
+moveDist = 110
 
 [node name="SpikePillar6" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 4163, -1 )
 rotation = 3.14159
-moveDist = 96
+moveDist = 110
 
 [node name="SpikePillar7" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 4354, -2 )
 rotation = 3.14159
-moveDist = 96
+moveDist = 110
 
 [node name="SpikePillar8" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 5035, 287 )
@@ -604,11 +608,11 @@ moveDist = -100
 
 [node name="SpikePillar9" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 5245, 789 )
-moveDist = -100
+moveDist = -110
 
 [node name="SpikePillar11" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 5669, 789 )
-moveDist = -100
+moveDist = -110
 
 [node name="SpikePillar12" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 6020, 620 )
@@ -677,3 +681,4 @@ position = Vector2( 5911, 526 )
 [connection signal="coin_collected" from="Coins/Coin12" to="Coin Counter" method="_on_coin_collected"]
 [connection signal="coin_collected" from="Coins/Coin13" to="Coin Counter" method="_on_coin_collected"]
 [connection signal="key_collected" from="Coins/key" to="Key Collect" method="_on_key_key_collected"]
+[connection signal="next_level" from="FlagPolev2" to="." method="_on_FlagPolev2_next_level"]

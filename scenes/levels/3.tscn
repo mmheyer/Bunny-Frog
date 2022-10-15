@@ -644,7 +644,7 @@ position = Vector2( 5222, 84 )
 position = Vector2( 4642, 509 )
 
 [node name="Area2D2" parent="." instance=ExtResource( 35 )]
-position = Vector2( 5113, 475 )
+position = Vector2( 5010, 513 )
 
 [node name="Area2D3" parent="." instance=ExtResource( 35 )]
 position = Vector2( 5402, 507 )
@@ -667,3 +667,4 @@ position = Vector2( 5787, 504 )
 [connection signal="coin_collected" from="Coins/Coin13" to="Coin Counter" method="_on_coin_collected"]
 [connection signal="coin_collected" from="Coins/Coin14" to="Coin Counter" method="_on_coin_collected"]
 [connection signal="key_collected" from="Coins/key" to="Key Collect" method="_on_key_key_collected"]
+[connection signal="next_level" from="FlagPolev2" to="." method="_on_FlagPolev2_next_level"]
